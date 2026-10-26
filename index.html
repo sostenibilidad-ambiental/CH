@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>El camino del agua · Fundación Natura 35 años</title>
+<meta name="description" content="35 años de historia de Fundación Natura junto a las cuencas hidrográficas de Panamá.">
+<meta property="og:title" content="El camino del agua · Fundación Natura 35 años">
+<meta property="og:description" content="35 años de historia de Fundación Natura junto a las cuencas hidrográficas de Panamá.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* Layout: guía de visitante editorial (versión cuencas, paleta de agua), como la del Smithsonian Tropical Research Institute. Páginas blancas con texto serif y titulares en mayúsculas (línea ligera + línea en negrita con sangría) alternan con pliegos azul océano a sangre. Tierra en lima, barras de rótulo naranjas y azules, cifras grandes y ligeras. Esquinas rectas, sin sombras de tarjeta. */
+:root{
+  --paper:#FFFFFF; --ink:#142B2C; --muted:#52676A; --rule:#DCE5E2; --mist:#F1F6F4; --wash:#F3F7E2;
+  --blue:#1F5F63; --blue-hi:#26777A; --abyss:#0E2E31; --on-blue:#FFFFFF; --on-blue-2:#D2E6E1;
+  --lime:#A4DFCB; --lime-ink:#1F7A70; --lime-deep:#5DB39E;
+  --green:#2F7A45; --green-d:#1E5E35; --orange:#E8875B; --cyan:#7FD3E6; --sand:#E9DDB0; --gold:#F2C14E;
+  --ok:#2F7A45; --bad:#C4441C; --note:#FFF5D1; --note-ink:#755A0E;
+  --f-sans:"Nunito",ui-rounded,system-ui,"Segoe UI",sans-serif;
+  --f-serif:"Nunito",ui-rounded,system-ui,"Segoe UI",sans-serif;
+  --f-display:"Fredoka","Nunito",ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;
+  --col:620px; --wide:1120px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0D2224; --ink:#E7EEF4; --muted:#A4B5C5; --rule:#2A4846; --mist:#15302F; --wash:#16291C;
+  --lime-ink:#A4DFCB; --note:#3A3017; --note-ink:#F0D58E; --ok:#8CCB5E; --bad:#F08A72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D2224; --ink:#E7EEF4; --muted:#A4B5C5; --rule:#2A4846; --mist:#15302F; --wash:#16291C;
+  --lime-ink:#A4DFCB; --note:#3A3017; --note-ink:#F0D58E; --ok:#8CCB5E; --bad:#F08A72; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0}img{max-width:100%}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-serif);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.phone{background:var(--mist)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--blue-hi)}
+h1,h2,h3,h4{margin:0;font-family:var(--f-display);text-wrap:balance}
+p{margin:0}
+a{color:var(--blue)}
+button{font:inherit}
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+path[role="button"]:focus-visible{outline:none;stroke:var(--orange);stroke-width:4}
+
+#app{container-type:inline-size;background:var(--paper);overflow-x:clip;position:relative}
+body.phone #app{max-width:400px;margin:24px auto;box-shadow:0 0 0 10px #0B1E2E,0 30px 60px rgba(0,0,0,.25);border-radius:30px}
+.gut{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.col{max-width:var(--col);margin-inline:auto}
+.wide{max-width:var(--wide);margin-inline:auto}
+.caps{font-family:var(--f-sans);text-transform:uppercase;letter-spacing:.06em}
+.kicker{font:600 13px/1.3 var(--f-sans);text-transform:uppercase;letter-spacing:.08em;color:var(--blue)}
+.blue .kicker,.ocean .kicker{color:var(--lime)}
+
+/* Titular de la guía: línea ligera + línea en negrita con sangría */
+.hd{font-family:var(--f-sans);text-transform:uppercase;color:var(--lime-ink);line-height:.95;letter-spacing:.01em;font-size:clamp(34px,10cqw,58px)}
+.hd .l{display:block;font-weight:300}
+.hd .b{display:block;font-weight:700;padding-left:1.1em}
+.blue .hd,.ocean .hd{color:var(--lime)}
+
+/* Rótulos */
+.tag{display:inline-block;background:var(--orange);color:#fff;font:500 13px/1.25 var(--f-sans);text-transform:uppercase;letter-spacing:.05em;padding:7px 12px}
+.tag b{font-weight:700}
+.tag.bl{background:var(--blue)}
+
+/* Barra superior */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--rule)}
+.topbar .in{display:flex;align-items:center;gap:10px;min-height:52px}
+.mark{display:flex;align-items:center;gap:10px;min-width:0;font:600 14px var(--f-sans);text-transform:uppercase;letter-spacing:.08em}
+.mark i{width:30px;height:30px;border-radius:50%;background:var(--lime);color:#12273A;display:grid;place-items:center;font:700 12px var(--f-sans);font-style:normal;flex:none;letter-spacing:0}
+.mark span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mark small{font-weight:300;letter-spacing:.04em}
+.tools{margin-left:auto;display:flex;gap:6px}
+.tbtn{font:600 11.5px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:6px 10px;cursor:pointer;white-space:nowrap}
+.tbtn.notes{border-style:dashed;border-color:var(--note-ink);background:var(--note);color:var(--note-ink)}
+#phoneBtn{display:none}
+@media (min-width:700px){#phoneBtn{display:inline-block}}
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:40;height:3px;background:transparent}
+.progress i{display:block;height:100%;width:0;background:var(--orange)}
+
+/* Notas para ArcGIS */
+.bn{font:14px/1.45 var(--f-sans);background:var(--note);color:var(--note-ink);border:1.5px dashed currentColor;padding:6px 10px;position:relative;z-index:3}
+.bn b{font-weight:700}
+body.no-notes .bn{display:none}
+.pend{font-weight:700;background:var(--note);color:var(--note-ink);padding:1px 6px}
+body.no-notes .pend{background:transparent;color:inherit}
+
+/* Pliegos */
+.ocean{background:linear-gradient(180deg,var(--blue-hi) 0%,var(--abyss) 100%);color:var(--on-blue)}
+.blue{background:var(--blue);color:var(--on-blue)}
+.lime{background:var(--lime);color:#12273A}
+.page{padding-block:52px}
+.page > .col,.page > .wide{display:grid;gap:18px}
+.lead{font-size:18.5px;line-height:1.6}
+.sans{font-family:var(--f-sans)}
+
+/* Portada */
+.cover{position:relative;min-height:540px;display:grid;align-content:center;overflow:hidden}
+.cover .map{position:absolute;left:0;top:44px;width:100%;height:auto}
+.cover .in{position:relative;z-index:2;padding-block:64px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.cover h1{font-family:var(--f-sans);text-transform:uppercase;color:#fff;line-height:.92;font-size:clamp(38px,12.4cqw,104px);overflow-wrap:anywhere;letter-spacing:.005em}
+.cover h1 .l{display:block;font-weight:300}
+.cover h1 .b{display:block;font-weight:700}
+.cover .sig{display:flex;align-items:center;gap:12px;font:500 15px/1.25 var(--f-sans);color:#fff}
+.cover .sig i{width:44px;height:44px;border-radius:50%;background:var(--lime);color:#12273A;display:grid;place-items:center;font:700 16px var(--f-sans);font-style:normal;flex:none}
+.cover .sig em{display:block;font:italic 400 17px var(--f-serif);color:var(--on-blue-2)}
+.cover .ap{stroke:none}
+@container (min-width:760px){
+  .cover{min-height:600px}
+  .cover .in{max-width:var(--wide);margin-inline:auto;width:100%;padding-block:80px}
+}
+
+/* Misión */
+.mission .in{padding-block:88px 80px;display:grid;gap:18px}
+.mission blockquote{margin:0;font:300 clamp(30px,8.4cqw,52px)/1.18 var(--f-sans);max-width:22ch}
+.mission blockquote b{font-weight:600;color:var(--lime)}
+
+/* Bienvenidos */
+.hello h2{font:300 clamp(40px,12cqw,72px)/1 var(--f-sans);text-transform:uppercase;color:var(--lime-ink);letter-spacing:.02em}
+.twocol{columns:1;column-gap:32px}
+.twocol p{margin-bottom:12px}
+@container (min-width:760px){.twocol{columns:2}}
+.faq{display:grid;gap:10px;border-top:1px solid var(--rule);padding-top:18px}
+.faq .q{display:flex;gap:10px;align-items:center;font:600 13px/1.3 var(--f-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+.arrowc{width:30px;height:30px;flex:none}
+.arrowc circle{fill:none;stroke:var(--lime-ink);stroke-width:2}
+.arrowc path{fill:none;stroke:var(--lime-ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.faq ol{list-style:none;margin:0;padding:0 0 0 40px;display:grid;gap:8px}
+.faq a{font:500 15.5px/1.3 var(--f-sans);text-transform:uppercase;letter-spacing:.04em;color:var(--lime-ink);text-decoration:none}
+.faq a:hover{text-decoration:underline}
+
+/* Plataforma: mapa + cifras */
+.plat .ttl{font:400 clamp(20px,5.6cqw,28px)/1.15 var(--f-sans);text-transform:uppercase;letter-spacing:.03em}
+.plat .ttl b{font-weight:700;display:block}
+.mapbtn{display:block;width:100%;border:0;padding:0;background:none;cursor:pointer;text-align:left;color:#fff}
+.mapbtn #mini{display:block;width:100%;height:auto}
+.mapbtn .go{display:inline-flex;align-items:center;gap:10px;margin-top:6px;background:var(--orange);color:#fff;font:600 14px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;padding:10px 16px}
+.mapbtn:hover .go{background:#DB7448}
+.lead-l{stroke:#fff;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.lead-t{font-family:var(--f-sans);font-weight:500;fill:#fff}
+.dot-a{fill:var(--orange);stroke:#fff;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.legend{display:flex;gap:6px 16px;flex-wrap:wrap;font:500 13.5px var(--f-sans);color:var(--on-blue-2)}
+.legend span{display:inline-flex;gap:7px;align-items:center}
+.sw{width:12px;height:12px;display:inline-block;flex:none}
+.stats{display:grid;grid-template-columns:1fr;gap:22px 32px;margin-top:8px}
+@container (min-width:760px){.stats{grid-template-columns:1fr 1fr}}
+.stat{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:end}
+.stat .n{grid-row:span 2;font:300 clamp(54px,15cqw,76px)/.82 var(--f-sans);color:var(--lime);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat strong{font:700 15px/1.15 var(--f-sans);text-transform:uppercase;letter-spacing:.03em;color:#fff}
+.stat span{font:400 15px/1.3 var(--f-sans);color:var(--on-blue-2)}
+
+/* Capas del mapa */
+.sea-r{fill:url(#seaGrad)}
+.cr{fill:var(--green);stroke:none}
+.pan{fill:var(--lime);stroke:none}
+.ap{stroke:var(--abyss);stroke-width:.6;vector-effect:non-scaling-stroke;fill-rule:evenodd;transition:opacity .25s}
+.ap.st-a{fill:var(--orange)}.ap.st-w{fill:var(--green-d)}.ap.st-h{fill:var(--cyan)}.ap.st-o{fill:var(--lime-deep)}
+.ap.hit{cursor:pointer}.ap.hit:hover{opacity:.8}
+.ap.dim{opacity:.25}
+.ap.sel{stroke:#fff;stroke-width:3}
+.ptn{fill:var(--green-d);stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke;cursor:pointer}
+.lbl{font:600 1px var(--f-sans);fill:#fff;paint-order:stroke;stroke:var(--abyss);stroke-linejoin:round;text-anchor:middle;dominant-baseline:middle;pointer-events:none;text-transform:uppercase;letter-spacing:.04em}
+.sealbl{font:500 1px var(--f-sans);letter-spacing:.3em;text-anchor:middle;fill:var(--cyan);opacity:.85;pointer-events:none}
+
+/* Explorador */
+.mapx{position:fixed;inset:0;z-index:95;background:var(--abyss);display:grid;grid-template-rows:minmax(0,1fr);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.mbody{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 360px;grid-template-rows:minmax(0,1fr);min-height:0;overflow:hidden}
+.mapwrap{position:relative;min-width:0;min-height:0;grid-column:1;grid-row:1}
+#map{display:block;width:100%;height:100%;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+#map.dragging{cursor:grabbing}
+.chips{position:absolute;top:12px;left:max(12px,env(safe-area-inset-left,0px));right:64px;z-index:3;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:600 12.5px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;border:1px solid rgba(255,255,255,.5);background:rgba(14,46,49,.6);color:#fff;padding:7px 12px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;min-height:36px}
+.chip[aria-pressed="true"]{background:#fff;color:var(--abyss);border-color:#fff}
+.zoom{position:absolute;top:12px;right:max(12px,env(safe-area-inset-right,0px));display:grid;gap:6px;z-index:3}
+.zoom button{width:40px;height:40px;border:1px solid rgba(255,255,255,.5);background:rgba(14,46,49,.6);color:#fff;font:600 20px var(--f-sans);line-height:1;cursor:pointer}
+.zoom .back{background:var(--orange);border-color:var(--orange)}
+.mlegend{position:absolute;left:max(12px,env(safe-area-inset-left,0px));bottom:12px;z-index:2;background:rgba(14,46,49,.82);padding:10px 12px;display:grid;gap:4px;font:500 12.5px var(--f-sans);color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.mlegend span{display:flex;gap:8px;align-items:center}
+.hint{position:absolute;left:50%;top:62px;transform:translateX(-50%);background:var(--orange);color:#fff;font:600 12.5px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;padding:7px 14px;pointer-events:none;white-space:nowrap;z-index:2;display:none}
+.panel{grid-column:2;grid-row:1;background:var(--paper);color:var(--ink);padding:0 0 24px;display:grid;gap:12px;align-content:start;overflow:auto;position:relative}
+.panel > *:not(.ph):not(.x){margin-inline:20px}
+.panel .ph{background:var(--blue);color:#fff;padding:18px 20px 16px;display:grid;gap:6px}
+.panel .ph .kicker{color:var(--lime)}
+.panel .ph h2{font:600 24px/1.1 var(--f-sans);text-transform:uppercase;letter-spacing:.02em;padding-right:34px}
+.panel .x{position:absolute;top:10px;right:10px;width:36px;height:36px;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:none;z-index:2}
+.badge{font:600 11.5px var(--f-sans);letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;justify-self:start}
+.b-a{background:var(--orange);color:#fff}.b-w{background:var(--green-d);color:#fff}.b-h{background:var(--cyan);color:#12273A}.b-o{background:var(--lime-deep);color:#12273A}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font:15px/1.35 var(--f-sans)}
+dt{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.06em;font-weight:600;padding-top:2px}
+dd{margin:0;font-weight:500;font-variant-numeric:tabular-nums}
+.minibar svg{display:block;width:100%;height:auto}
+.minibar .cap{font:13px var(--f-sans);color:var(--muted)}
+.story{border-left:4px solid var(--lime-deep);padding:4px 0 4px 12px;display:grid;gap:8px;font-size:17px;line-height:1.45}
+.story b{font:700 12px var(--f-sans);text-transform:uppercase;letter-spacing:.07em;color:var(--lime-ink);display:block}
+.lnk{display:flex;gap:8px;align-items:flex-start;color:var(--ink);font:600 14.5px/1.3 var(--f-sans);text-decoration:none}
+.lnk .ic{font:700 10.5px var(--f-sans);background:var(--orange);color:#fff;padding:3px 6px;flex:none;margin-top:1px}
+.lnk .ic.w{background:var(--blue)}
+.lnk:hover span:last-child{text-decoration:underline}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.sum div{padding:10px;color:#fff;display:grid;gap:2px}
+.sum b{font:300 34px/1 var(--f-sans)}
+.sum span{font:600 11.5px/1.2 var(--f-sans);text-transform:uppercase;letter-spacing:.04em}
+.mnote{font:13.5px/1.4 var(--f-sans);color:var(--muted)}
+@media (max-width:760px){
+  .mbody{grid-template-columns:minmax(0,1fr)}
+  .panel{grid-column:auto;grid-row:auto;position:absolute;top:0;right:0;bottom:0;width:min(88%,360px);transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);z-index:4}
+  .panel.open{transform:none}
+  .panel .x{display:block}
+  .hint{display:block}
+  .panel.open ~ .mapwrap .hint{display:none}
+}
+
+/* ¿Qué es? */
+.wrapI{display:grid;grid-template-columns:minmax(0,1fr);gap:0;background:var(--blue)}
+.ic1,.ic2{display:grid;gap:12px;align-content:start;min-width:0}
+@container (min-width:860px){.icard{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:44px;padding:26px 30px 22px}.icard > .inav{grid-column:1/-1}}
+.stage{position:relative;min-width:0;background:var(--mist)}
+.stage svg{display:block;width:100%;height:auto}
+.pills{position:relative;z-index:3;display:flex;overflow-x:auto;scrollbar-width:none;background:rgba(14,46,49,.85)}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:none;display:inline-flex;align-items:center;gap:7px;font:600 12.5px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;border:0;background:transparent;color:#fff;padding:10px 12px;cursor:pointer;min-height:40px;border-bottom:3px solid transparent}
+.pill b{font-weight:300;font-size:18px;color:var(--lime)}
+.pill[aria-pressed="true"]{border-bottom-color:var(--orange);background:rgba(255,255,255,.08)}
+.hs{cursor:pointer}
+.hs circle{transition:transform .2s;transform-box:fill-box;transform-origin:center}
+.hs:hover circle,.hs.on circle{transform:scale(1.12)}
+.hs.on .ring{fill:var(--orange)}
+.hs:focus{outline:none}
+.hs:focus-visible .ring{stroke:var(--gold);stroke-width:5}
+#veil{transition:opacity .35s}
+.icard{background:var(--blue);color:#fff;padding:22px 20px 18px;display:grid;gap:12px;align-content:start;min-width:0}
+.icard .kicker{color:var(--lime)}
+.icard h3{font:600 24px/1.1 var(--f-sans);text-transform:uppercase;letter-spacing:.02em}
+.icard p{font-size:17.5px;line-height:1.45}
+.fact{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25);padding:10px 0}
+.fact b{font:300 40px/1 var(--f-sans);color:var(--lime);white-space:nowrap}
+.fact span{font:500 14px/1.3 var(--f-sans);color:var(--on-blue-2)}
+.natline{font-size:16.5px}
+.icard .src{font:italic 12.5px/1.4 var(--f-sans);color:var(--on-blue-2)}
+.natline strong{font:700 12px var(--f-sans);text-transform:uppercase;letter-spacing:.07em;color:var(--lime);display:block;margin-bottom:2px}
+.inav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap}
+.inav button{white-space:nowrap;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;padding:8px 14px;font:600 13px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;cursor:pointer;min-height:40px}
+.inav .next{background:var(--orange);border-color:var(--orange)}
+.inav button:disabled{opacity:.35;cursor:default}
+.idots{display:none;gap:5px}
+.idots i{width:7px;height:7px;background:rgba(255,255,255,.35)}
+.idots i.on{background:var(--lime);width:18px}
+@container (max-width:820px){.wrapI{grid-template-columns:minmax(0,1fr)}.idots{display:flex}}
+@container (max-width:460px){.idots{display:none!important}}
+
+/* Importa */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+@container (min-width:760px){.split{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px}}
+.side{display:grid;gap:14px;align-content:start;font:15.5px/1.45 var(--f-sans);color:var(--blue)}
+.side h4{font:700 13px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+.boxb{background:var(--blue);color:#fff;padding:18px;display:grid;gap:6px}
+.boxb .n{font:300 64px/.9 var(--f-sans);color:var(--lime)}
+.boxb .n small{font-size:.45em;color:#fff;font-weight:400}
+.boxb .kicker{color:var(--lime)}
+.boxb p{font:15px/1.4 var(--f-sans);color:var(--on-blue-2)}
+:root[data-theme="dark"] .side,:root[data-theme="dark"] .side h4{color:var(--on-blue-2)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .side,:root:not([data-theme="light"]) .side h4{color:var(--on-blue-2)}}
+
+/* Carruseles */
+.car{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(18px,env(safe-area-inset-left,0px)) 16px;scrollbar-width:none;scroll-padding-inline:18px}
+.car::-webkit-scrollbar{display:none}
+.car > *{scroll-snap-align:start;flex:0 0 min(86%,440px)}
+.carnav{display:flex;align-items:center;justify-content:center;gap:12px;padding-inline:18px}
+.dots{display:flex;gap:6px}
+.dots i{width:8px;height:8px;background:var(--rule);transition:width .25s}
+.dots i.on{width:24px;background:var(--orange)}
+.arrow{width:40px;height:40px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;font-size:18px;line-height:1}
+
+/* Tour */
+.stop{background:var(--paper);display:grid;align-content:start;border-top:6px solid var(--blue)}
+.stop .loc{position:relative}
+.stop .loc svg{display:block;width:100%;height:auto}
+.stop .loc .tag{position:absolute;left:0;bottom:0}
+.stop .body{padding:16px 2px 6px;display:grid;gap:10px}
+.stop .where{font:600 12.5px var(--f-sans);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.stop p{font-size:18px;line-height:1.45}
+.hl{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0}
+.hl b{font:300 40px/1 var(--f-sans);color:var(--lime-ink);white-space:nowrap}
+.hl span{font:600 13.5px/1.3 var(--f-sans);text-transform:uppercase;letter-spacing:.03em;color:var(--blue)}
+.blue .hl span{color:#fff}
+.kpis{display:flex;gap:6px 14px;flex-wrap:wrap;font:600 13px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.photo{aspect-ratio:16/9;background:linear-gradient(135deg,var(--green-d),var(--blue));display:grid;place-items:end start;color:#fff;font:500 13px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;padding:0;position:relative}
+.photo span{background:var(--blue);padding:6px 10px}
+.doclink{border-top:1px solid var(--rule);padding-top:10px}
+
+/* Así trabajamos */
+.lines{display:grid;grid-template-columns:1fr;gap:0}
+@container (min-width:760px){.lines{grid-template-columns:repeat(3,1fr)}}
+.line{padding:20px 4px 22px;border-top:1px solid rgba(255,255,255,.25);display:grid;gap:8px;align-content:start}
+@container (min-width:760px){.line{padding:22px 22px 26px 0}}
+.line svg{width:40px;height:40px}
+.line svg *{fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.line h3{font:600 18px/1.15 var(--f-sans);text-transform:uppercase;letter-spacing:.03em}
+.line p{font:16px/1.45 var(--f-sans);color:var(--on-blue-2)}
+.line .k{font:300 26px/1.1 var(--f-sans);color:var(--lime)}
+.partners{font:600 13px/1.8 var(--f-sans);text-transform:uppercase;letter-spacing:.07em;color:var(--on-blue-2)}
+.partners i{color:var(--lime);font-style:normal;padding-inline:6px}
+
+/* Inversión */
+.chartwrap{display:grid;gap:8px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:14px}
+.chartwrap svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{font:500 11px var(--f-sans);fill:var(--muted);font-variant-numeric:tabular-nums}
+.grid{stroke:var(--rule);stroke-width:1}
+.yb{cursor:pointer}
+.yb:hover rect:first-child,.yb.on rect:first-child{fill:var(--orange)}
+.readout{font:500 15px/1.3 var(--f-sans);min-height:24px;color:var(--muted)}
+.readout b{font:300 26px var(--f-sans);color:var(--blue)}
+.leg2{display:flex;gap:6px 16px;flex-wrap:wrap;font:500 13.5px var(--f-sans);color:var(--muted)}
+.leg2 span{display:inline-flex;gap:7px;align-items:center}
+.rank{display:grid;gap:8px}
+.rk{display:grid;grid-template-columns:minmax(0,15ch) 1fr auto;gap:12px;align-items:center;font:500 14.5px var(--f-sans)}
+.rk .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase;font-size:13px;letter-spacing:.04em;font-weight:600}
+.rk i{display:block;height:12px;background:var(--blue)}
+.rk.a i{background:var(--orange)}
+.rk .v{font-variant-numeric:tabular-nums;text-align:right;min-width:7ch}
+
+/* Historia (página lima) */
+.hitos{display:grid;gap:0;border-left:2px solid #12273A;margin-left:6px}
+.hito{display:grid;grid-template-columns:10ch 1fr;gap:14px;padding:10px 0 10px 18px;position:relative}
+.hito::before{content:"";position:absolute;left:-7px;top:18px;width:12px;height:12px;background:var(--blue);border-radius:50%}
+.hito .y{font:700 17px/1.2 var(--f-sans);color:var(--blue);padding-top:3px}
+.hito p{font-size:18px;line-height:1.4;color:#12273A}
+.lime .hd{color:var(--blue)}
+.lime .bn{color:#755A0E;background:#FFF5D1}
+
+/* Voces */
+.video{aspect-ratio:9/12;max-height:540px;width:100%;background:linear-gradient(160deg,var(--green-d),var(--abyss));color:#fff;display:grid;place-items:center;text-align:center;padding:20px;position:relative}
+@container (min-width:760px){.video{aspect-ratio:16/9}}
+.video .play{cursor:pointer;background:transparent;padding:0;width:76px;height:76px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;margin:0 auto 14px}
+.video .play::after{content:"";border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.video .tag{position:absolute;left:0;top:0}
+.video .cc{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(0,0,0,.5);padding:8px 10px;font:500 14px var(--f-sans)}
+.video a{color:#fff}
+.video.on{aspect-ratio:16/9;padding:0;display:block;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vstats{display:grid;grid-template-columns:1fr;gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:14px}
+@container (min-width:620px){.vstats{grid-template-columns:repeat(3,1fr)}}
+.vstats div{display:grid;gap:4px}
+.vstats b{font:300 44px/1 var(--f-sans);color:var(--lime-ink)}
+.vstats span{font:500 14.5px/1.35 var(--f-sans);color:var(--muted)}
+
+/* Quiz */
+.quiz{border-top:6px solid var(--blue);padding-top:18px;display:grid;gap:14px}
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.qprog{display:flex;gap:5px}
+.qprog i{width:22px;height:5px;background:var(--rule)}
+.qprog i.done{background:var(--blue)}
+.qprog i.cur{background:var(--orange)}
+.qtext{font:500 24px/1.2 var(--f-sans)}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;font:500 17px var(--f-sans);background:var(--mist);color:var(--ink);border:2px solid transparent;padding:12px 16px;cursor:pointer;min-height:50px}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--paper))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--paper))}
+.opt:disabled{cursor:default}
+.fb{font-size:17px;border-left:4px solid var(--lime-deep);padding:4px 0 4px 12px}
+.fb b{display:block;font:700 13px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--lime-ink)}
+.qbtn{font:600 14px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;background:var(--orange);color:#fff;border:0;padding:12px 22px;cursor:pointer;justify-self:start;min-height:46px}
+
+/* Acción */
+.acts{display:grid;gap:0}
+.act{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:14px 0;border-top:1px solid rgba(255,255,255,.22)}
+.act b{display:block;font:600 16px/1.2 var(--f-sans);text-transform:uppercase;letter-spacing:.04em;color:#fff;margin-bottom:3px}
+.act span{font:16px/1.4 var(--f-sans);color:var(--on-blue-2)}
+.act .arrowc circle,.act .arrowc path{stroke:var(--lime)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font:600 15px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;padding:13px 20px;justify-self:start}
+
+/* Recursos */
+details{border-top:1px solid var(--rule);padding:4px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font:600 15px var(--f-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--blue);padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+:root[data-theme="dark"] summary{color:var(--lime)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) summary{color:var(--lime)}}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 24px var(--f-sans);line-height:.8;color:var(--orange)}
+details[open] summary::after{content:"–"}
+details ul{list-style:none;margin:0 0 8px;padding:0}
+details li a{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px dotted var(--rule);text-decoration:none;color:var(--ink);font-size:18px}
+details li small{font:600 11.5px var(--f-sans);letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+
+footer{background:var(--abyss);color:var(--on-blue-2);font:14.5px/1.5 var(--f-sans)}
+footer .in{padding-block:30px 44px;display:grid;gap:12px}
+footer a{color:var(--lime)}
+footer strong{font:600 14px var(--f-sans);text-transform:uppercase;letter-spacing:.08em;color:#fff}
+.pendlist{margin:4px 0 0;padding-left:18px;columns:2;column-gap:20px}
+@container (max-width:420px){.pendlist{columns:1}}
+.folio{font:500 11px var(--f-sans);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;display:flex;justify-content:space-between}
+.blue .folio,.ocean .folio{color:var(--on-blue-2);border-color:rgba(255,255,255,.25)}
+
+
+/* Fredoka para titulares y cifras, Nunito para el texto */
+.hd,.cover h1,.hello h2,.plat .ttl,.icard h3,.panel .ph h2,.qtext,.line h3,.mission blockquote,.stat .n,.fact b,.hl b,.boxb .n,.line .k,.vstats b,.readout b,.sum b{font-family:var(--f-display)}
+.hd .b,.cover h1 .b{font-weight:600}
+.hd .l,.cover h1 .l{font-weight:300}
+.hello h2{font-weight:300}
+.stat .n,.fact b,.hl b,.boxb .n,.vstats b{font-weight:300}
+.stop p,.icard p{font-size:16px;line-height:1.6}
+.story,.fb,.hito p{font-size:15.5px;line-height:1.55}
+details li a{font-size:15.5px}
+
+
+
+/* Visor de ArcGIS */
+.mapx{grid-template-rows:auto minmax(0,1fr)}
+.mbar{display:flex;align-items:center;gap:12px;background:var(--blue);color:#fff;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));min-height:52px}
+.mtitle{font:600 15px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.04em;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mext{font:600 12.5px var(--f-sans);color:var(--lime);text-decoration:none;white-space:nowrap}
+.mext:hover{text-decoration:underline}
+.mclose{font:700 13px var(--f-sans);text-transform:uppercase;letter-spacing:.05em;background:var(--orange);color:#fff;border:0;padding:10px 16px;cursor:pointer;white-space:nowrap}
+#mapFrame{display:block;width:100%;height:100%;border:0;background:var(--abyss)}
+@media (max-width:520px){.mext{display:none}}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* ===== Versión cuencas: paleta de agua ===== */
+:root{--m-a:#E8875B;--m-w:#5DB39E;--m-w-d:#3D9683;--m-o:#D3E1DC;--on-acc:#2A1208;--aqua-page:#F4ECDD}
+/* El dorado lleva texto oscuro */
+.tag,.mapbtn .go,.zoom .back,.hint,.b-a,.inav .next,.lnk .ic,.qbtn,.cta,.mclose{color:var(--on-acc)}
+.tag.bl,.lnk .ic.w{color:#fff}
+.dots i.on{background:var(--m-w-d)}
+.progress i{background:linear-gradient(90deg,var(--m-w),var(--orange))}
+/* Página de historia en agua clara */
+.lime{background:var(--aqua-page);color:#142B2C}
+.lime .hd{color:var(--blue)}
+.hito .y{color:var(--blue)}
+.hitos{border-left-color:#142B2C}
+/* Rango: activas en dorado */
+.rk.a i{background:var(--m-a)}
+.rk i{background:var(--m-w-d)}
+
+/* Capas del mapa de cuencas */
+.cr{fill:#2E4F50;stroke:none}
+.cu{stroke:var(--abyss);stroke-width:.7;vector-effect:non-scaling-stroke;fill-rule:evenodd;transition:opacity .25s}
+.cu.st-a{fill:var(--m-a)}.cu.st-w{fill:var(--m-w)}.cu.st-o{fill:var(--m-o)}.cu.st-f{fill:#B7CBC5}
+.cu.hit{cursor:pointer}.cu.hit:hover{opacity:.82}
+.cu.dim{opacity:.28}
+.cu.sel{stroke:#fff;stroke-width:3}
+.cu:focus{outline:none}.cu:focus-visible{stroke:#fff;stroke-width:3}
+#map .lbl{font:700 1px var(--f-sans);fill:#142B2C;paint-order:stroke;stroke:rgba(255,255,255,.75);stroke-linejoin:round;text-anchor:middle;dominant-baseline:middle;pointer-events:none;text-transform:none;letter-spacing:0}
+#map .lbl.off{opacity:.45}
+#map .sealbl.ctry{fill:#A9C9C2;letter-spacing:.15em}
+.mapwrap{background:radial-gradient(120% 90% at 50% 40%,#1D4A4B 0%,var(--abyss) 75%)}
+.sea-r{fill:var(--abyss)}
+.stop .loc{background:var(--abyss)}
+.panel .minibar svg{max-width:300px}
+.panel dd{font-weight:600}
+
+/* Ilustración de la cuenca */
+.art-wrap{position:relative}
+.art-wrap svg#art{display:block;width:100%;height:auto}
+.klegend{position:absolute;top:10px;left:10px;z-index:2;background:rgba(255,255,255,.94);padding:7px 12px;display:grid;gap:3px;font:600 12.5px var(--f-sans);color:#0C2B36}
+.klegend span{display:flex;align-items:center;gap:8px}
+.klegend svg{width:34px;height:14px;flex:none}
+@container (max-width:520px){.klegend{font-size:11px;padding:5px 8px}.klegend svg{width:26px}}
+.dim{transition:opacity .35s}
+.lift{transition:opacity .35s}
+.flow{stroke-dasharray:10 9;animation:flow 1.4s linear infinite}
+.rain line{animation:rain 1.1s linear infinite}
+.shine{stroke-dasharray:26 22;animation:flow 3s linear infinite}
+.snake{stroke-dasharray:22 8;animation:snakeflow 1.3s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-38}}
+@keyframes snakeflow{to{stroke-dashoffset:-60}}
+@keyframes rain{from{transform:translateY(-6px);opacity:0}30%{opacity:1}to{transform:translateY(14px);opacity:0}}
+.hs.on .ring{fill:var(--orange)}
+@media (prefers-reduced-motion:reduce){.flow,.rain line,.shine,.snake{animation:none!important}}
+.mapx{grid-template-columns:minmax(0,1fr)}
+.mbar{min-width:0}
+
+/* Apertura e invitación */
+.mission .mis{font:400 16px/1.5 var(--f-sans);color:var(--on-blue-2);max-width:52ch;border-left:3px solid var(--orange);padding-left:14px}
+.mission .mis span{display:block;font:700 12px var(--f-sans);text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:2px}
+.hd.inv{font-size:clamp(30px,8cqw,54px)}
+.hd.inv .b{color:var(--orange)}
+.lime .bn{color:#755A0E;background:#FFF5D1}
+.hito::before{background:var(--orange)}
+/* Gráfico de aliados */
+#chartY .yb .bar{transition:fill .2s}
+#chartY .yb:hover .bar,#chartY .yb.on .bar{fill:var(--orange)}
+#chartY .lab{font-size:11.5px;fill:var(--ink)}
+.readout b{font:600 18px var(--f-display);color:var(--blue)}
+
+/* Portada clara */
+.mission.bright{background:linear-gradient(180deg,#E7F4EF 0%,#F6FBF9 70%,#FFFFFF 100%);color:var(--ink);position:relative;overflow:hidden}
+.mission.bright .in{padding-block:84px 200px;position:relative;z-index:1}
+.mission.bright .kicker{color:var(--lime-ink)}
+.mission.bright blockquote{color:#142B2C}
+.mission.bright blockquote b{color:var(--lime-ink)}
+.mission.bright .mis{color:var(--muted)}
+.mission .cv-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:220px}
+@container (max-width:600px){.mission.bright .in{padding-block:56px 150px}.mission .cv-art{height:150px}}
+
+/* Agua en cifras */
+.datos{background:var(--mist)}
+.wdata{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+@container (min-width:700px){.wdata{grid-template-columns:repeat(2,1fr);column-gap:36px}}
+@container (min-width:1000px){.wdata{grid-template-columns:repeat(3,1fr)}}
+.wd{display:grid;gap:3px;padding:18px 0;border-bottom:1px solid var(--rule);align-content:start}
+.wd .n{font:300 clamp(44px,11cqw,60px)/1 var(--f-display);color:var(--lime-ink);font-variant-numeric:tabular-nums}
+.wd strong{font:700 14.5px/1.25 var(--f-sans);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.wd span{font:15.5px/1.4 var(--f-sans);color:var(--muted)}
+.wd small{font:italic 12px/1.35 var(--f-sans);color:var(--muted);opacity:.85;margin-top:4px}
+.nino{display:grid;grid-template-columns:1fr;gap:20px;background:var(--paper);padding:22px;margin-top:10px;border-top:5px solid var(--orange)}
+@container (min-width:860px){.nino{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;padding:28px}}
+.nino h3{font:600 22px/1.2 var(--f-display);margin:4px 0 10px;color:var(--ink)}
+.nino p{font-size:16px;line-height:1.55}
+.nino .kicker{color:#B65A2E}
+#chartN{display:block;width:100%;height:auto;overflow:visible}
+#chartN .lab{font-size:12px;fill:var(--ink)}
+
+/* Invitación final (estética oscura original, tono de invitación) */
+.invite .col{display:grid;gap:16px}
+.invite .closing{margin:6px 0 0;font:300 clamp(24px,6.6cqw,34px)/1.25 var(--f-display);text-wrap:balance}
+.invite .closing b{font-weight:600;color:var(--lime)}
+
+</style>
+</head>
+<body>
+<div id="app">
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+
+<!-- 1. MISIÓN -->
+<section class="mission ocean gut" id="inicio">
+  <div class="col in">
+    <div class="kicker">Fundación Natura · 35 años</div>
+    <blockquote>Seguir una gota de lluvia desde la montaña hasta el mar es <b>entender todo lo que hacemos</b>.</blockquote>
+    <p class="mis"><span>Nuestra misión</span>Conservar la biodiversidad mediante el manejo integrado de cuencas hidrográficas, áreas marino-costeras y sus ecosistemas.</p>
+  </div>
+</section>
+
+<!-- 2. BIENVENIDOS -->
+<section class="page gut hello" id="cifras">
+  <div class="wide">
+    <h2 class="hd inv"><span class="l">Acompáñanos en este recorrido</span><span class="b">por nuestras cuencas</span></h2>
+    <div class="twocol">
+      <p class="lead">Abre la llave y el agua llega. Detrás de ese gesto hay un viaje que empieza muy lejos: en una nube que se detiene sobre la cordillera, en un bosque que guarda la lluvia, en una quebrada que baja entre fincas y pueblos hasta encontrarse con el manglar y el mar.</p>
+      <p>Ese viaje ocurre dentro de una cuenca, y en una cuenca nada está aislado: lo que pasa en la cumbre se nota en la costa. Por eso, desde 1991, en Fundación Natura no miramos un río por partes. Lo acompañamos completo, de la naciente a la desembocadura, sumando a productores, comités de cuenca, comunidades indígenas y campesinas, gobiernos locales, empresas y cooperantes.</p>
+      <p>Nuestra forma de hacerlo es reunir recursos y conocimientos, ponerlos en manos de quienes viven junto al agua y buscar, entre todos, soluciones que duren. En 35 años ese camino nos ha llevado a 30 de las 52 cuencas del país. Te invitamos a recorrerlas con nosotros.</p>
+    </div>
+    <div class="faq">
+      <div class="q"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg>Lo que encontrarás en el camino</div>
+      <ol>
+        <li><a href="#que-es">Cómo funciona una cuenca, de la cumbre al mar</a></li>
+        <li><a href="#mapa">El mapa de las 30 cuencas que acompañamos</a></li>
+        <li><a href="#tour">Cuatro ríos y la gente que los cuida</a></li>
+        <li><a href="#aliados">La red de aliados que hace posible el trabajo</a></li>
+        <li><a href="#accion">Lo que tú puedes hacer por tu cuenca</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PLATAFORMA: MAPA + CIFRAS -->
+<section class="page ocean gut plat" id="mapa">
+  <div class="wide">
+    <h2 class="ttl">Dónde estamos<b>de Bocas del Toro a Darién</b></h2>
+    <p class="sans" style="color:var(--on-blue-2);max-width:60ch">Panamá se divide en 52 cuencas hidrográficas. En coral, las 13 donde hoy tenemos proyectos. En verde agua, las que hemos acompañado a lo largo de 35 años. Toca el mapa para conocer cada una.</p>
+    <button class="mapbtn" id="openMap" aria-label="Abrir el mapa interactivo de cuencas hidrográficas">
+      <svg id="mini" aria-hidden="true"></svg>
+      <span class="go">Explorar las 52 cuencas <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+    </button>
+    <p class="legend" id="leadKey">1 Chiriquí Viejo · 2 Santa María · 3 Chagres · 4 Darién</p>
+    <p class="legend" style="font-size:12.5px">Fuente: Cuencas hidrográficas de Panamá, escala 1:250,000. Trabajo de Natura: listado al 17 de marzo de 2026.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--m-a)"></i>Proyectos activos en 2026</span><span><i class="sw" style="background:var(--m-w)"></i>Trabajada por Natura</span><span><i class="sw" style="background:var(--m-o)"></i>Otras cuencas del país</span></div>
+    <div class="stats">
+      <div class="stat"><span class="n">30</span><strong>Cuencas con trabajo de Natura</strong><span>de las 52 cuencas hidrográficas del país</span></div>
+      <div class="stat"><span class="n">13</span><strong>Con proyectos activos en 2026</strong><span>del río Chiriquí Viejo a los ríos del Darién</span></div>
+      <div class="stat"><span class="n">53 mil</span><strong>Kilómetros cuadrados</strong><span>suman las 30 cuencas que hemos acompañado</span></div>
+      <div class="stat"><span class="n">72%</span><strong>Del territorio de las cuencas</strong><span>del país: 53,408 de 74,026 km²</span></div>
+      <div class="stat"><span class="n">12</span><strong>Cuencas con comités</strong><span>fortalecidos con el fondo de Comités de Cuencas</span></div>
+      <div class="stat"><span class="n">13</span><strong>Fondos y socios</strong><span>han trabajado con nosotros en las cuencas en los últimos cinco años</span></div>
+    </div>
+    <div class="folio"><span>Fundación Natura · 35 años</span><span>Cuencas hidrográficas</span></div>
+  </div>
+</section>
+
+<!-- 4. ¿QUÉ ES? -->
+<section class="page gut" id="que-es">
+  <div class="wide">
+    <h2 class="hd"><span class="l">Un territorio,</span><span class="b">un mismo río</span></h2>
+    <div class="split">
+      <div style="display:grid;gap:12px">
+        <p class="lead">Una cuenca hidrográfica es todo el territorio que recoge la lluvia y la entrega a un mismo río. Sus bordes son las cumbres y su salida es el mar. Dentro caben bosques, fincas, pueblos, ciudades y manglares, unidos por el mismo hilo de agua.</p>
+        <p>Por eso hablamos de manejo integrado: no basta con cuidar una parte si la otra se descuida. Toca los números de la ilustración para recorrer la cuenca tramo a tramo y ver qué hacemos en cada uno.</p>
+      </div>
+      <aside class="side">
+        <div><h4>52 cuencas, dos vertientes:</h4><p>La cordillera central reparte el agua de Panamá: 18 cuencas drenan al mar Caribe y 34 al océano Pacífico. Sus números impares miran al Caribe y los pares al Pacífico.</p></div>
+        <div><h4>Comités de cuenca:</h4><p>La Ley 44 de 2002 creó el régimen especial para manejar las cuencas y dio vida a los comités de cuenca, donde instituciones, municipios y vecinos deciden juntos sobre su río.</p></div>
+        <div><h4>Seguridad hídrica:</h4><p>El Plan Nacional de Seguridad Hídrica 2015–2050, «Agua para todos», es la hoja de ruta del país para que nunca falte agua de calidad.</p></div>
+      </aside>
+    </div>
+  </div>
+  <div class="wide" style="margin-top:22px">
+    <div class="wrapI">
+      <div class="stage">
+        <div class="pills" role="group" aria-label="Partes de la cuenca" id="pills"></div>
+        <div class="art-wrap">
+          <div class="klegend" aria-label="Simbología">
+            <span><svg viewBox="0 0 36 14" aria-hidden="true"><line x1="2" y1="7" x2="34" y2="7" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/><line x1="2" y1="7" x2="34" y2="7" stroke="#E4573D" stroke-width="3" stroke-dasharray="9 3 2 3" stroke-linecap="round"/></svg>Divisoria de aguas</span>
+            <span><svg viewBox="0 0 36 14" aria-hidden="true"><path d="M2 7 Q6 1 10 7 T18 7 T26 7" fill="none" stroke="#0B6E7F" stroke-width="2.6" stroke-linecap="round"/><path d="M26 2.5 L34 7 L26 11.5z" fill="#0B6E7F"/></svg>Escurrimientos</span>
+          </div>
+    <svg viewBox="0 0 800 640" role="img" aria-labelledby="svgT" id="art">
+      <title id="svgT">Ilustración de una cuenca: montañas con la divisoria de aguas, escurrimientos hacia el río, fincas en la parte media, ciudad y manglar en la parte baja, y el mar.</title>
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0B6E7F"/></marker>
+        <marker id="ahb" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A7CC9"/></marker>
+      </defs>
+
+      <g id="scene">
+        <!-- cielo -->
+        <rect width="800" height="640" fill="#DDF2FC"/>
+        <!-- nubes -->
+        <g fill="#FFFFFF"><ellipse cx="560" cy="62" rx="44" ry="16"/><ellipse cx="590" cy="52" rx="28" ry="16"/><ellipse cx="610" cy="64" rx="30" ry="12"/></g>
+        <g fill="#C5D3DD"><ellipse cx="120" cy="96" rx="52" ry="20"/><ellipse cx="150" cy="80" rx="34" ry="22"/><ellipse cx="96" cy="86" rx="26" ry="16"/></g>
+        <g fill="#AFC0CC"><ellipse cx="420" cy="58" rx="60" ry="22"/><ellipse cx="455" cy="40" rx="38" ry="24"/><ellipse cx="390" cy="46" rx="28" ry="18"/></g>
+        <g fill="#C5D3DD"><ellipse cx="705" cy="110" rx="46" ry="18"/><ellipse cx="730" cy="96" rx="28" ry="18"/></g>
+        <g class="rain" stroke="#7FB8DA" stroke-width="2" stroke-linecap="round">
+          <line x1="96" y1="118" x2="92" y2="130"/><line x1="118" y1="120" x2="114" y2="132" style="animation-delay:-.3s"/><line x1="140" y1="118" x2="136" y2="130" style="animation-delay:-.6s"/><line x1="162" y1="116" x2="158" y2="128" style="animation-delay:-.8s"/>
+          <line x1="392" y1="82" x2="388" y2="94" style="animation-delay:-.2s"/><line x1="414" y1="84" x2="410" y2="96" style="animation-delay:-.5s"/><line x1="436" y1="82" x2="432" y2="94" style="animation-delay:-.9s"/><line x1="458" y1="80" x2="454" y2="92" style="animation-delay:-.4s"/>
+          <line x1="690" y1="130" x2="686" y2="142" style="animation-delay:-.7s"/><line x1="712" y1="128" x2="708" y2="140" style="animation-delay:-.1s"/><line x1="734" y1="130" x2="730" y2="142" style="animation-delay:-.5s"/>
+        </g>
+        <!-- montañas del fondo -->
+        <path d="M0 270 C70 230 110 200 150 205 C200 160 240 150 280 175 C330 120 370 95 410 100 C470 90 520 150 560 160 C610 120 650 115 690 135 C740 150 770 175 800 185 L800 360 L0 360Z" fill="#8CCB6A"/>
+        <!-- montañas principales -->
+        <path d="M0 330 L0 268 C60 226 120 176 172 186 C222 196 262 230 302 222 C352 184 392 112 432 110 C474 112 522 172 562 192 C602 204 632 162 666 166 C712 172 760 222 800 244 L800 380 L0 380Z" fill="#4CA64C"/>
+        <!-- facetas claras y oscuras -->
+        <path d="M172 186 C150 230 120 280 70 330 L190 330 C180 280 178 230 172 186Z" fill="#62B85A"/>
+        <path d="M432 110 C410 170 380 240 330 330 L440 330 C436 250 434 170 432 110Z" fill="#62B85A"/>
+        <path d="M432 110 C450 180 480 250 540 330 L440 330Z" fill="#3F9142"/>
+        <path d="M666 166 C650 220 620 280 580 330 L670 330 C668 280 667 220 666 166Z" fill="#62B85A"/>
+        <path d="M666 166 C690 230 720 290 770 330 L670 330Z" fill="#3F9142"/>
+        <path d="M172 186 C190 240 220 290 270 330 L190 330Z" fill="#3F9142"/>
+        <!-- bosque parte alta -->
+        <g fill="#2F7D3A">
+          <circle cx="110" cy="290" r="9"/><circle cx="126" cy="298" r="8"/><circle cx="230" cy="285" r="9"/><circle cx="246" cy="296" r="8"/>
+          <circle cx="350" cy="250" r="9"/><circle cx="366" cy="262" r="8"/><circle cx="500" cy="250" r="9"/><circle cx="516" cy="262" r="8"/>
+          <circle cx="600" cy="270" r="9"/><circle cx="616" cy="282" r="8"/><circle cx="720" cy="280" r="9"/><circle cx="736" cy="290" r="8"/>
+          <circle cx="300" cy="300" r="8"/><circle cx="560" cy="300" r="8"/><circle cx="180" cy="310" r="8"/>
+        </g>
+        <!-- parte media: lomas y fincas -->
+        <path d="M0 400 C120 352 240 372 360 346 C480 322 620 352 800 330 L800 480 L0 480Z" fill="#A7D676"/>
+        <g fill="#C9E59C">
+          <path d="M60 420 l70 -14 l18 30 l-72 14z"/><path d="M160 408 l60 -10 l14 26 l-62 10z"/>
+          <path d="M520 392 l70 -10 l12 26 l-70 10z"/><path d="M620 388 l64 -8 l10 24 l-64 8z"/>
+        </g>
+        <g fill="#5E8208" opacity=".55">
+          <circle cx="80" cy="425" r="3"/><circle cx="94" cy="422" r="3"/><circle cx="108" cy="419" r="3"/><circle cx="86" cy="436" r="3"/><circle cx="100" cy="433" r="3"/><circle cx="114" cy="430" r="3"/>
+          <circle cx="540" cy="398" r="3"/><circle cx="554" cy="396" r="3"/><circle cx="568" cy="394" r="3"/><circle cx="546" cy="410" r="3"/><circle cx="560" cy="408" r="3"/><circle cx="574" cy="406" r="3"/>
+        </g>
+        <g><rect x="232" y="400" width="18" height="13" fill="#FFFFFF"/><path d="M228 401 l13 -10 l13 10z" fill="#D2553A"/>
+           <rect x="660" y="414" width="18" height="13" fill="#FFFFFF"/><path d="M656 415 l13 -10 l13 10z" fill="#D2553A"/>
+           <rect x="150" y="448" width="16" height="12" fill="#FFFFFF"/><path d="M146 449 l12 -9 l12 9z" fill="#D2553A"/></g>
+        <!-- laguna -->
+        <ellipse cx="660" cy="452" rx="54" ry="16" fill="#52B5EC"/><ellipse cx="652" cy="449" rx="30" ry="6" fill="#B1E3FA"/>
+        <!-- parte baja -->
+        <path d="M0 480 L800 480 L800 548 C600 540 420 556 240 546 C140 540 60 548 0 544Z" fill="#BFE08F"/>
+        <g fill="#8C959D"><rect x="520" y="492" width="16" height="34"/><rect x="540" y="482" width="18" height="44"/><rect x="562" y="498" width="14" height="28"/><rect x="580" y="488" width="16" height="38"/></g>
+        <g fill="#FFFFFF" opacity=".7"><rect x="543" y="488" width="4" height="4"/><rect x="551" y="488" width="4" height="4"/><rect x="543" y="498" width="4" height="4"/><rect x="551" y="498" width="4" height="4"/></g>
+        <!-- arena y manglar -->
+        <path d="M0 544 C60 548 140 540 240 546 C420 556 600 540 800 548 L800 580 L0 580Z" fill="#FBF1D0"/>
+        <path d="M0 560 C150 566 300 556 460 566 C600 574 700 562 800 568 L800 586 L0 586Z" fill="#F4DFA6"/>
+        <!-- estuario y manglar -->
+        <path d="M250 556 C290 548 350 552 386 560 L386 574 C340 570 290 572 250 568Z" fill="#8FD0EE"/>
+        <path d="M424 560 C470 552 530 552 570 560 L570 572 C530 570 470 574 424 572Z" fill="#8FD0EE"/>
+        <g><g transform="translate(262 568) scale(0.9)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(290 566) scale(1)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(318 567) scale(1.05)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(348 568) scale(0.95)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(372 570) scale(0.85)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(440 570) scale(0.9)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(468 568) scale(1.05)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(498 567) scale(1)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(528 568) scale(0.95)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g><g transform="translate(556 569) scale(0.85)"><path d="M-10 0 C-10 -8 -4 -12 0 -14 M10 0 C10 -8 4 -12 0 -14 M-4 0 C-4 -6 -1 -10 0 -14 M4 0 C4 -6 1 -10 0 -14 M0 -14 V-22" fill="none" stroke="#7A5A34" stroke-width="2" stroke-linecap="round"/><ellipse cx="0" cy="-28" rx="14" ry="9" fill="#2E6E31"/><ellipse cx="-8" cy="-24" rx="8" ry="6" fill="#3F8A3E"/><ellipse cx="8" cy="-25" rx="8" ry="6" fill="#3F8A3E"/></g></g>
+        <!-- humedal -->
+        <g><ellipse cx="96" cy="516" rx="46" ry="11" fill="#8FD0EE"/><ellipse cx="170" cy="526" rx="34" ry="8" fill="#8FD0EE"/><ellipse cx="92" cy="513" rx="22" ry="4" fill="#B1E3FA"/><path d="M52 516 V496" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="50" y="494" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M60 518 V492" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="58" y="490" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M68 515 V497" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="66" y="495" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M126 520 V498" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="124" y="496" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M134 522 V494" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="132" y="492" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M142 519 V501" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="140" y="499" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M150 528 V508" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="148" y="506" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M196 528 V504" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="194" y="502" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M204 530 V512" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="202" y="510" width="4" height="8" rx="2" fill="#8A6A3C"/><path d="M212 527 V505" stroke="#4C8A3A" stroke-width="2" stroke-linecap="round"/><rect x="210" y="503" width="4" height="8" rx="2" fill="#8A6A3C"/></g>
+        <!-- mar -->
+        <path d="M0 584 C120 574 260 590 400 582 C540 574 680 588 800 580 L800 640 L0 640Z" fill="#52B5EC"/>
+        <path d="M0 606 C140 598 280 612 420 604 C560 596 700 610 800 602 L800 640 L0 640Z" fill="#00B8F1" opacity=".55"/>
+        <g fill="#1A7CC9" opacity=".55"><path d="M130 620 q16 -9 32 0 q-16 9 -32 0z M162 620 l9 -6 v12z"/><path d="M520 624 q14 -8 28 0 q-14 8 -28 0z M548 624 l8 -5 v10z"/></g>
+        <!-- ríos -->
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M172 200 C196 258 256 300 326 330 C356 344 372 376 384 398" stroke="#52B5EC" stroke-width="7"/>
+          <path d="M666 180 C642 242 602 300 524 330 C474 350 436 380 416 404" stroke="#52B5EC" stroke-width="7"/>
+          <path d="M432 124 C422 196 402 240 410 292 C418 340 380 362 392 402" stroke="#52B5EC" stroke-width="9"/>
+          <path d="M614 450 C560 452 500 440 450 448" stroke="#52B5EC" stroke-width="5"/>
+          <path d="M392 400 C408 452 472 468 444 512 C424 546 404 562 404 600" stroke="#52B5EC" stroke-width="26"/>
+          <path d="M392 400 C408 452 472 468 444 512 C424 546 404 562 404 600" stroke="#B1E3FA" stroke-width="11"/>
+          <path class="shine" d="M392 400 C408 452 472 468 444 512 C424 546 404 562 404 600" stroke="#FFFFFF" stroke-opacity=".85" stroke-width="2.5"/>
+        </g>
+        <!-- nacientes -->
+        <g fill="#FFFFFF" stroke="#1A7CC9" stroke-width="2"><circle cx="172" cy="200" r="5"/><circle cx="432" cy="124" r="5"/><circle cx="666" cy="180" r="5"/></g>
+      </g>
+
+      <!-- capa para atenuar todo -->
+      <path id="veil" class="dim" fill="#FFFFFF" fill-rule="evenodd" opacity="0" d="M0 0H800V640H0Z" pointer-events="none"/>
+
+      <!-- capas que se resaltan -->
+      <g id="L-div" class="lift">
+        <path d="M0 262 C60 220 120 170 172 180 C222 190 262 224 302 216 C352 178 392 106 432 104 C474 106 522 166 562 186 C602 198 632 156 666 160 C712 166 760 216 800 238" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-opacity=".75" stroke-linecap="round"/><path d="M0 262 C60 220 120 170 172 180 C222 190 262 224 302 216 C352 178 392 106 432 104 C474 106 522 166 562 186 C602 198 632 156 666 160 C712 166 760 216 800 238" fill="none" stroke="#E4573D" stroke-width="4" stroke-dasharray="16 6 3 6" stroke-linecap="round"/>
+      </g>
+      <g id="L-esc" class="lift" fill="none" stroke="#0B6E7F" stroke-width="3.6" stroke-linecap="round">
+        <path class="snake" d="M100 262 Q97.0 272.6 108.0 272.0 Q119.0 271.4 116.0 282.0 Q113.0 292.6 124.0 292.0 Q135.0 291.4 132.0 302.0 Q129.0 312.6 140.0 312.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M250 230 Q245.8 240.5 257.0 241.7 Q268.2 242.9 264.0 253.3 Q259.8 263.8 271.0 265.0 Q282.2 266.2 278.0 276.7 Q273.8 287.1 285.0 288.3 Q296.2 289.5 292.0 300.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M372 178 Q366.1 188.3 377.2 192.4 Q388.3 196.5 382.4 206.8 Q376.5 217.1 387.6 221.2 Q398.7 225.3 392.8 235.6 Q386.9 245.9 398.0 250.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M500 176 Q488.9 177.8 493.7 188.0 Q498.5 198.2 487.3 200.0 Q476.2 201.8 481.0 212.0 Q485.8 222.2 474.7 224.0 Q463.5 225.8 468.3 236.0 Q473.1 246.2 462.0 248.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M610 196 Q598.8 198.1 603.7 208.3 Q608.5 218.6 597.3 220.7 Q586.2 222.7 591.0 233.0 Q595.8 243.3 584.7 245.3 Q573.5 247.4 578.3 257.7 Q583.2 267.9 572.0 270.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M748 236 Q736.2 236.4 738.4 248.0 Q740.6 259.6 728.8 260.0 Q717.0 260.4 719.2 272.0 Q721.4 283.6 709.6 284.0 Q697.8 284.4 700.0 296.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M150 390 Q158.1 398.0 164.0 388.2 Q169.9 378.4 178.0 386.4 Q186.1 394.4 192.0 384.6 Q197.9 374.8 206.0 382.8 Q214.1 390.8 220.0 381.0 Q225.9 371.2 234.0 379.2 Q242.1 387.2 248.0 377.4 Q253.9 367.6 262.0 375.6 Q270.1 383.6 276.0 373.8 Q281.9 364.0 290.0 372.0" marker-end="url(#ah)"/>
+        <path class="snake" d="M720 380 Q713.2 370.7 705.7 379.4 Q698.2 388.1 691.4 378.9 Q684.6 369.6 677.1 378.3 Q669.6 387.0 662.9 377.7 Q656.1 368.4 648.6 377.1 Q641.1 385.8 634.3 376.6 Q627.5 367.3 620.0 376.0 Q612.5 384.7 605.7 375.4 Q598.9 366.2 591.4 374.9 Q583.9 383.6 577.1 374.3 Q570.4 365.0 562.9 373.7 Q555.4 382.4 548.6 373.1 Q541.8 363.9 534.3 372.6 Q526.8 381.3 520.0 372.0" marker-end="url(#ah)"/>
+      </g>
+      <g id="L-cic" class="lift" fill="none" stroke="#1A7CC9" stroke-width="3" stroke-linecap="round" opacity="0">
+        <path class="flow" d="M700 596 C770 500 770 300 730 150" marker-end="url(#ahb)"/>
+        <path class="flow" d="M120 596 C60 480 50 300 100 150" marker-end="url(#ahb)"/>
+        <text x="742" y="420" font-family="Nunito,sans-serif" font-weight="800" font-size="15" fill="#1A7CC9" stroke="none" transform="rotate(-80 742 420)">Evaporación</text>
+        <text x="462" y="112" font-family="Nunito,sans-serif" font-weight="800" font-size="15" fill="#1A7CC9" stroke="none">Lluvia</text>
+      </g>
+
+      <!-- etiquetas de zona -->
+      <g id="L-zl" font-family="Nunito,sans-serif" font-weight="800" font-size="13" letter-spacing="1.5" fill="#12385A" opacity="0" class="lift">
+        <text x="18" y="236" data-z="alta">PARTE ALTA</text>
+        <text x="18" y="372" data-z="media">PARTE MEDIA</text>
+        <text x="640" y="560" data-z="baja">PARTE BAJA</text>
+        <text x="420" y="626" data-z="baja" fill="#FFFFFF">DESEMBOCADURA</text>
+        <text x="58" y="497" data-z="baja" font-size="12">HUMEDAL</text>
+        <text x="452" y="524" data-z="baja" font-size="12">MANGLAR</text>
+      </g>
+
+
+      <!-- números tocables -->
+      <g id="hotspots"></g>
+    </svg>
+
+        </div>
+      </div>
+      <article class="icard" id="icard" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ¿POR QUÉ IMPORTA? -->
+<section class="page gut" id="por-que" style="padding-top:12px">
+  <div class="wide">
+    <h2 class="hd"><span class="l">Lo que hacemos río arriba,</span><span class="b">lo vive alguien río abajo</span></h2>
+    <div class="split">
+      <div class="twocol" style="columns:1">
+        <p class="lead">Un árbol talado en la cabecera puede convertirse, meses después, en una crecida en el pueblo o en un pozo seco en verano. Una finca que conserva su suelo devuelve al río agua más limpia. Y un manglar sano protege la costa de las mareas que llegan con más fuerza cada año.</p>
+        <p>Cuidar una cuenca es, en el fondo, ponerse de acuerdo. Por eso gestionamos de forma participativa: sentamos en la misma mesa al productor de la ladera, a la junta del acueducto rural, a la alcaldía y a la empresa que usa el agua río abajo, y les acercamos recursos y conocimientos para que las soluciones sean suyas y perduren.</p>
+      </div>
+      <aside class="side">
+        <div class="boxb"><div class="kicker">Desde 2014</div><div class="n">1 <small>de 20</small></div><p>primeras entidades del mundo acreditadas como Entidad Nacional de Implementación del Fondo de Adaptación. Con ese fondo trabajamos en Chiriquí Viejo y Santa María.</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 5b. EL AGUA EN CIFRAS -->
+<section class="page gut datos" id="datos">
+  <div class="wide">
+    <h2 class="hd"><span class="l">Un país rico en agua</span><span class="b">que vale la pena cuidar</span></h2>
+    <p class="lead" style="max-width:62ch">Panamá recibe lluvia en abundancia y más de la mitad de su territorio sigue cubierta de bosque. Pero esa riqueza depende de cuencas sanas: del bosque que guarda el agua y de las personas que la gestionan juntas.</p>
+    <div class="wdata">
+      <div class="wd"><span class="n">2,928</span><strong>milímetros de lluvia al año</strong><span>en promedio sobre el país</span><small>FAO AQUASTAT, 2020 · vía ONU-Agua, sdg6data.org</small></div>
+      <div class="wd"><span class="n">56%</span><strong>del territorio es bosque</strong><span>la esponja que guarda la lluvia y alimenta los ríos en verano</span><small>FAO, 2023 · vía sdg6data.org</small></div>
+      <div class="wd"><span class="n">115×</span><strong>más agua de la que usamos</strong><span>33,984 m³ renovables por persona al año frente a 295 m³ extraídos</span><small>FAO AQUASTAT, 2017 y 2016 · vía sdg6data.org</small></div>
+      <div class="wd"><span class="n">+700</span><strong>millones de m³ de agua potable</strong><span>produce el IDAAN cada año. Casi 8 de cada 10 se producen en Panamá, Panamá Oeste y Colón</span><small>IDAAN, 2022 · datos ambientales por provincia</small></div>
+      <div class="wd"><span class="n">40</span><strong>de 100 puntos</strong><span>en la gestión integrada de los recursos hídricos: el camino que nos falta recorrer juntos</span><small>Indicador ODS 6.5.1, 2023 · sdg6data.org</small></div>
+      <div class="wd"><span class="n">75%</span><strong>de las masas de agua vigiladas</strong><span>tiene buena calidad del agua</span><small>Indicador ODS 6.3.2, 2023 · sdg6data.org</small></div>
+    </div>
+    <div class="nino">
+      <div class="nino-t">
+        <div class="kicker">Alerta de El Niño 2026</div>
+        <h3>Cuando la lluvia falta, se nota en los ríos que cuidamos</h3>
+        <p>El boletín hidrológico del IMHPA vigila 12 cuencas, y en 10 de ellas hemos trabajado. Entre mayo y septiembre de 2026, la mayoría de los ríos del Pacífico bajó su caudal, y en La Villa y Tonosí el déficit viene desde enero. Por eso el bosque en las nacientes y el buen manejo de las fincas importan tanto: ayudan a que el agua dure cuando la lluvia escasea.</p>
+      </div>
+      <div class="nino-c">
+        <svg id="chartN" role="img" aria-label="Caudal de septiembre de 2026 como porcentaje del promedio 1991–2020 en ríos de cuencas donde trabaja Natura"></svg>
+        <p class="mnote">Caudal de septiembre de 2026 como porcentaje del promedio de septiembre 1991–2020, en la estación con mayor área de drenaje de cada cuenca. La línea marca el 100 %. Fuente: IMHPA, Boletín hidrológico mensual, octubre de 2026 (metodología HydroSOS de la OMM).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. TOUR -->
+<section class="page" id="tour" style="padding-top:12px;padding-bottom:30px">
+  <div class="wide gut" style="display:grid;gap:12px;margin-bottom:10px">
+    <h2 class="hd"><span class="l">Historias que corren</span><span class="b">río abajo</span></h2>
+    <p>Del volcán Barú a la selva del Darién, cada río tiene su propia manera de enseñarnos. Estas cuatro cuencas muestran cómo se ve el manejo integrado en el terreno. Desliza para viajar de oeste a este.</p>
+  </div>
+  <div class="car" id="tourCar" aria-label="Paradas del tour"></div>
+  <div class="carnav"><button class="arrow" data-car="tourCar" data-d="-1" aria-label="Anterior">‹</button><div class="dots" id="tourDots"></div><button class="arrow" data-car="tourCar" data-d="1" aria-label="Siguiente">›</button></div>
+</section>
+
+<!-- 7. ASÍ TRABAJAMOS -->
+<section class="page blue gut" id="trabajo">
+  <div class="wide">
+    <h2 class="hd"><span class="l">El manejo integrado,</span><span class="b">en cinco acciones</span></h2>
+    <p style="max-width:62ch;color:var(--on-blue-2)">Innovar, para nosotros, ha sido escuchar al territorio y probar soluciones con quienes lo habitan. De esa práctica salieron estas cinco líneas de trabajo, que hoy combinamos según lo que necesita cada río.</p>
+    <div class="lines" id="lines"></div>
+    <div class="kicker">Con el apoyo de</div>
+    <div class="partners" id="partners"></div>
+  </div>
+</section>
+
+<!-- 8. ALIADOS -->
+<section class="page gut" id="aliados">
+  <div class="wide">
+    <h2 class="hd"><span class="l">Muchas manos,</span><span class="b">un mismo río</span></h2>
+    <div class="split">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="lead">Ningún río se cuida solo, y ninguna organización tampoco. Gestionamos recursos y conocimientos de fondos nacionales, cooperación internacional, empresas y los propios comités de cuenca para que cada territorio tenga lo que necesita.</p>
+        <div class="chartwrap">
+          <div class="readout" id="readout" aria-live="polite">Toca una barra para ver en qué cuencas trabaja cada aliado.</div>
+          <svg id="chartY" viewBox="0 0 400 300" role="img" aria-label="Número de cuencas que acompaña cada fondo o socio en los últimos cinco años"></svg>
+          <div class="leg2"><span><i class="sw" style="background:var(--m-w-d)"></i>Cuencas acompañadas por cada fondo o socio</span></div>
+        </div>
+        <p class="mnote">Fondos y socios en los últimos cinco años, según el listado de Natura al 17 de marzo de 2026. Una cuenca puede tener varios aliados. Seis cuencas trabajadas antes no registran fondos recientes.</p>
+      </div>
+      <aside class="side" style="min-width:0">
+        <h4>Las diez cuencas más extensas donde trabajamos</h4>
+        <div class="rank" id="rank"></div>
+        <p class="mnote">Superficie en km² según la capa de cuencas hidrográficas 1:250,000. En coral, cuencas con proyectos activos en 2026.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 9. HISTORIA -->
+<section class="page lime gut" id="historia">
+  <div class="col">
+    <h2 class="hd"><span class="l">Un río de</span><span class="b">35 años</span></h2>
+    <p style="color:#142B2C">Como todo río, nuestra historia tiene afluentes: cada uno sumó caudal al camino.</p>
+    <div class="hitos" id="hitos"></div>
+  </div>
+</section>
+
+<!-- 10. VOCES -->
+<section class="page gut" id="voces">
+  <div class="col">
+    <h2 class="hd"><span class="l">Voces de</span><span class="b">la cuenca</span></h2>
+    <p class="lead">Las soluciones duran cuando son de quienes las ponen en práctica. Escúchalo de ellos.</p>
+    <div class="video" id="vid">
+      <span class="tag">Cuencas del Canal, Santa María y río Boquerón</span>
+      <div><button class="play" id="playBtn" aria-label="Reproducir el video Rutas del agua"></button><p class="caps" style="font-weight:600;font-size:20px;line-height:1.2">Rutas del agua</p><p style="font-size:17px;opacity:.9;margin-top:6px">Episodio de Fundación Natura en el programa Voces de la Naturaleza</p>
+      </div>
+    </div>
+    <p class="mnote" style="margin-top:-8px">¿No se reproduce? <a href="https://www.youtube.com/watch?v=QtZBwuq9_MY&amp;t=88s" target="_blank" rel="noopener">Míralo en YouTube</a>.</p>
+    <p>Liduvina Rivera, Bolívar Peña y Doris Rodríguez viven y trabajan en las cuencas del Canal de Panamá y del río Santa María, y en la subcuenca del río Boquerón, dentro del Parque Nacional Chagres. Los tres cambiaron su forma de producir para proteger los ecosistemas que les dan agua y ayudar a que se regeneren. Sus historias son parte de la sexta temporada de Voces de la Naturaleza.</p>
+    <p>Esa misma idea, producir y conservar a la vez, guía nuestro trabajo con productores en otras cuencas. Con el proyecto «Manejo sostenible de la tierra y restauración de paisajes productivos», en Chiriquí Viejo, Santa María y La Villa:</p>
+    <div class="vstats">
+      <div><b>1,567</b><span>productores, incluidos mujeres y jóvenes, con insumos y asistencia técnica</span></div>
+      <div><b>3,082</b><span>hectáreas con prácticas de restauración y manejo sostenible</span></div>
+      <div><b>+12 mil</b><span>personas beneficiadas en sus medios de vida y resiliencia climática</span></div>
+    </div>
+    <p class="mnote">Financiado por el Fondo para el Medio Ambiente Mundial (GEF), implementado por MiAMBIENTE con apoyo técnico de la FAO y ejecutado por CATHALAC y Fundación Natura.</p>
+  </div>
+</section>
+
+<!-- 11. QUIZ -->
+<section class="page gut" id="quiz" style="padding-top:8px">
+  <div class="col">
+    <h2 class="hd"><span class="l">¿Cuánto sabes</span><span class="b">del agua?</span></h2>
+    <p>Llegaste a la desembocadura. Cuatro preguntas para ver cuánto te llevas del recorrido.</p>
+    <div class="quiz" id="quizbox"></div>
+  </div>
+</section>
+
+<!-- 12. INVITACIÓN -->
+<section class="page ocean gut invite" id="accion">
+  <div class="col">
+    <div class="kicker">Una invitación</div>
+    <h2 class="hd"><span class="l">Súmate al</span><span class="b">camino del agua</span></h2>
+    <p class="lead" style="color:var(--on-blue-2)">Cada cuenca de este recorrido tiene personas que un día decidieron cuidarla. Si alguna de estas historias te inspiró, hay muchas maneras de sumarte, desde tu casa o junto a tu comunidad.</p>
+    <div class="acts">
+      <div class="act"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg><div><b>Descubre tu cuenca</b><span>Busca en el mapa el río que te da agua. Conocer de dónde viene es el primer paso para quererlo.</span></div></div>
+      <div class="act"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg><div><b>Cuida el agua en casa</b><span>Pequeños gestos, como reparar una fuga o reutilizar el agua, ayudan a que haya más en los ríos.</span></div></div>
+      <div class="act"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg><div><b>Siembra vida en las orillas</b><span>Únete a jornadas de reforestación con especies nativas en nacientes y quebradas.</span></div></div>
+      <div class="act"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg><div><b>Participa en tu comité de cuenca</b><span>Tu voz suma en las decisiones sobre el agua de tu comunidad.</span></div></div>
+      <div class="act"><svg class="arrowc" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13"/><path d="M9 15h11M15 10l5 5-5 5"/></svg><div><b>Comparte esta historia</b><span>Llévala a tu familia, tu escuela o tu trabajo: se cuida lo que se conoce.</span></div></div>
+    </div>
+    <blockquote class="closing">El agua nos une a todos, <b>de la montaña al mar.</b></blockquote>
+    <a class="cta" href="https://naturapanama.org/proyectos/" target="_blank" rel="noopener">Conoce nuestros proyectos →</a>
+  </div>
+</section>
+
+<!-- 13. RECURSOS -->
+<section class="page gut" id="recursos">
+  <div class="col">
+    <div class="kicker">Para saber más</div>
+    <div>
+      <details><summary>Documentos de Natura</summary><ul id="lib"></ul></details>
+      <details><summary>Gobierno e instituciones</summary><ul id="gov"></ul></details>
+    </div>
+  </div>
+</section>
+
+<footer class="gut">
+  <div class="col in">
+    <strong>Créditos</strong>
+    <p>Datos: listado de cuencas hidrográficas de Fundación Natura (17 mar 2026, A. Rodríguez) y cifras de Natura de 2021 y 2026. Polígonos y superficie: capa de cuencas hidrográficas de Panamá, escala 1:250,000. Agua en cifras: perfil de Panamá en ONU-Agua, sdg6data.org (consultado el 25 de octubre de 2026), con datos de FAO AQUASTAT e indicadores ODS 6. Producción de agua potable por provincia del IDAAN (2022). Boletín hidrológico mensual del Instituto de Meteorología e Hidrología de Panamá (IMHPA), octubre de 2026. Población por cuenca (solo en el mapa y en las cuatro historias): Plan Nacional de Seguridad Hídrica 2015–2050, Anexo 1 (INEC 2010). Una misma población puede contarse en más de una cuenca. Misión, visión y propuesta de valor: Fundación Natura. Frases originales para esta historia.</p>
+    <p><a href="https://naturapanama.org" target="_blank" rel="noopener">naturapanama.org</a> · <a href="https://www.instagram.com/naturapma/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/naturapma" target="_blank" rel="noopener">Facebook</a></p>
+  </div>
+</footer>
+</div>
+
+<!-- Visor de mapas (ArcGIS Experience Builder) -->
+<div class="mapx" id="mapx" hidden role="dialog" aria-modal="true" aria-label="Mapa de cuencas hidrográficas de Panamá">
+  <div class="mbar">
+    <span class="mtitle">Cuencas hidrográficas de Panamá</span>
+    <a class="mext" href="https://experience.arcgis.com/experience/b28da4fe10de4a69805e800045c953fc" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+    <button class="mclose" id="closeMap" aria-label="Cerrar el mapa y volver a la historia">Cerrar ×</button>
+  </div>
+  <iframe id="mapFrame" title="Mapa interactivo de cuencas hidrográficas de Panamá" allow="fullscreen; geolocation" allowfullscreen></iframe>
+</div>
+
+<script>
+/* Abrir siempre desde la portada, salvo que el enlace apunte a una sección (#mapa, #tour...). */
+try{if("scrollRestoration" in history)history.scrollRestoration="manual"}catch(e){}
+if(!location.hash){window.scrollTo(0,0);addEventListener("load",()=>window.scrollTo(0,0))}
+</script>
+<script>
+const D={"W":6518,"H":3099,"cr":["M23 895l21-3 39 6 17-4 13 8-4 58-9 31 5 13 6-3 14 10 9-2 4 9 23 9 35-16 7 1 13 34 17 3 18 19 29 12 18 26 28 0 32 17 8 11 0 16 22 18 6 27-33 12-15 26-27 11-30 4-16 18-42 5-17 13-8 19 23 14-29 29-4 15-17 0-14 9-21-2-8 4-2-4-29-12-13-13-24 3-3-3-9 3-12-3-13 11-29 0 1-483 20 24z","M2 1354l29 0 13-11 12 3 9-3 3 3 24-3 13 13 29 12 2 4 8-4 27-1-1 28 16 13 2 11 18 22 18 4 11 33 20 21 10 28 0 8-9 6 10 9-6 14 10 14-2 18-14 19 7 41-8 29-32 43-50 14-21-6-7 13-22 8 0 8-15 21-15 14-8 1-11 17-16 8-21 3-16 17 3 15 24 5 1 10 17 7 22 33 6-2 8-19 8 12 11-1 10 11 12 2 2 17 9 16-8 27 27 18 3 56 24 40-5 11 1 24-7 17 7 14-12 11-6-2-10-19 4-20 8 1 4-5 1-28-25-47-13-37-55-81-90-59 2-519z","M62 32l-14 5-13 32-29 12 0-81 32 0 24 32z","M98 82l60 75-1 30-62 19-18-5-10 8-7 25-48 13-7-11 1-122 30-17 33 3 15-5 14-13z","M155 175l5-11 38 65-6 6-7-6-4 1-5 10 6-9 10 6 9-4 28 41 32 23 9 2 14-15 6-1-3 31 11 30 36 39 10 3 16-4 23 17 7-3 26 9 11-5 24 12 16-8 29 5 3 21 16 17-21 8-45 6-11-9-26-6-30-25-20 7-6-7-20 7-29-3-10-8-15-2 4-15-3-10-21 2-31-10-20 2-12-8-6 6-8-6-4 3-2 8-11 7-2 14-30 23-10-1-10-10-23 7-7 7-27-1-9-19-19 2-16 11-10-8 0-183 7 11 8 0 28-12 8 2 7-7 4-21 10-8 12 5 34-6 14-9 20-4-2-12z","M98 82l-14 13-15 5-33-3-30 17 0-33 29-12 13-32 14-5 36 50z"],"feats":[{"n":87,"nm":"Río Sixaola","rio":"Río Sixaola","prov":"Bocas del Toro","km2":1366,"p":[23810,37536,45390],"w":true,"a":false,"v":"Caribe","lx":144,"ly":570,"bb":[3,376,589,825],"d":"M200 379l17 6 9 0 7-3 29 10 17-3 4 1 3 10-4 15 15 2 10 8 21 4 8-1 14-4 6-3 6 7 18-7 2 0 12 14 15 6 3 5 26 6 11 9 45-6 23-9 7 10 39 26 5 2 19 18 0 3 1 1 0 2 1 3-1 1 1 2-1 3-1 1 1 4-8 1-15-5-11 4-1-3-5 1-5-7-3 1-6-7 0 2-9 6 1 8-2 2 1 4-5 1 2 4-1 4 2 1-3 2-1 4 2 4-2 1 0 3-2 0-2 5-5 5-4 1-2 4-11 6-7 2-4 4-6 3-5-3-5 6 0 6-3 0-1 3-5-2-1-3-3-1-10 3-9-4-4-6-7 1-1-13-7-13 0-3 4 0 3-3-2-4-13-3-3 3-11 1-10-4-15-3-2 14-5 1-3 10 1 7 4 3-2 16 3 2-1 13 1 3-1 5 2 3 0 7-3 4 0 3 3 5-5 2-2 5-16 8-7 9-13-2-8-4-12 2-4 5-7 5 0 3-13 7 1 5 3 4-11 4-6-2-7 5-3-2 1-8-4-5-8 1-1 3-7-1-11 2-5 5 0 3 8 7 0 3-8 13-2 2-5 0-1 4-7 0-4 4-4 9-5 0-4 5-22 4-14 22-3 1-6-4-8-1-13 6-13 4-12 10-7-2-4-5-11 2-3 5 1 5-6 9-33 17-3 10-8 3-5-1-15 2 2-406 12 9 4-5 10-7 6-1 5 3 2-4 6 0 4 4-1 4 4 5 2 6 5 0 4-3 17 4 4-5 3 0 1-2 24-7 9 10 5-1 5 2 2-5 11-4 3-5 14-9 3-4-2-3 2-3-1-4 6-6 5-1 3-3-1-5 2 0 2-3 3 1 2 5 3 0 6-6 1 3z"},{"n":89,"nm":"Ríos entre el Sixaola y Changuinola","rio":"Río San San","prov":"Bocas del Toro","km2":247,"p":[77989,126023,154769],"w":true,"a":false,"v":"Caribe","lx":560,"ly":563,"bb":[358,502,634,695],"d":"M587 502l13 11-2 7 5 8 3-5 15 9-1 10-10 9 0 6 12-12 3-12 9 8 0 8-1 2-4-1 0 2-3-1-5 3 2 3-3 3-8 0-2 3-3 0-1 3 9 9-4 5-5 0-3 3-10 3-2 6-4 4-5 1-4 4 2 1 0 3-14 9-6 8-5 1-4 5 1 4-2 1-1 7-4 1-2-3-5-2 0 4-7 2 0 4-10 0 4 6 13 0-4 5 11 4 2 5 5 5-1 14-3 5-8-1-5 5-12 1-11-7-17-4-13-9 1-4-14-1-7-8-15-2-8-8-9-7-8 2-2-3-16-1-2 3-11-4-6-7-8 3-8 0-6-4-1-5 3-4 0-7-2-3 1-5-1-3 1-13-3-2 2-16-4-3-1-7 3-10 5-1 2-14 15 3 10 4 11-1 3-3 13 3 2 4-3 3-4 0 0 3 7 13 1 13 7-1 4 6 9 4 10-3 3 1 1 3 5 2 1-3 3 0 0-6 5-6 5 3 6-3 4-4 7-2 11-6 2-4 4-1 5-5 2-5 2 0 0-3 2-1-2-4 1-4 3-2-2-1 1-4-2-4 5-1-1-4 2-2-1-8 9-6 0-2 6 7 3-1 5 7 5-1 1 3 7-3 8 0 14 4 5-1-1-4 2-4-1-2 1 0-1-6-1-1 0-3z"},{"n":91,"nm":"Río Changuinola","rio":"Río Changuinola","prov":"Bocas del Toro, Chiriquí y Comarca Ngäbe Buglé","km2":3190,"p":[124145,199268,266769],"w":true,"a":false,"v":"Caribe","lx":456,"ly":915,"bb":[3,541,810,1316],"d":"M149 765l6-3 11-20 22-4 4-5 5 0 4-9 4-4 7 0 1-4 5 0 2-2 8-13 0-3-8-7 0-3 5-5 11-2 7 1 1-3 8-1 4 5-1 8 3 2 7-5 6 2 11-4-3-4-1-5 13-7 0-3 7-5 4-5 12-2 8 4 13 2 7-9 16-8 2-5 5-3 12 2 8-3 6 7 11 4 2-3 16 1 2 3 8-2 9 7 8 8 15 2 7 8 14 1-1 4 13 9 17 4 11 7 12-1 5-5 8 1 3-5 1-14-5-5-2-5-11-4 4-5-13 0-4-6 10 0 0-4 7-2 0-4 5 2 2 3 4-1 1-7 2-1-1-4 4-5 5-1 6-8 14-9 0-3-2-1 4-4 5-1 4-4 2-6 10-3 3-3 5 0 4-5-9-9 1-3 3 0 2-3 10-1 1-2-2-3 5-3 3 1 0-2 4 1 1-2-1-8 3 2 43 39 7 17 1 9-3 6-11 12-8 1 0 1 7 1 10-8 9-14 0-7-6-13 7 4 22 21-1 0 1 6-1 5-9-5 1-4-4-2-1 1 0 6-3 6 7 5-15 4 1 8-5 3-7 14 4 5 0 2-3 3 1 5-3 3 0 2-10 4 3 8-1 3 3 4-3 2 4 4-1 3-16 7-3 5 8 9 0 4 2 0 0 5 6 4 1 3 7 6 0 3-7 9-2 0 1 6 5 3-5 2-9 10 0 5-6 3-1 3 17 12 21 20 9 4 15 16 5 2 1 4 16 11 7 7-2 9 9 10-10 10 0 5-4 5-9 5-5 0 1 2-4 2-1-1-5 2 0 7-2 1 2 3-1 5 1 5-5 3 0 3-4 4 1 2-1 2 8 9 1 7-7 1-3 2 0 3-4 0-1 14 3 1 1 4-4 3 0 4-3 1-2 6-7 7 3 4 8 2 2 3 0 8 10-3 3 6 6 3 2 11 3 2 4 11 16 1 6 3 0 6-2 3 2 3-1 3 0 4 2 3-1 7-6 6-1 5-6 1-3 4-2-1-10 4-9 13 1 5 10 7 3-1 5 4 9 1 7 4 11-1 7 3 2 5 15 12 2 5 3 0 2 2 3 6 0 10 6 6-2 11 3 4 8 5-1 7 3 6 0 6-2 2-9 3-5 6 1 7-4 17 2 14-6 6 2 4-3 8 1 2-8 5-5 0-2 6-10 1-2-2-5 0-3-5-3 0-4-6-11-2-3-3-6 2-12-6-5 2-5-7-6 1-6-7-8-1-6-9-5 0-3-9-10 0-3 4-2-2-3 1-9-8-14 0-4-3-5 0-8-7-4 1-2 3-4 0-2 4-4 1-2-6-6-5 1-3-3-4-8-4-4-8-9-4-9-11-21-1-8-4-7 5-22 2-3-4-4-1 1-6-4-1-2 9-4 1-7 9-5-5-6-1-7-4-4 4-11-2-1 4-9 0-16 6 1-7-8-9 0-2-9-1-1-7-3-1-9 1 0-2 8-1-6-27-3-4-19-14 0-16-4-8-9-6-27-14-12 2-16-2-2-3-3-9-13-14-29-12-10-7-8-12-17-3-9-20-4-14-7-1-11 8-24 8-5-1-8-7-7 1-3-2-4-9-9 2-14-10-6 3-1-9-4-3 0-1 2-3-1-2 8-26 5-40-1-18-13-8-17 4-7-2-7 1-6-3-19-2-16 5-9-5-4-8-12-13 0-46 15-2 5 1 8-3 3-10 33-17 6-9-1-5 3-5 11-2 4 5 7 2 12-10 13-4 13-6 8 1 6 4z"},{"n":93,"nm":"Ríos entre Changuinola y Cricamola","rio":"Río Guariviara","prov":"Bocas del Toro, Chiriquí y Comarca Ngäbe Buglé","km2":2210,"p":[104559,155569,215607],"w":false,"a":false,"v":"Caribe","lx":1194,"ly":1346,"bb":[653,612,1354,1519],"d":"M1249 1174l5 6 4-1 2 6 5 1 5 12 6 1 0 4-6 0-4 7 8 3 0 2 6 5 1 5 5 0 0 3 5 0 4 4-2 1 1 6 3 1 0 4 6 1 5 7 5 0 1 3 10 8 0 2 4 3 7 1 2 2 4-3 6 1 7 9 0 5-2 2 0 4-4 3 1 3-4 5 1 3-3 3 0 13 3 12 3 4-3 5 1 8 2 3 4 3-4 4-2 11-8 7-1 4-7 6 4 15 3 3 4 1 2 6-9 4-3 12 0 15 2 7-2 19 2 3 0 7-12 7-1 5-7 8-5 0-6-9-4 0-3 3-5-1-12 10-6 11-8 0-11 4-10 1-12 0-6-6-2-4-4 1-6-1-11 6-6-3-4 1-5-4-21 5-14-5-11 0-5 1 0 2-6 4-9 2-9 0-7-5-6-1-4 3-3 6-4 0-13-6-22-6-6 0-10-6-6-12 1-3 7-7 3-14-1-7-6-8-1-5 3-8 4-1 8-9 0-4 3-3 0-8-2 0-1-3 4-12 0-5-3-3 4-13-3-4-5-3-6 2-10-2-11 2-4-2-8 1-1-2-11 0-2 4-17-1-3-5-12 1-18-13-2-3-7-3-7 0-5 9-3 3-4 0-1 2-11-7-18-1-3 2-4-3-5 0-2-2-1 2-9-2-23 1-7-6-1-3-3 1-2-9-14 0-7-4-6 2-8-12 0-5-4-1-4-7 4-4-1-2 3-8-2-4 1-3 3 0 2-3-2-14 4-17-1-7 5-6 9-3 2-2 0-6-3-6 1-7-8-5-3-4 2-11-6-6 0-10-3-6-2-2-3 0-2-5-15-12-2-5-7-3-11 1-7-4-9-1-5-4-3 1-10-7-1-5 9-13 10-4 2 1 3-4 6-1 1-5 6-6 1-7-2-3 1-7-2-3 2-3 0-6-6-3-16-1-4-11-3-2-2-11-6-3-3-6-10 3 0-8-2-3-8-2-3-4 7-7 2-6 3-1 0-4 4-3-1-4-3-1 1-14 4 0 0-3 3-2 7-1-1-7-8-9 1-2-1-2 4-4 0-3 5-3-1-5 1-5-2-3 2-1 0-7 5-2 1 1 4-2-1-2 5 0 9-5 4-5 0-5 10-10-9-10 2-9-7-7-16-11-1-4-5-2-15-16-9-4-21-20-17-12 1-3 6-3 0-5 9-10 5-2-5-3-1-6 2 0 7-9 0-3-7-6-1-3-6-4 0-5-2 0 0-4-8-9 3-5 16-7 1-3-4-4 3-2-3-4 1-3-3-8 10-4 0-2 3-3-1-5 3-3 0-2-4-5 7-14 5-3-1-8 15-4-7-5 4-13 4 2-1 4 2 2 7 3 1-5-1-6 1 0 34 31 21 9 10 0 10-7 5-12 3 0 8 4-3 8-9 11-4 20 2 14-9 7-6-2 1 5-2 0-2 4-8-1-8 22-4 6 3 12 3 4 41 27 1 11-14 3 2 11-6 0-4 3-3-3-2 2-7-1-13-8-2 3-5-3-5 0-3-4-1 3 4 5 2 7 5 7-5-3-4 3 1 3 5 2-1 7 3-2 8 9 4-1 1 2 4 1 1 2 3-1 4 4 11 3-3 3-6 0-2 2 3 1 1 4-2 4 1 2 0 5 6 1-1 10 13 4 0 2-5 3 1 4 3 1 4-1 12 12 9 1 3 3 4 0 3 2 12 2-1-4 3 1 2-1-2-6-4-1 0-6 9 2 3 3 6-1 9 3 6-2 0-3-9-8-4-7 0-5 2-5 3-1 1 9 6 3 1 4 5 4 0 4 5 5-3 1 2 4-2 3-8-3 4 11 5 2 7-1 5 4 6 1 10-8 0-2-6-9 2-3-4-6 3 0 3 4 2 0-3-6 3-3-6-3 3-6 6 4 0 11 3 4-2 1 0 4 6 6 9 1 5-4 6-1-3-10 1-2-7-4 1-6 4-6 10-7 0-3 2-1 2 4-4 8 3 5 4 1 1 3 2 0 3-3-2-4 0-2 3-1 2 2 3 0 0 6-5 6 10 1 1 8 2 0 1 4 4 1 0 7 3 0 1-8 4 0 7-3 3 2 0 2-4 2-2 3-5 0 0 4-5 9 4 3 2 0-2 4 3 2 2 5 6-2-4 4 4 10-5 6-4 0-5 3 2-4-3 2-1-3-3 0-7-11-5 0-2 3 0-9-4-4-4 3-3-3-1 3-7 1-7-1-8-7-3 0-11 4-8 0-5 2-2 4 4 2 0 11-7-1-6 3-4 5-1 12 6-1 4 2-5 4-2 12 14 9 0 2-5 1-15-6-6 5 0 9 6 4 3-1 3 6 9 3 8 6 6-1 2-3 2 2-7 30 2 32-3 15-3 2-10-1-2 3 2 6 12-2 3 2 6 11 9-1 10 1 3 2 3-2 4 6 5 1 1 3 28-1 2-2-3-9 2 0 4 2-2-3 2-2 3 2 1 5 10 6 10-2 8 4 3 4 7 0 2-4 2 0 6 4-1 4 4 2 1 5-1 8 14 17 7 13 2 10 5 2 8-2 6 2 1-1 6 0 3 8 5 3 8-2 1-2-1-6 0-2 3 0 0-5 7 0 7 4 1-4 3 1 0-5 27-6 20-12 17 3 8 9 3 5 5 3 10-1 2 3 5-4 0 7-12 7-4 11 6-11 25-9 7-6 9-3z"},{"n":95,"nm":"Río Cricamola y entre Cricamola y Calovébora","rio":"Río Cricamola","prov":"Comarca Ngäbe Buglé","km2":2346,"p":[56266,91808,116995],"w":true,"a":true,"v":"Caribe","lx":1519,"ly":1400,"bb":[1239,909,2019,1672],"d":"M2009 1339l0 4 2 3 0 12-4 7 1 6 6 3 1 7 3 3-2 1 3 4 0 5-8 5 1 7-2 2-3-3-4 4-3 12-6 4 4 6-1 5-8 12 0 4-5 1-10-3-16 15-19 1-2-4-3 3-9 1 0 7 3 8-4 6 2 10-5 6-1 8 2 7-14 15-17 4-4 12-7 9 3 6 0 6 7 10-6 3 0 6-3 2-2 5-4 2 0 5-4 3-6-3-9 0-5 3-5-1-4 1-9 0-8-2-6 0-2 2-4-5 0-4-2-2 1-4-3-4-11-8-13-2-3-4-13-3-6-6-22 0-2 2-7-5 0-5-5-9-9-2-2 3-1-10-3-4-17 2-15-2-3 3-6-2-7 2-3-5-11-2-2-4-6-1-3 2 4 2 2 4-9 7 2 3-2 9-8 4-5 0-3 4-3-1-2 4-16 7-2 16-7 12-12 0-3-2-5-1-10 2-7-3-5 2-4 4-10 0-4 4-3 7 0 13-4 9-7 4 0 9-11 13-12 2-8-5-2 2-7 0-8 5-6 0-6-4-9 8-2 4-8-1-3 2-6-2 0-4-4-3-3 0-3-6-4 1-2-4-5-1-1-6-4-4 1-7-4-4-14-8-14-14-5-7-4-2 2-4-4-5-2-7-18-13-9-11-8 3-9-4-10-1 3-11 6-2-1-10-4-5 4-5-2-7 5-7 0-3-6-11 5 0 7-8 1-5 12-7 0-7-2-3 2-19-2-7 0-15 3-12 9-4-2-6-4-1-3-3-4-15 7-6 1-4 8-7 2-11 4-4-4-3-2-3-1-8 3-5-3-4-3-12 0-13 3-3-1-3 4-5-1-3 4-3 0-4 2-2 0-5-7-9-6-1-4 3-2-2-7-1-4-3 0-2-10-8-1-3-5 0-5-7-6-1 0-4-3-1-1-6 2-1-4-4-5 0 0-3-5 0-1-5-6-5 0-2-8-3 4-7 6 0 0-4-6-1-5-12-5-1-2-6-4 1-5-6 9-8 5-11 0-9-6-7 6-1 6 2-6-15 2-1 8 9 15 3-1 9 3 7-3 11 6 0 8-4 10 0 16-7 21 7 11-3 17 12-1 6-3 1 2 4 6 1 0 4-4 4 2 0 1-2 4 4 2-4 1 4 5 1-5-8 1-4 1 0 2 5 5 1 12-5 13-12 8-14 2-17-2-4-5-2 3-14-7-11-11-2-13-6-2-4-12 0-4-3-8-2-5-7-10-7-2-7-6-5-4-1-5-6-4-1-4-3 2-13-1-5-7-2-2-4 1-2-4-3-1-6-5-5-6-3-5 1 0-7-7-3-11-12-6-2 0 3-2 0-7-9-19-11-4-4-5-1-1-2 4-10 6-4 1 2-2 5 8 0 7-5 3-1 16 13 5-2-2-5 5-2 5 2 5 5 12 0 2-3-2-7 9 1 1-7-4-3-7 1-5-2-5 0-5-3-8-1-4 3-11-7-6-18 8-5 10 3 14-3 7 4 6-1 11 17 3 2 3 6 13 13 1 6 10 7 10 1 1 3 5 6 11 2-2 5-10 1-2 5-11-1-6 2 0 3 2 2 6 0 0 3 2 2-2 5 4 2 0 3 8 1-1 4-2 0 0 5 6 10 0 6 4 6-5 2 1 2 3 2 2-3 6 1 3-2 2-6 4-2 1 3-3 5 3-1 2 3 11 1 7-4 7 2 2 3 8 2 10-4 3 11 9 9 6 3 5-2 7 6 1 4 3 2 11-2 0 5 5 3 3 9 0 9-2 5 1 7-3 4-4 2 8 26-14 15 0 3 6 4-2 9 6 4-6 5 11 2 3 5 7-3 2-3-2-5-11-3-4 1-2-2-2-3 1-7-5-7 2-3 12-10-1-8-5-15 1-4 3 0 1 4 7 10 16 21 3 2-1-6-4-1-4-5-15-20-1-14-2-4 2-4 12 22 12 15 14 15 21 29 50 57 20 21 55 42-6 7 6 13 2 9-1 9 2-3 1-7-8-22 6-2 32 21 15 5 2 3 10-1 2-6 8-2 9 3 6-2 4 3 6-1 35 11 8-2 8-8 3 2 24 3-3 11-5 5-2 16 2 4 3-20 4-3 1-10 2-1 4 0 15 11 14 5 19 0 13-3 7 2 13 0 1 6-2 3 3 2 0-5 2-5 10 0 7-9 17 0 31-6z"},{"n":97,"nm":"Río Calovébora","rio":"Río Calovébora","prov":"Veraguas y Comarca Ngäbe Buglé","km2":526,"p":[19420,26341,33247],"w":false,"a":false,"v":"Caribe","lx":2015,"ly":1541,"bb":[1880,1338,2163,1669],"d":"M2082 1341l7 1 2 14 1 1-5 3 2 4 2 0 0 7 4 1 0 4 3 1 5 7 8 0-1 16-4 1-2 3 1 6 4 2-2 7 3 5 0 11 11 8 5 10 2 0 4 6 3 1 10 11 0 4 6 9 2 9 4 10 3 2-2 11 5 4 0 13-3 4 1 7-5 10-11 8-7 3-3 5-10-1-1 8-3 4-8 2-5-4-7 2-1 6 2 3 0 6-3 4 6 7 2-1 4 5-2 9-3 7 1 22-3 5 1 3-4-4-9 2-6 3-2 8-7 3-10-1-4-3-9 2-6-2-3 2-7-4-1-4-4 0-3-6-11-11-6 1-6-2-6 0-9 2-4 4-6-1-7 2-12-15-3-12-10-13-10-4-16-15-5-1-2 2-5 0-8-4 0-3-7-5-4 1-4 0-6-9 0-6-3-6 7-9 4-13 17-3 14-15-2-7 1-8 5-6-2-10 4-6-3-8 0-8 9 0 4-3 1 4 19-1 16-15 10 3 5-1 0-4 8-12 1-5-4-6 6-4 3-12 4-4 3 3 2-2-1-7 8-5 0-5-3-4 2-1-3-3-1-7-6-3-1-6 4-7 0-12-2-3 0-4 19 2 6 2-1 4 9-1-19 18 2 7 6 4-6-8 0-3 7-4 3-5 6-6 16-1 4-3 12-5 5 2 3-4 1 3z"},{"n":99,"nm":"Ríos entre Calovébora y Veraguas","rio":"Río Concepción","prov":"Veraguas","km2":626,"p":[15009,17803,21595],"w":false,"a":false,"v":"Caribe","lx":2255,"ly":1427,"bb":[2081,1277,2410,1590],"d":"M2371 1367l5-1 3 2 0 3-2 4 2 3 4 1-4 7 7 4-4 3-3 8-4 3-5 11 0 3 3 3 1 6-2 7-4 7-12 9-2 3 6 6 6 0 0 9 9 5-2 7 4 13-4 7 11 2 2 7 11 7 5 14 0 6 4 5 0 11 3 2 1 6-2 4-7 0-4-3-8 1-6 6-3-2-8 0-3-3-1 5-3 4-10 1-3-2-3 3-6 2-1 4-9 2-1 4-7-1-2 5-6-3-8-13-7 2-3 5-5 5-9 1-4 2-4-1-1-10-5-3 0-4-3-2 0-7-3-6-4-3-8-1 0-6-9-2-1-10 1-4-6-3-7 1-13 6-4-3-11 10-7 0-3 2-7 1 0 2-4-1-11 9-14-2 4-8-1-7 3-4 0-13-5-4 2-11-3-2-4-10-2-9-6-9 0-4-10-11-3-1-4-6-2 0-5-10-11-8 0-11-3-5 2-7-4-2-1-6 2-3 4-1 1-16-8 0-5-7-3-1 0-4-4-1 0-7-2 0-2-4 5-3-1-1-2-14-6 0-2-4 31 0 9-5 9-3 10-1 12-5 10 1 14-3 6 1 6 6 3 0 2 4 1 7 2-2-1-9-10-5 14-2 12-13 19-2-1 5 3 10-3 7 4-8-2-14 4-4 8-2 6-4 31-2 13-9 11 0-1 7 4 5 8 5-9-9-1-4 2-6 11-7 1 5-2 3 0 6 3 2 5 1 4 4 10 2 3 9 3 2 0 5 7 3-1 6 1 6-3 2-1 4 0 3 4 1 0 10 7 3 7 8 3 0 2 5z"},{"n":100,"nm":"Río Coto y Vecinos","rio":"Río Palo Blanco","prov":"Chiriquí","km2":561,"p":[57424,64218,79063],"w":false,"a":false,"v":"Pacífico","lx":183,"ly":1835,"bb":[19,1689,387,2182],"d":"M255 1710l14 17 6 1 4 4 5 0 19 15 8 30 6 15 30 24 20 14 18 18 2 7-7 1-28 11-18 4-7 1-1-4-3 5-17 2-15 10-5 1-1-2 3-1-4-1-2 4-18 2-12 5-9 10-9 7-7 14-7 6-8 23 0 10-3 12 1 11 3 5-2 11 2 6-2 6 1 16-2 19 3 8 2 14-2 12 10 19 7 8 2 17 4 6 1 6-8 12-10 4 1 19-2 5-8 3-9-5-8 0-11-7 12-11-6-7-1-7 7-17 1-12-2-12 4-6 1-5-7-6-17-34 0-22-4-6 1-28-7-1-12-14-6 0-2-3 1-9 7-18-1-3-8-13-2-17-4-4-8 2-10-11-11 1-4-10-4-2-4 6-4 13-2 2-4 0-22-33-17-7 0-8-1-2-3-2-21-3-3-15 0-3 6-3 4-8 6-3 7-3 14 0 16-8 7-13 4-4 8-1 15-14 2-6 5-3 8-12 0-8 22-8 7-13 4 0 17 6 50-14 29-39 2 1 3 20z"},{"n":101,"nm":"Río Veraguas","rio":"Río Veraguas","prov":"Veraguas y Coclé","km2":340,"p":[9914,11937,15064],"w":false,"a":false,"v":"Caribe","lx":2466,"ly":1536,"bb":[2317,1237,2554,1628],"d":"M2545 1535l2 7 7 11-4 9 1 1-9 2-3 4-7 2-6 12-5 3-1 10-6 9-7 2-10-6-7 0-5-4-7-1 0 4-7 4-1 5-12 5-7 10-11 4-8-4-9-10-4-1 1-3-2-4-3-3 0-7-2-3 2-14-3-3 0-7-4-5 2-4-1-6-3-2 0-11-4-5 1-2-5-15-1-3-11-7-2-7-11-2 4-7-4-13 2-7-9-5 0-9-6 0-6-6 2-3 12-9 4-7 2-7-1-6-3-3 0-3 5-11 4-3 3-8 4-3-7-4 4-7-4-1-2-3 2-4-1-3-2-2-5 1-2-5-3 0-7-8-7-3 0-10-4-1 0-3 1-4 3-2-1-6 1-6-7-3 0-5-3-2-2-8-11-3-4-4-5-1-3-2 0-6 2-3-1-5 6-2 6-8 13-7 34-2 5-5 4-8 11-8 2 8 4 4-2 5 4 7-2 3 1 3-6 4 1 8-11 6 3 2-1 4 2 2-4 2 0 3 4 0 1 5 3 1-1 7 4 2 5 8-1 9-5 1 3 3 1 6 8-1 4 2 3 6-2 8 2 2 1 6 3 0 3 5-1 8 2 1 2 13 7 1 4-1 5 4 3-1 4 4 7-2 2 5-1 4-3 3 4 5-1 5 3 6 5 0 10 9 3 0 3-3 3 0 2 2 3 11-1 6-4 6 0 18 4-1 16 5-2 6 2 9 7-2 4 2 1 5 6 3-2 11 7 19 8 8 9-2z"},{"n":102,"nm":"Río Chiriquí Viejo","rio":"Río Chiriquí Viejo","prov":"Bocas del Toro y Chiriquí","km2":1339,"p":[140149,147115,185035],"w":true,"a":true,"v":"Pacífico","lx":341,"ly":1383,"bb":[169,1196,597,1855],"d":"M597 1258l0 6-4 4 3 2 1 7-5 4-1 5-6 10 1 5-4 7 0 1 8 1 7 4-6 6 0 3-3 3-4 0-4-3-6 10-4 2-13 0-3 1-6 0-6-7-4-1-2-4-7-4-16 5-7 8-2 11-2 2 0 8-11 11-7 2-10 16-2 7 1 7-4 3 4 21-8 9 2 7-5 5 0 8-4 10 0 7-2 3 0 9 6 8-1 8-5 8 0 3 3 1-2 8-4 8-8 11-4 1-4 8-3 0-1 5 2 4-2 4 0 12 2 6-2 2-6 0-4 20 3 4 1 17 3 5-1 9 2 3-2 3-1 11 3 8 5 5-1 3 1 5-2 1 0 19-5 13 3 8-6 4 0 6-5 8 1 8-4 17 1 11 6 11-3 8-10 6-3 4 1 15-3 3-3 11 12 28-7 1-10-3-2 7-10 0-2-7-18-18-20-14-30-24-6-15-8-30-19-15-5 0-4-4-6-1-14-17-3-20-2-1 3-4 8-29-1-18-3-5-3-18 3-7 11-12 2-4 0-14-2-5-8-9 6-8 0-6-10-9 2-3 7-3 0-8-2-9-10-23-9-6-9-11-8-18 0-11-3-4-14-1-4-3-18-22-2-11-16-13-1-6 4-10-3-9 4-7 5-2 19-1 0-11 2-3 12-14 12-7 4-4 1-6-2-2-16-5-5-5 8-19 17-13 17 1 25-6 9-6 7-12 13-5 17 1 27-11 7-8 2-12 6-6 25-11 0 2 9-1 3 1 1 7 9 1 0 2 8 9-1 7 16-6 9 0 1-4 11 2 4-4 7 4 6 1 5 5 7-9 4-1 2-9 4 1-1 6 4 1 3 4 22-2 7-5 8 4 21 1 9 11 9 4 4 8 8 4 3 4-1 3 10 11z"},{"n":103,"nm":"Río Belén y entre Río Belén y Río Coclé del Norte","rio":"Río Belén","prov":"Veraguas, Coclé y Colón","km2":852,"p":[20274,24830,29143],"w":false,"a":false,"v":"Caribe","lx":2514,"ly":1316,"bb":[2388,1034,2751,1537],"d":"M2614 1416l-5 6 1 3-13 10 4 8-1 8-4 6 4 8 1 10 2 4 4 0 4 3 3 6-1 12-22 5-3 2-1 8-5 8 1 6-1 1-10 0-22-5-4 10-10 2-10-10 0-6-5-11 2-11-6-3-1-5-4-2-7 2-2-9 2-6-16-5-4 1 0-18 4-6 1-6-3-11-2-2-3 0-3 3-3 0-10-9-5 0-3-6 1-5-4-5 3-3 1-4-2-5-7 2-4-4-3 1-5-4-4 1-7-1-2-13-2-1 1-8-3-5-3 0-1-6-2-2 2-8-3-6-4-2-8 1-1-6-3-3 5-1 1-9-5-8-4-2 1-7-3-1-1-5-4 0 0-3 4-2-2-2 1-4-3-2 11-6-1-8 6-4-1-3 2-3-4-7 2-5-4-4-2-7 26 0 13 2 17-3 5-3 9-3 7-12 10-5 6-9 8-5 13-22 8-7 13-5 7-9 1-10 6-9 21-18 11-5 21-2 6-3 5-5 2-11 11-5 4 1 0 18-2 7 6 1-1-3-3 0 2-4 1-22 7-2 10-11 15-9 5-1 15-10 9 3-2-3 0-2 13-4 23-14 0 7 6 8 0 3-4 5 4 11-7 10-2 6 8 7 0 3 3 2 0 5 5 4-2 4-7-1-4 6-4-1-10 6 2 6-2 2-1 11 3 10 8 8 0 4 2 6 5 0 6-4 4 1-5 12 2 2 0 5-3 2-1 4 4 2 1 11 10 3 0 9 5 4-2 4 1 3-5 4-3-5-3 5-3 0-5 9-5-4-3 0-18 5 1 2 2 1 0 5 6-1 3 2 4-1 3 12-2 1 0 3-9 0-2 2-2 11-6 1 0 2-2 3-4-2-7 3-4 0-1-2-13 1-4 2-4 0-1 6-8 1-4-3-5 19-6 1 4 8-1 5-2 0-2-2-5 0-3 1-3 5 1 11 3 6-4 3 0 5-9 7 0 3-7-1-1-2-7 0-5 7 8 9-2 6 3 2-4 9-4 2 1 2-3 0-4 6 6 5 7 0 5 5 2 7z"},{"n":104,"nm":"Río Escárrea","rio":"Río Escárrea","prov":"Chiriquí","km2":418,"p":[66994,75843,92637],"w":false,"a":false,"v":"Pacífico","lx":484,"ly":1794,"bb":[404,1383,676,1916],"d":"M416 1850l-12-28 3-11 3-3-1-15 3-4 10-6 3-8-6-11-1-11 4-17-1-8 5-8 0-6 6-4-3-8 5-13 0-19 2-1-1-5 1-3-5-5-3-8 1-11 2-3-2-3 1-9-3-5-1-17-3-4 4-20 6 0 2-2-2-6 0-12 2-4-2-4 1-5 3 0 4-8 4-1 8-11 4-8 2-8-3-1 0-3 5-8 1-8-6-8 0-9 2-3 0-7 4-10 0-8 5-5-2-7 8-9-4-21 4-3-1-7 3-7 9 9 4 2 0 7 2 2-2 16 5 11 0 8-5 1 1 8-2 5 2 9 0 14 5 3 4 22 0 8-4 10 0 14-4 14 5 18-2 4 1 3-4 4-1 5 2 5-1 7 3 3 1 6 4 1 0 5 1 1 4 11 0 6 4 6 0 10 4 5 2 0-3 11 3 2-1 3 7 1 2 2-3 8 6 9-1 11 2 6 0 7 5 4-1 4-5 1 1 12 7 10-4 7 6 1-1 8 7 7-1 4 3 4 1 11 5 5-1 3 12 11 5 3 4-1 1 4 12 9-1 2 13 13-3 15 3 21 11 12 1 5-10-5-10 2 11 0 12 10 7 2 9-1 15 3 6-2 18-1 13 4-16 10-11 4-23-3 14 7 10 0 3 1-10 4-9 0-28-15-150-45-46-1 0-2 53 1-8-5-12 3-3-2-12 2-12-2z"},{"n":105,"nm":"Río Coclé del Norte","rio":"Río Coclé del Norte","prov":"Coclé y Colón","km2":1735,"p":[79910,92254,98405],"w":false,"a":false,"v":"Caribe","lx":2862,"ly":1308,"bb":[2594,1003,3249,1558],"d":"M2845 1076l-12 10-1 5-10 7-3 7 3 2 0 6 4 2-1 3 2 2 3-2 5 2-2 4 5 2 0 3 4 1 1 6 3 3 3-2 6 1 3 3 0 5 7-10 5-3 3 3-2 6 6 2 6-5 0-4 3-4 9 0 8-6 9 9 6-3 1 6-4 3 1 7-3 1 1 5-2 5 2 1-2 2 3 4 4 0 5-4 10-3 3 7 11 0 0 3 7 5 1 5 1 1-2 8 2 3 0 4 3 11 5 3 4-1 2 3 8 0 1 4-4 3 4 2 6-6 7 0 3 4 5-1 1-4 5 1 4 6 5 4-3 2-2 7 1 5 10 3 3-3 2 1 4 4 1 7 3 3 9 1 0 4 4 0 4 4 3 6 5-3 4 7 7 0 7-3 5-4 6 2 10 0 5-2 2 7 3-2 4 2 2-1-2 4 1 8 4 0 1 2 4-2 1 0 5 11 8 9-2 7 2 9 2 1-2 5 3 3 12 4 7-1 10 9 8 1 1 2 4-1 4 6-1 4 2 3 5-1 3 4 10 1 4 8 0 5 6 5-1 5 6 5 3-1 4 9 9 9 1 5-1 9 1 8 3 5 5 5 4 22-7 10 2 11-4 11 0 11-5 7-7 1 1-6-2-2-1-4-7-3-1-4-7-1-16 11-6 0-6 5-5-2-1 2-14 0-6 3-8 0-1 1-7 1-5 4-5-2-8 2-4-1-6 4-5 0-2 2-1-2-15 0-3-2-4 12-9 4-1 8-8 15-5 1-4 4-7-7-8 1-12-8 0-4-7-3 0-15-2-3-7 0-1 3-6 6-8 1-6-4-10 0 1-10 10-6 0-4 1-2-4-11-3-2 0-6-3-3 5-8-5-16-3-4-13 0-7-6-11 0-2-3-4 0-4 8-5 3-5-1-3-6-23 0-4 1-1 3-10 1-9 9-7-5-9-1-6-7-4 0-5 5-5 0-9 8-13 1 0 8-5 0-5 7-5-2-8-7 0-9-6 1-8-7-2-5-7 2 1-2-5-3-3 3 0 5-18-1-6 4-2 2 0 6-4 2 0 8-2 3 1 7-3 2-8-2-6-9-7 2-6-1-9 12-5 0-1 6-9 3-4 6-7 3-12 0-9-9-14 0-6 4-1 6-7 2-4-2-7-7 1-13-3-6-4-3-4-1-3-13-4-8 4-6 1-8-4-8 13-10-1-3 5-5-2-8-5-5-7 0-6-5 4-6 3 0-1-2 4-2 4-9-3-2 2-6-8-9 5-7 7 0 1 2 7 1 0-3 9-7 0-5 4-3-3-6-1-11 3-5 3-1 5 0 2 2 2 0 1-5-4-8 6-1 6-19 3 3 8-1 1-6 4 0 4-2 13-1 1 2 4 0 7-3 4 2 2-3 0-2 6-1 2-11 2-2 9 0 0-3 2-1-3-12-4 1-3-2-6 1 0-5-2-1-1-2 18-5 3 0 5 4 5-9 3 0 3-5 3 5 5-4-1-3 2-4-5-4 0-9-10-3-1-11-4-2 1-4 3-2 0-5-2-2 5-12-4-1-6 4-5 0-2-6 0-4-8-8-3-10 1-11 2-2-2-6 10-6 4 1 4-6 7 1 2-4-5-4 0-5-3-2 0-3-8-7 2-6 7-10-4-11 4-5 0-3-6-8 0-7 5-1 14-7 4 1 1 5 3 1-1-5 9-9 11-3 5-5 12-3 5-5 6 1 7-1 3 4 0 5 3-2 1-5 6-2 8 9-1 8 3 9 5 3 5 0-2 4 8 2-1 5 2 0 0 3 7 2 2 3 0 8-7 6 1 3-4 4 0 4z"},{"n":106,"nm":"Río Chico","rio":"Río Chico","prov":"Chiriquí","km2":486,"p":[79733,92642,114230],"w":true,"a":false,"v":"Pacífico","lx":537,"ly":1390,"bb":[474,1318,678,1887],"d":"M668 1822l6 1 2 5-2 7 2 22-4 4-1 7 6 6 1 4-9-13 1-8 3-1 1-3-6 4-4 10-10 3-4 4-4 10-5 3-15-3-1-6-1-2-2 0 2 4-8 7-8-2-3-4-1-5-11-12-3-21 3-15-13-13 1-2-12-9-1-4-4 1-5-3-12-11 1-3-5-5-1-11-3-4 1-4-7-7 1-8-6-1 4-7-7-10-1-12 5-1 1-4-5-4 0-7-2-6 1-11-6-9 3-8-2-2-7-1 1-3-3-2 3-11-2 0-4-5 0-10-4-6 0-6-4-11-1-1 0-5-4-1-1-6-3-3 1-7-2-5 1-5 4-4-1-3 2-4-5-18 4-14 0-14 4-10 0-8-4-22-5-3 0-14-2-9 2-5-1-8 5-1 0-8-5-11 2-16-2-2 0-7-4-2-10-9 10-16 7-2 11-11 0-8 5-15 6-6 6-1 3-3 3 1 4-2 4 2 15 14 5 0 11-2 6 1 5-4 5-8 4 3 4 0 6-8 7 8-2 14 8 8 0 3-1 6-3 1-4 8 0 6-4 0-1 2-2 7 1 5-3 2 0 11-5 2-2 11-6 8 2 10-2 10 4 14-3 5-1 16 2 10 3 7 0 12 2 3-2 2 3 8 1 25 3 3 0 7-3 2 0 2 2 1 0 2-3 22 1 18-4 8 2 2-1 6 4 4-1 10 2 8 0 13-1 4 4 7 0 4 6 7-1 4 3 4-1 4 2 4-3 5 0 10 1 5-2 5 5 3 0 7 9 6-1 5 2 1 5-1 1 2 5 1-2 8 5 11 4 2 1 5 5 6-2 8 4 8 13 17 13 9 5 11z"},{"n":107,"nm":"Río entre Coclé del Norte y Miguel de la Borda","rio":"Río Platanal","prov":"Colón","km2":131,"p":[5319,6447,7092],"w":false,"a":false,"v":"Caribe","lx":2925,"ly":1007,"bb":[2793,950,2993,1077],"d":"M2845 1076l0-4 4-4-1-3 7-6-1-10-8-3 0-3-2 0 1-5-8-2 2-4-5 0-5-3-3-9 1-8-7-6 0-2-3-1-4 2-1 5-3 2 0-5-3-4-7 1-6-1 1-3 24-7 15-9 7 2 16 0 2 2 3-3 6 0 1-6 3-3 8-3 8 2 11-1 1-2-4-1 18-3 3-2 6-9 13-4 39 2 15-4-1 5 5 6-4 9 1 4 2 1 0 8-4 3-7-2-4 9-1 12 4 2 1 11-9 12-8 6-2-2-8 1-4 5 2 2-2 5-5-2-3 2-8 0-16 2-5-4-3 0-5 3-2 3 2 3-3 4-7-2-5 6-4-1-6 4-5 0-14 11-2-2-14 1z"},{"n":108,"nm":"Río Chiriquí","rio":"Río Chiriquí","prov":"Chiriquí y Comarca Ngäbe Buglé","km2":1925,"p":[224622,253472,298007],"w":true,"a":false,"v":"Pacífico","lx":787,"ly":1541,"bb":[577,1249,1055,1896],"d":"M783 1308l4 7 4 1 0 5 8 12 6-2 7 4 14 0 2 9 3-1 1 3 7 6 23-1 9 2 1-2 2 2 5 0 4 3 3-2 18 1 11 7 1-2 4 0 3-3 5-9 7 0 7 3 2 3 18 13 12-1 3 5 17 1 2-4 11 0 1 2 8-1 4 2 11-2 10 2 6-2 8 6-4 12 3 5 0 5-4 8 1 7 2 0 0 8-3 3 0 4-8 9-4 1-3 8 1 5 7 11-3 18-7 7 0 3-8 0-9 1-1 3-8 1-3 3 2 25-2 10 2 6-4 3-1 7-4 6 0 5-4 9 0 9 3 10-3 7-12 12-5 3 10 10 0 4 4 6-4 17-11 5-12 13-14 7-4 7-6 1-6 8-7 0-8 10-7-1-9 9-4 0-6 9-2 0-2 3-3 1 1 5-3 4-10 10-10 1-4 3-2 4 1 8-5 1-3 5-12-1-1 4-14 0-2 10 3 3 0 4-4 0-6 5-1 3-6 4 6 16-6 2-2 3 0 2 6 3-6 12 2 2-2 2 1 3-1 4 3 4-3 3-1 4 1 5-3-2 0-5-9-1-8 0-5 6-6-1-7-9 1-2 6-2-4-8-3 1 2 7-6 5 12 12 18-5 7 6 5 12-4 6-5 1 3 1 0 7-3 2-11-7-12-1-3-3-3-8-5-2 4 2 0 7 9 18-3 3-14 0-10 0-1-7-5-9-2-3-11 3 0-5-3 3-4-1-4 1-6 13-7-1-4-5 10 0 0-14 5-2-5-1-3 2 2 9-1 4-4 0-2-3-9 3-5-22 12-6 3 2 4-1 2-3 0-7 5 3 3-1 7-11 3 1 5 5 7-1 2-34 3-4 4 0 3-2 5-15 4 7 7 3 1-3-3-9 9-3 1-1 1-4-3 4-9 2-1 4 3 7-2 1-7-11-2 0-4 15-10 5-3 14-1 20-3 4-5-3-2-5-3-1-7 12-8-1-3 9-2 0-5-18-13 1 0-2 5-3 3-4 3-14-8 4 1 3 3-2 1 5-11 13 2 2 12 1 1 8-1 4-7 0-5 4-2 11-6 12-1-4-6-6 1-7 4-4-1-33-7-2-4-10-14-10-13-17-4-8 2-8-5-6-1-5-4-2-5-11 2-8-5-1-1-2-5 1-2-1 1-5-9-6 0-7-5-3 2-5-1-5 0-10 3-7-2-2 0-7-2-1 1-4-6-7 0-4-4-7 1-4 0-13-2-8 1-10-4-4 1-6-2-2 4-8-1-18 3-22 0-2-2-1 0-2 3-2 0-7-3-3-1-25-3-8 2-2-2-3 0-12-3-7-2-10 1-16 3-5-4-14 2-10-2-10 6-8 2-11 5-2 0-11 3-2-1-5 2-7 1-2 4 0 0-6 4-8 3-1 1-6 0-3-8-8 2-14-6-8 2-4-7-4-8-1 4-8-1-5 6-10 1-5 5-4-1-7-3-2 4-4 0-6 3-2 1-3 4 0 2-3 4-1 8 7 5 0 1 2 8 2 9-1 5 3 0 3 9 3 3-4 10 0 3 9 5 0 6 9 8 1 6 7 6-1 5 7 5-2 12 6 6-2 3 3 11 2 2 4 5 2 3 5 15 2 3-3 1-4 5 0 4-1z"},{"n":109,"nm":"Río Miguel de la Borda","rio":"Río Miguel de la Borda","prov":"Colón y Coclé","km2":633,"p":[10856,13571,15169],"w":false,"a":false,"v":"Caribe","lx":3021,"ly":1109,"bb":[2819,903,3156,1271],"d":"M3145 904l-5 4 0 3-3 1-1 4 5 9 5-2 0 3-6 5 3 7-4 5 2 1-1 5 4 2 0 3 3 0 1 4 0 6-3 7 2 3-2 3 1 2-8 5 7 5 3 5 2 8 5 7 1 11-2 2-2 7 2 9-8 12-5 2 0 10-4 2 0 9 3 2 0 5 3 3-3 1 0 2-5-2-7 2 5 2 4 4-1 5-5 2 1 6-3 1 0 4-3 1 0 4 3 3-2 4-2 0-6-4 0 3-7 6 2 4-2 4 5 2 4 8-3 4 6 2-4 2-1 3 3 3 1 7 5-1 0 4 3 2-2 4 2 2 0 9-2 2 0 5 2 2-6-2-6 6-9 2 1 8-4 5 1 10 13 5 3 6-1 2-4 1-2 4 3 4 0 4-3 2 0 4-3 3 0 7 2 2-2 3-4-2-4 2-2-7-5 2-10 0-3-2-5 0-6 6-11 1-3-6-3-1-3 3-3-6-4-4-4 0 0-4-9-1-3-3-1-7-6-5-3 3-10-3-1-5 2-7 3-2-5-4-4-6-5-1-1 4-5 1-3-4-7 0-2 3-2 1 0 2-4 0-2-3 4-2-1-4-8 0-2-3-4 1-7-4-1-14-2-3 2-8-1-1-1-5-7-5 0-3-11 0-3-7-10 3-5 4-5-1-2-3 2-2-2-1 0-3 2-2-1-5 3-1-1-7 4-3-1-6-6 3-9-9-8 6-9 0-3 4 0 4-6 5-6-2 2-6-3-3-2 0-10 13 0-5-3-3-4-1-5 2-1-1-3-8-4-1 0-3-5-2 2-4-5-2-3 2-2-2 1-3-4-2 0-6-3-2 3-6 7-4 3-4 1-5 11-10 15-1 2 2 14-11 5 0 6-4 4 1 5-6 7 2 3-4-2-3 2-3 5-3 3 0 5 4 16-2 8 0 3-2 5 2 2-5-2-2 4-5 8-1 2 2 8-6 9-12-1-11-4-2 1-12 4-9 7 2 4-3 0-8-2-1-1-4 4-9-5-6 0-6 17-7 11-3 15-1 16 2 7-2 7-5 3-8 12 2 24-4 6-3 8-10 7 0 6-4 18-3z"},{"n":110,"nm":"Río Fonseca y entre Río Chiriquí y Río San Juan","rio":"Río Fonseca","prov":"Chiriquí y Comarca Ngäbe Buglé","km2":1538,"p":[59332,83020,104305],"w":false,"a":false,"v":"Pacífico","lx":1124,"ly":1657,"bb":[804,1489,1352,2037],"d":"M1031 1489l7 12 6 4 32 8 13 6 4 0 3-6 4-3 6 1 7 5 9 0 9-2 6-4 0-2 5-1 11 0 14 5 21-5 5 4 4-1 6 3 11-6 6 1 4-1 2 4 6 6 22-1 6-3 13-1 6-11 8-8 16-4 3 6 2 0 7 14 0 3-5 7 2 7-4 5 4 5 1 10-6 2-3 11 10 1 9 4 8-3 9 11 12 9 0 10-2 2 2 3-9 20-12 5-3 8-1-1-10 6-1 5 2 3 0 3-3 1-9 11-15 3-1 6-8 6 1 6-4 0-7 4 1 7-3 1 0 7-7 1-7 10-7 3-2 7 2 1 0 8-2 1-10 14-4 0 0 6-4 6 1 3 3 1-2 27-10 7-1 6-5 1-7 8-1 10-4 2-2 7-1 13-6 6-7-2-8 5 0 9-9 14 7 16 4 16-4 6-5 22 0 6-5 17-12 17-5-6 3-7-4-11-6-4-2 1 5 2-2 3 5 4 2 6-4 5 5 6-7 7 6-1 12 6 2 3-6 3-44-10-13 3-49-10-5-3 0-6 7-3 6 4-7-8-6 2-3 5-8-8-4 1-6-4-1-12-4-4 2-6-1-8-3-4-4 1-1 1 6 2 1 8-2 7 3 6-5 1-4-6-3 0-3 2 6 0 3 6 5 2 2 6 3 4 12 4 3 8 5 4 3 7-4 5-4 0-2 4-4-2-12 6-1 11-3 11 2 6-3 10 3 4-12 0-1-2-4 1 1 3-8-1-1-7 18 1-6-3 5-8 4-1-4-16-2-1-4 4-12 0 6-2 4-10 9-3 0-5-5-3-1-4-5 0-5-3-9 1 2 9 2 2-1 2-2-1-2 2 4 4-1 2-11-6-16 3-4 3-2-9 1-5-5-6-4 3-19-3 0-13 4-4 7-1 8-6 10-1 2-2 15-8-7-2-3 4-6 4-3-2-1-4-4-1-8 13-6-1-4-8 7-14 6-6 4-8 6 5 0 3 1 1-1 6 5 0 2-4-3-4 5-7-3 1-5-8 10-1-1-2-5-1-13 5-1-5 5-6 2-4-4 3-8-4-1 6 2 4-2 3 2 7 1 2 3-1 0 2-4 3-5 1-6-4-3-7 0-8 5-3 3-9-1-5-3-2 3-6-1-9 9 7 0 5 3-2 7 1 6-8 5 5 0-8 3-1 5 3 0 6 6-6 0-2-6-4-2 3-4-3-9 2-6 9-5 0-2-3 3-14-7-1-4-7 4-7 11-1 19 3 9 4 11 2 4 3-2 1-1 2 4 7 5-1-6-5 3-4-4-6 16-2 5-7 4 2-5-5 2-7-4 4-1 8-5 3-4-1-2-3-1 3-14 0 0-6 4-1 0-2-4 1-1-2 2-5-3 3 0 8-4 3-26-6-17 2-5-8 7-18 5-8 9-6 4 4-2-5-7 1-14 8 1 9-3 6-3 1-6-5 0 6-4 0 10 8 1 3-2 4-13 12-1 9-2 1 1 7-7 19-14 7-10-1-2 5-18-17 2-6 9-11 0-5-8 12-8 9-9-4-9 0-2-11 4-4 10-2 7-9 7-5 14-2 6-3 2-4 0-8-2 3 0 8-5 0-4-4 2-1-1-1-6-1-5 6 1 3-5 2 1-10-2 4-11 7-1 6-8 6-2-7-10-7-1-3 3-4-3 1-2 2 2 8-4 1-3-2 2 4-8 5-1 6-8 1-3-2 0-5-1-2 1-4 3-2 0-2-3-3 1-4-1-3 2-2-2-2 6-12-6-3 0-2 2-3 6-2-6-16 6-4 1-3 6-5 4 0 0-4-3-3 2-10 14 0 1-4 12 1 3-5 5-1-1-8 2-4 4-3 10-1 10-10 3-4-1-5 3-1 2-3 2 0 6-9 4 0 9-9 7 1 8-10 7 0 6-8 6-1 4-7 14-7 12-13 11-5 4-17-4-6 0-4-10-10 5-3 12-12 3-7-3-10 0-9 4-9 0-5 4-6 1-7 4-3-2-6 2-10-2-25 3-3 8-1 1-3 15-1z"},{"n":111,"nm":"Río Indio","rio":"Río Indio","prov":"Coclé, Colón y Panamá Oeste","km2":580,"p":[49639,61799,70864],"w":true,"a":true,"v":"Caribe","lx":3202,"ly":1272,"bb":[3107,893,3295,1529],"d":"M3191 893l-2 7-4 2 4 5-6 6 0 2 5 4-5 3 0 3 4 2 0 4 2 0 2 4-1 8-3 1 3 8-3 4 1 5-2 4 2 5 4 2 0 3-1 4-7 6 1 4-6 3 4 10 4 0 5 3 7-2 8 10 3-4 4-2 4 5-1 12 10 8 6 1 0 2 3 5 0 4 8 11 0 6 6 4 1 4-3 5 2 5-2 2 8 7 5 10-2 6 2-1 1 4-2 5 2 10-2 2 0 5-4 10 3 0-1 3 6 3 1 5 0 6-6 6-7 4-2 3-7 1 2 7 3 4-4 5-1 12 7 3 1-7 4-1 5 6 1 7 7 3 1 3 4 1-2 3-7 5-5 8 6 4 2 5 11 3 8 5-1 4 4 5 2 13-1 4 1 5-4 4 0 6-4 3 1 2-2 4 1 3-8 7 0 5-5 7 2 2 1 7 4 4 1 10 2 2 0 8 3 6 3 1 1 3 5 2 2 8-4 12 1 5-7 8-1 4 2 8-2 3 2 7-2 3 3 6-2 11 2 1 3 13-1 8-3 1-2 7 2 6 0 14 8 5 2 2-2 6-3 1-4 6-4 0-2-3-3 1-3 5-19 9-7 9-5 0-3-3-4 0-1-6 4-2-1-6-4-2-1-2 5-4 2-4 0-11 4-11-2-11 7-10-4-22-5-5-4-11 1-9-1-7-9-9-4-9-3 1-6-5 1-5-6-5 0-5-5-9-9 0-3-4-5 1-2-3 1-4-4-6-4 1-1-2-5 0-13-10-7 1-2-2-5 0-1-2-7-3 2-5-2-1-2-9 2-3 0-6-8-7-5-11-1 0-4 2-6-3 0-7 3-6-2-2 0-7 3-3 0-4 3-2 0-4-3-4 2-4 4-1 1-2-3-6-12-3-2-4 0-8 4-5-1-8 9-2 6-6 6 2-2-2 0-5 2-2 0-9-2-2 2-4-3-2 0-4-5 1-1-7-3-3 1-3 4-2-6-2 3-4-4-8-5-2 2-4-2-4 7-6 0-3 6 4 2 0 2-4-3-3 0-4 3-1 0-4 3-1-1-6 5-2 1-5-4-4-5-2 7-2 5 2 0-2 3-1-3-3 0-5-3-2 0-9 4-2 0-10 5-2 8-12-2-9 2-7 2-2-1-11-5-7-2-8-3-5-7-5 8-5-1-2 2-3-2-3 3-7 0-6-1-4-3 0 0-3-4-2 1-5-2-1 4-5-3-7 6-5 0-3-5 2-2-5-3-2 1-6 3-2 0-2 3-4 11-2 4-5 18 2 6-2 6-4 3 0z"},{"n":112,"nm":"Ríos entre el Fonseca y el Tabasará","rio":"Río San Félix","prov":"Chiriquí y Comarca Ngäbe Buglé","km2":1202,"p":[72844,108240,135911],"w":true,"a":false,"v":"Pacífico","lx":1331,"ly":1840,"bb":[1155,1581,1578,2189],"d":"M1434 1672l7 27-3 4 1 6-3 11-5 2-2 3 5 4 2 12 2 3-2 6-1 1 2 6-1 3 0 6 1 7-4 6 0 2 11 4-3 4 1 3-3 4 0 7 3 2 8-2 4 1 5 0 10 13 8 5 2 4 9 0 2 4 1 12 5 2 1 9 3 4 0 9 14 13 16 3 5 5 3 4-3 4 2 3-1 3 4 2 0 4 4 1 0 8-3 3 3 6 0 4-2 1 1 5 2 3 6 0 6 6 0 4 4 1-1 19 4 5 10 1 0 6 3 4 1 17-4 2-1 5-5 3-4 4 2 16 4 5-3 6-4 3-1 8 4 3 0 4 8 4-4 9 0 5-5 1-3 7 0 6 5 9 2 9-3 3 1 9-4 5 1 6 4 2-6 4 0 4-10 13 0 4-3 0-3 4-6 0-2 3-4 0-2 3-6 1-4-3-10 1-3-7 1-9-2 1-2 4 0 9-4 6 1 12-1 4-14-5 0-9 9-9-4-8-9-10-18-8-2-8 19 6 2 3 6 1 13-13 4-1 4 4 0 3 4 0 8 3-3 9 3-5 4 0 1-5 7 2 4-3-9 0-11-4 0-3-3-1-3-4 0-1 2-1-1-2-6-1-3-7 2-1 0-4-3 1 0-7-4-8-34-51-2-5 6-9-11 5-6-3-2-27 1-2 3 0 1-5-1-1-1 4-3 0-2 9-3 1-7-8 0-5 5-16 4-1 2 2 1 1-3-5-6 1-1-5-3-4-6 1-3-4-6-2-4 6-6 0 7 2 5-6 4 3 2 4 8 0 2 9-5 12 4 12-3 18-2 0-3-7 3-6-1-6-9-7-2-9-3-1-12 0 13 2 4 11 6 5 1 18 10 9-10 1 10 3 8-3-3 13-3 4-4 1-14-5-12-6 0-7-5-2-5 0-7 7 7-5 6 0 2 5-4 3 7 5 7 0 7 7 9 2 1 8-5 3-5 7-5 2-16-5-6-3-17-20 1 5-33-11-3-3 3-4-5 5-26-7-34-13-6-4 15 4 4-2-7-1-19-7-26-3 16 7-34-4-8-4-1-4 17 4 9-2-26-6-3-5 1-7 20-27 7-5 11 2 3-6 6-4 2-5 0-2-5 7-6 2-2 6-8-4-5 3-6-4-3-20 9-5 2-4-13 9 1 14 6 10-1 5-14 17-2 1 1-6 4-4 1-4-7 7-4 1 1 5-2 3-8 3-3 9-11 2 6 2 8-2 3 5-8 2-21-2-12-15 0-5-5 3-3-3-6-1-2-3 11-17 5-13 2-20 4-14 4-6-4-16-7-16 9-14 0-9 8-5 7 2 6-6 1-13 2-7 4-2 1-10 7-8 5-1 1-6 10-7 2-27-3-1-1-3 4-6 0-6 4 0 10-14 2-1 0-8-2-1 2-7 7-3 7-10 7-1 0-7 3-1-1-7 7-4 4 0-1-6 8-6 1-6 15-3 9-11 3-1 0-3-2-3 1-5 10-6 1 1 3-8 12-5 8-16 1-5-2-2 2-2 0-10 6 4 2 7 4 5-2 4 4 2 5 7 14 14 14 8 4 4-1 7 4 4 1 6 5 1 2 4 4-1 3 6 3 0 4 3 0 4 6 2z"},{"n":113,"nm":"Ríos entre el Indio y el Chagres","rio":"Río Lagarto","prov":"Coclé y Colón","km2":436,"p":[68180,74056,79982],"w":false,"a":false,"v":"Caribe","lx":3267,"ly":949,"bb":[3179,761,3452,1098],"d":"M3452 822l-5 5-9-4-5 0 2 8-6 7-1 8 2 2-4 4 4 2 2 10-5 5-7 16-6 9 6 10 0 4-8 7 4 11-6 8 5 7 3 2 3 5-4 0-6 8 0 6-6-1-1-3-9 2-4 3-1 4-5 0-9 7-10-1-2 5-4 3-5-3-4 1-15 15-2-2-4 1 0 3-4 5 1 3-5 5-2 6-7 5-4 5-7 3-3 5-8-5-2 3-3 0-3 4 0 6-4 4 1 4-3 5 3 4-3 5-5 1-5 9 2 4 0 3-3 1-1 5 4 4-7 4-1 4-5-10-8-7 2-2-2-5 3-5-1-4-6-4 0-6-8-11 0-4-3-5 0-2-6-1-10-8 1-12-4-5-4 2-3 4-6-10-4 0-5 2-5-3-4 0-3-7-1-3 6-3-1-4 7-6 1-4 0-3-4-2-2-5 2-4-1-5 3-4-3-8 3-1 1-8-2-4-2 0 0-4-4-2 0-3 5-3-5-4 0-2 6-6-4-5 4-2 2-7 9 0 3-4 11-7 15-1 15-10 26-9 5-4 3-3 3-9 18-19 4-7 17-13 12-17 19-13 7-12 12-4 23 27 3 1 7-3 5 2 5 15 9-3 10 2 5-2 5 15-3 4 2 3 5-2 6 2z"},{"n":114,"nm":"Río Tabasará","rio":"Río Tabasará","prov":"Chiriquí, Comarca Ngäbe Buglé y Veraguas","km2":1593,"p":[77937,106267,132967],"w":true,"a":false,"v":"Pacífico","lx":1593,"ly":1752,"bb":[1429,1525,1814,2346],"d":"M1785 1577l-2 2-3 9-15 7-11 2-2 3-4 1-4 6 2 20-3 1-4 13-8 6 0 2-2 4 3 6 0 4-2 3 1 7 0 9-4 4-7 1 1 5 8 12 1 6 3 4-2 6 1 4-4 5 0 6-6 6 0 20 3 6 0 5-4 3 0 5 3 7-4 8 0 10 3 3 1 11-4 4-3 0-3 9 8 11-4 10 2 5 4 1-1 9 1 3-2 11-4 3 1 8 2 2 0 7-2 3 4 0 8 11 0 8-3 5 5 4-3 7-7 2 0 3 1 8 5 1 4 11 5 3 13 0 7 6 0 6 6-3 4 4-4 6-8 3-4 6 1 7-5 2-5 7-3 0-5 4-8-1-2 3-4 0-8 5-10 0 1 3-3 3-5 0-5-1-3 8-4 1-9 7-2 0-1 3-20 0-4 12-4 2 5 6-1 7-7 4 0 5 7 0 2 2 13 4 1 4-3 6 3 2 5-5 14-5 3 0 1 2 5-1 4 3 2 10 9 9-1 5 4 2 5-3 3-5 12 1 4-4 10 2 7 15-7 4-12 3-2 9 4 7 11 3 3 4 9 1 9 6 8 1 4-2 4 1-4 9 6 1 5 13-2 2 1 4 7 3 1 8 2 5 4 2 0 5 8 8 4 7-7-2-3 4 1 8-4 7 2 4-2 6-7 3-7-1-4 18 3 3 1 7-8 6 0 3-7 8 6 3 6-4 3 1 8-3 4 3 8 0 7 5 0 2-3 5 2 3-4 4-11 4-6-2-8 8 1 5-4 6-3 1-7-2-2-5-5-4-9 0-1-1-4 1-4-1-6 2-3-3-13 0-1-3 3-2 0-5-4-2-3-7-1 3-16 2-1 6-5-3-4 1-3-4-7 0-3-3-3 1-12-10 3-4-1-3-7-4-2-8-5-3-2-7-5-5-18-4-5-6-7-1-7 12-6-17-3 2-1-4-2 3-3 0 0-13 2-4 12-5 7-6 5-8 1-6 6-7-7 5-7 10 1 4-9 7-9 3-16-5 2-3 6-2 4-8-8-5 2-8 9 0 2-9 7-4 1-3-9 6-3 8-9 0-4 9 1 3 7 2 1 4-2 2-6 2-4 6 1 5 3 3 6 1 2 3-3 13 8 16-2 9-3 2-5-2-8-12-7-14-1-8-2-2-1-6-9-8-4-8-26-23 2-2 23 11-1-3-6-9 3-2-3-1-5 5-15-7-8-11-1-4 7-7 4 4 4-3 14 1-17-3 6-1 2-3 4 0 2-3 8 0 1-4 3 0 0-4 10-13 0-4 6-4-4-2-1-6 4-5-1-9 3-3-2-9-5-9 0-6 3-7 5-1 0-5 4-9-8-4 0-4-4-3 1-8 4-3 3-6-4-5-2-16 4-4 5-3 1-5 4-2-1-17-3-4 0-6-10-1-4-5 1-19-4-1 0-4-6-6-6 0-2-3-1-5 2-1 0-4-3-6 3-3 0-8-4-1 0-4-4-2 1-3-2-3 3-4-3-4-5-5-16-3-14-13 0-9-3-4-1-9-5-2-1-12-2-4-9 0-2-4-8-5-10-13-5 0-4-1-8 2-3-2 0-7 3-4-1-3 3-4-11-4 0-2 4-6-1-7 0-6 1-3-2-6 1-1 2-6-2-3-2-12-5-6 7-3 3-11-1-6 3-4-7-27 3-2 8 1 2-4 9-8 6 4 6 0 8-5 7 0 2-2 8 5 12-2 11-13 0-9 7-4 4-9 2-19 5-5 10 0 4-4 5-2 7 3 10-2 5 1 3 2 12 0 7-12 2-16 16-7 2-4 3 1 3-4 5 0 8-4 2-9-2-3 9-7-2-4-3-1-1-3 3 0 6 1 2 4 11 2 3 5 7-2 6 2 3-3 15 2 17-2 3 4 1 10 2-3 9 2 5 9 0 5 7 5 2-2 22 0 6 6 13 3 3 4z"},{"n":115,"nm":"Canal de Panamá","rio":"Río Chagres","prov":"Colón, Panamá y Panamá Oeste","km2":2832,"p":[703582,807145,900919],"w":true,"a":true,"v":"Caribe","lx":3964,"ly":769,"bb":[3243,554,4199,1495],"d":"M4174 665l5 3 2 6 11 2 1-2 3 4-2 7 1 5-5 3 0 3 2 4 4 0 3 3-3 8 1 5-8 11-7 3 1 7-3 2-4-1 0 3-3 1 1 3-8 8-4 2-6-1-2 4-3 0-3 15-9 7 0 5-3 3 1 11-11 6-11-4-14 1-6 8-4 1-3 7-7 6 4 8-3 8-23 8-5 6-8-9-8 3-8-2-3 8-2 0-3 6 0 5 4 4 0 6-3 3 2 2-4 5 2 5-1 5-8 6 4 14-3 3-5 1-9-7-4 1-4-2-10 1-11-12-3 6-5 0-7 12-7 1 5 4 2-1 2 4-5 2-7 13-2-2-8 0-2-6-3-1-3 0-5 6-4-2-2 2-2 0 0 6-3 3 11 9 0 9-7 4-3 0-3-4-6-1-4 1-2 5-2-1-3 3-5-2-5 2 0 5 6 4 1-1 0 4 5 8-5 0-1 5-4-2-2-6-15 5 1 4-6 7 4 9-5 5-3 0-9 6-16-1-2-3 1-2-2-7-4 0-2-3-5 5-6-3-3 5-2-1-4 4-4-1 0-2 3-3 0-4-4-3 2-5-6-10-5-1-1-4-2 1-1 2-2-1-3 7-3-2-5 4-3 2 0 6 4-1 3 3-4 22 1 5 7 3 1 3-3 13 3 2 3-1 1 3 0 3-2 0 1 4-1 4 4-2 4 4 3 0-1 4 5 11 0 5-34-25-12-17-15-12-5-9-3-9-15-25-6-6 0-2 8 1 5-5-2-5 5-2-4-2-2-4 5 0 5-5-1-4 10-8 0-2-4 2 0-3 15-16 7-25 0-7 4-7 1-12 29 5 4-8 2 7 3 0 8-4-3-6-3 1 0-5-4-4 0-3 2 0 4 4 4 0 13 6 3 10-3 4 4 2 4-2-3 8 1 1 4-1 0 5 6-9 0-8 3 6 5-1 4 3 2 0 1-5-2-1 2-2-2-4 7-9-3-2-5 2 0-3-4-2 2-3 4 2 0-5 7-1 2 1 0-4 3-1 1 3 5 0 5 8 5 1 4-3 0 4 5 1-3-3 0-6-3 0 0-3 4-2 4 3 4-1-4-7 1-5-4-3 1 8 4 6-7-2-9 4-3-2 2-4-4 1-1 3-2-5-4 0-4-4 1-6 9 0-2-5-5 3-3-4-1 5-3 2-2-1 2-4-4 2 0-3-3 1 1-4-5-5 2-3-6-5 1-3-3-1 2-2 3 0-1-1 3-1 0-4-6 2-2 2-1-1 2-6 6-2 0-1-5 0 0-3 7-3-6-1-3 3-4-6-1-4 3-1-2-2 3-3 3 2 1-6-4 2-3-3 2-11 11-12 3 0 3 5 4 1-6-8-3 0 1-4 8-10 7-2 4-17 2-1 2 3 2-1-3-3-7 1-3-3-3 1 2 11-2 2-3-1-3 3-5 11-4 2 0 4-4 5-2-1-4-10-4 1-4-3-1-5-2 1 0 6-9 6 12-4 0 3 6-1 3 10-4 5-1 10 4 0 1 2-5 3-3 12-6 11 2 5-2 0-3 4 0 2 5-2-2 2 2 6-2 3-3 4-3 1 0-10-1 0-3 3 2 5-1 6-7 4-4-1 6 6 1-5 4-1 3 2 0-4 3-3 7-5 2 0 0 6-2-1-1 3 5 0-1 3-7 4 0 3-5-3-2 1 0 2 8 4 3 4 1 10-1 6 2 3-9-2-3 2 2-4-3-1 0-3-7-3-6 0-2 1 0 3-4 6-4 0 0 2 3 0-2 3 1 3 5-2 1 4-7 2-3 6-13-3-7 1-3-3-3 1-4 15-3 6-8 34-8 7-4 1 7-7-3-2-4 2-4-3 3-4-1-2-4 3 4 12-3 9-10 9-1 4-2-1 0-3-3 4-4 0 1 6 4 7 0 3-7 5-12-5-21-1-7-4-22 1-17 8-8-3 4-5-6 0 0-3 3 0-5-2-1-2-3 2 1 3-1 1-3-7 3-5-1-5 3-1 2 4 5-4-2-2-2-7-3 1-1 5-4 2-3 5-4-2-5 0 0-3 5-5-5-3 3-5-2-2 2-2-4-4-2 4-2-2-5-1-1-4 2-6 4 4 2 0 0 2 5 0-2-7 3-3 5 3 3 9 0-10 3-4-8-2 5-1-4-1 3-2-1-2 1-1-4 0-2-1-2 3-2-2-4 0 0-2-5-4-1 1 1 5-3-5-5 0-3 3-1-6-2 0-1 3-2-1-5 2 3 4-7 1-1 3-5-1 4-2 2-7 2 1 10-6-1-5 4 0 7 2-2-11-4-3-4 2 3-1 0 4-3 0 2 2-1 3-3-1-2 6-2-1-1-3-5-1-1 2 3 0 2 4-5 1-3-3-5 1-1 0 1 4-9 2-3-1 5-2-2-2-6 2 0 4-3 2-6 0-1-5 5-1-1-8 2-3 3 2 1-3 6-1 3-4 5-1 3-3 1 4 2 1-1-7 2 2 3-2-1-3 2 1 2-1-3-9 3-2-2-1 0-2-1 2-5-1 2 3-3 3-1-3-2 4-4 0 2-6-6-6 0-1 5 0 0 2 3-1 0 3 4-4 2 1 4-1 3-17 3-2-4 1-1 3-3-6 4 2 4-3 0-4 2 0 4 6-4 9 4-5 3-1 3 3 2 10 5 6 1-3 4-2-2-1-4 1-3-11 3-1 0-3 2 2 2-1-1-7 3 0 1 2 3-1 5 0 3 3 2-1-1-3 3-1 0 4 3 4-2 5 4-3 1-5 4 0 4-3-2-1-5 0 0-2 3-1-1-2 1-3-8-6 1-2 11 3 1-2 7-3-13 3 10-5-4-3-1 4-3-3-1 3-10 3-12 9-14 4-5 5-2 0 1-4-3 0 0-2 4-4-6 1-3-3 1-2-1-2 2-1 3 4-1-6 4 0 2 2 0-4-2-3-6 0 6-4-8 0 1-5-5-2 0-2 4 1 0-3 3 1 2-3-3-4-2 3-2-6 2 8-3 0-1-3-2 2 0-11 3-5 1 0 0 5 5-7 4 1-3-3-5-1 4-2-1-4 3-4 2 2 6-2 7 1-4-2 1-4-10 2 2-5 3 0 1-2 2 1 0-15-2 1-1 4-1-3-3 0 0-4-3 2 1 6 5 1 1 3-1 2-3-4-2 1 2 2-4-1 2 4-8-3-11 2 0-2 4-2 12 0-2-2 2-1 0-2-5-1 2-2 4 0-1-1-4 0-2 3-3 0-1 3-2-1-2 3 2-7 12-3-2-4-3 2-3-3-8 8 0 3-3 4 0 9-8 4-2-2 3-2-3 0 0-2 2 0 2-2 2 1 2-1-5-4-4 2 0-2-2 0-1 10-4 2-3 0-1 6-4 6-3 0 2 5-5-2 2-12-1 0-1 4-2-4 0 9-3-2-3 2 2 2 0 6-2-2-4 1 0 4 3-1 3 3 3-1 0 4-4 0 0 3-1 1-3-5-4 5 2 5 3-1 2 4-11 0-1 4 4 2-18 17-22 2-7-7 1-2 7 0 2 2-1 6 22-6 3-4 7-5-2-2 1-6 7-5 1-9 3-2-2-5 4-7-1-5 6 0 2-7 4-3 4 3 0 5 2 1 2-3-1-2 10-8-2-4 4-6 7-2 1 3 2 0 4-3 1-5 9-6 4-5 1 4 5 5 3-1 10 6 3 8 4 0 14-3 3 2 1-6 6-1 4-4 2 2 2-1 9-9 7-1 1-6 10-3 12 1 8-7 9 1 13-4 6 2 8-2 4-6 6-2 8-7 7-2 3-4 0-4 13-8 4-8 12-8 4-13 17-5 4-4 2-2-4-5 4-6 5 0 5-7 5-2 4-3 4 0 7-5 7 2 4-6 7-2 2-11 7-3-1-6 4-9 2-1 1 2 6 2 10-14 5 1 4-5 5 1 0-3 2 3 2 0 0 2-2 5-5 3 5 6 4-1 2-3 1 0 5-5 10-1 1 4 11 4 0 8 11 3 4-1 1-4 13-9 5-1 2 2 3-4 3 0 4 4 7-1 8 9 7-4 5 3 3-1 1-14 4-2 8 1 5-3 11 3 7 5-1 8-9 7-5 7 1 3 6 1 7 7 0 2-4 4-2 5 5 2 2 5-2 5 4 7-1 4 1 2-2 3-4-2-2 3-3 1-3 9-5 2-1 3-11 3-4 4-3 9 4 5 5 0 2-6 3-1-1-2 12-6 4 0 3 1 4-1 1-2 5 0 9 3 3-10 15-8 1 3 6 0 0 6 5 5 9 1 2-3 5-1 4-4 3-9 5 1 6-4-1-8 3-5 4-3 8-1 8 1 4 7 0 4 11 6 4-1 3 7 5 3 7-3 0 4-3 3-1 5 2 3 5 1-1 5zM3452 822l1 1-5 5-8-2-1 1-1 11-7 13 2 1 2-3 4-1-1 2 1 3-4 2 7 2-4 3-3-1-1 9-5 3-5 9 0 6-3 7 1 5 5 3-5 6-1 11-3-2-1 1 1 4 3 4-1 6-3 2 0 3 2 4 4-1-2 12-4 9-3-1 2 4-2 0 1 3 3 0 0 5-4 0-7 6 0-4 4-3-3 0-4 2-3 6-2-1 1-4-3 1 0-4 4-3-6 0 0 13-6-4-1 2 3 2 2 4-3 3-1-2-2 1-4-3 2 5-3-2-2 2-2-1 1 7-2 2-1-1-1-11-2 1-1-9-4 7-7-1-3 2 2 2 7-1 4 5 0 2-5-3 1 10-5-10-2 5-2-6-6 9-1-6-1 1-4 9-2-6-2 0-1 11-2-2-2-5-4 3-4-4 1 6 9 9 0 2-9-4 6 7-3 0 1 5-3 3-8-7-2 1 7 9-3 1 3 5-10-5-1 1 5 7-2 3 5 1 1 4-3 1 5 1 0 3-3 0-8-8-2 0-1 1 5 4-1 1-13-5 0 2 10 6-5 1-3-1-1 7-7-2 0 6-3-2-3 4-5-1-1 2 8 7-1 3-6-1-5-4-6-2 2 4-1 5 6-2 5 3 0 4-7 6 5 5 2-4 3 0 3 8 2-4-4-10 4-6 2-2 5 1 2 6 9-2-3-3 0-7-4-3 5-4 2 0 1 3 3-2 3 2-3 5 3 2-1 6 3-1 2 1-3 6 0 2 3 1 4-7 3-2 1 3-4 2-2 11 2 8 3 5-2 5-5 2 4 3-1 3-6-1 0 5 6-2 1 3 1 0 3-3-2-5 5-11-4-13 3-1 1-7 1 0 0 6 4 4 5-7-1-10-7-5-6-8 1-10 4 6 1-5 3 1 0 10 6-5 0 6 4-2 1 6 2-2 2 1-2 7 4-2 2 9-8 0 2 4-3 5 4 1 3-6 3 6 5 4-2-7-3-1 2-8-6-14 1-9-2-1-1 6-2 0-3-4 1-4-4 3-3-2 5-2 0-4-7 3-4-2-3-4 2-4-2-5 2-2 0-7 2 3 1-4 3 0-2-4 1-3 2 0 0 4 3-2 2 3 4-1 0 1-1 2-10 5-1 8 1 2 5-10 5 0 2-3 3 2 1-3 3 0 2-6-6-1 0-7 5 1 7-1 1-5 4 4 2 0 1-3 3-1 0 3 3 1 0 4-3-1-1 4-3-5-3 1-1 4-8-1 3 4 4 1-3 0-1 7-6 3-7 6 3 0 2 4 1-7 7-1-4 4-1 5 1 2 3-1-1 5 2 0 1 7 2-5 0-9 3 3 0 6-2 3 0 14 1 5 3 5 0-8-2-3 1-11 5 4 0-6 2 2 2-4 0 7 3 0 0 5 4-3-2 6-5 4 2 0-1 7 3-1 1-4 1 7-5 7 2-1 2 1 2-2 3 3-2 1 1 3-3 5 3-2 5 1-4-13 4 1 1-2-2-4-3 1 1-3-2-3 2-1-4-2 4-4-2-1 1-2-1-7 2 2 1-5 6-5 3 6 3-3 0 4-2 1 0 2-2 2-2 8 3 4 1-4 2 0-1-3 2 0 0-4 4 5 1-7 3 2-1 6 2 3 2-3 0 5-3 2-2-3-1 0 0 3-2 1 2 4-3 2 1 2-2 2 4 7 1-7 3-5 1 1-1 17-2 8 1 7 3-11 6-7-2-12 3-3 2 3 2-1-2-7 1-2 3 2 0-7 12 6 1-1-9-7-3 0 5-3-2-4-7 1 0-2 3-2 1-3-6 0 0-4 2-1-1-3-5 2 2-4 2-1 0-8-4-3-4-1-1-5 5-1-3-5-4 0-3-2 2-1 3 1-1-4 3-1 0-8 1 0 2 3 4-4 2 1-1 2 3 4-5-1-4 2 8 3-5 5 5-1 2 3 1-5 4 2 0 3 3 1 1 6-2 4 3 1 1-3 3-1 1 3-2 2 2 2 2-3 2 1 0-4 5 2 0-2-8-5-1-3-3 2 0-3-3-1 0-2 4 0 0-2-3-2-4 2-4-4 3 0 1-5-2-1 2-2-3-11 5 1-1 2 1 4 8 2 2-4 4 4 1-5 1 6-3 4 4-2 1 2-3 3 4 0-2 4 3 0 2 11 2-1 0-4 2-1 1-3 8-3 2-4 3 3 6 1-5-5-11 1-5-8 0-4-3-2-1 3-3-1-1-6 3 0 0-4 4 2-4-5 3 1-1-4 2-1 4 2 2 7 1-4 4 3-4-9 13 5 5 7 1-2-3-4 5-1-20-7-2-1 2-2-12-3 5-3-5-4 6-7-5 3-3-6-2 4 2-8-4 2-2-2-2 3-2-2 2-2-6-1-2-2 5 0-2-2 1-6 13 4-5-6 5-7-9 4-3-6 5-4 3 1 1-6 2 0 2-9 3 0 2 9 4-1-1 3 2 2 3-2 0 7 3-2 3 3-6 2 5 0-4 4 7-2 0 3-4 0-3 3 3 1-1 2-2 1 3 2 1 4 2-10 2 0 0 8 6-4-2-5 3-3-1-6 3 0-1-4 2-1 4 2-2-4-4 0 7-8-2-2 4-3 6 0 1 2-3 4-6 3 0 5 5 2 1-2-2 0 2-2 2 3-1 20 2 2 1-3 2 1 1-2 1 3 6 1-1 2 2 2-4 0 0 3-3 1-2-3 1-2-4-1 1 4-3 2 4 5-2 6 6 2-3 4 8-1-5 5 4 0 2 5 4 1 4-3-2-4 3 0-1-7-2-4 3-3 5 3 2 0 0 3 5-3-1 4 2 0 1 4 6-1 0-7 3-1-2 4 4 1 1-2 1 5 2 1 0 3 4 2-1-9-6-10 4 3 4-2 0 3 6 3 2 7 3 3-1 5 8-6 0-3 5 3 0 7 4 2-2 4 4 6-7 3-7 5-3 0-2-2-3 7 7 2-3 2 0 4-6 4-3-6-6-1 0 3-3 0 0 2 4 0 3-2 2 4-5 1 1 4 5-3 2 1-1 6 1 5-3 5-3-1 1-7-4 2-5-3-1-3-1 3-2-3-1 4 4 1-2 3 4 5-4 0-3-6-1 2-4-3 1-5-2 2-1-3-4 9-2-3-5 3 1 2 3 1-1 2-6 1-1-8-3-2-2-7-2 1 0 5-6-6-2 2-3-1-1 4 8 2-2 8 4 1 4-3 3 8-3 2 1 2-3 3 1 1 2 0 0 3 7-1 0-3 4 0 1-3-1-2 3-2 2 3 0 2 3 1-2 6 2 2-4 2 7 5 2-5 2 3 1-1-2-9 4 0-2-5 5 4-1-3 3 0 2-2 1 5-3 5 7 13 2-2 3 1-1-2 3-7-3-3-2-8-3-4 5-8 0 12 2 0 0-5 3 0-1-17 2 2 2-1-3-3-1-4 3 0 2-5 2 1 0 3 5-2 0 3 4 2 0 7-2 2 2 8 5 3-5-9 4-3-2-4 2-1-1-4 1-1 1-4 11-2 3 1 1 0 5-5-2-1-3 2-5-1-3 4-5 0-3-3-3 4-2-3-3 0 1-4-4-1 3-6 4-4 3 6-2 4 6-2-3-4 1-5 5 1-1-3 2-3-1-3-1-12 8 5-1 4-2 1-1 9 1 1 1-4 1 2-4 9 4 4 1-2-1-7 6 0 0-1-3-2 5-2 2 3 2-1-1-5-3 0 1-3-2 0 0-3-1 0 4-5 3 4 3-3 4 1 0 4 2 6-1 4 4-6 3-1 2 1 0 3 3 0 2 2-2 3 1 2 3-2 1-5 5 7 4 0-1-5-8-7 1-3-2-3 7-8 3 3-3 4 3 0 0 4 5 3 1-2-3-3 1-1 5 3 2-2-3-4 0-6 10 4 0 4 12 3 1 4 4-1-2-4 3-4 7 1 4 5 4 0 2 3 2-3 9 1 0 3 3 0 10 17 11 25 12 8 19 24 32 23-9-2-9 0-8-6-2-4-10 6 1 3-4 6 2 4-2 0-3 3-2-2-15 1-10-2-2 6-10 6-3-3-6-1 1-4-5-2-7 3-4-2-1 6-10-2-8 11-11 1-1 2-3 1-10-2-7 1-9 5-1 10 2 0 3 6-6 5-4-2-6 0-8 3-9-4 0 8-4 4-3 1-1 4-8-1-3 4-3-1-5 3-3-2-11 6-3-2-4 6-5 2-3-4-9-1-2-3-4-2-3 8-8-3-4-4-2 3-7-1-7 3-5 6-2-2-4 2-4-2-2 4 0 5-8 7-7-2-4 3-4-1-13 7-2 4-3 0-1-4-7-2-5 11-4 3-3-2-3 2-3 7-10-9-7-4-1-5-7 0-1-2-5-1 1 5 8 6-2 3-1 11 4 12-5 11 4 5-2 17 3 5 9 1 0 1 0 5-2 0-3 5 3 2 2-1 3 1-2 22 4 3-8 11 1 3-10 8 2 17 5 8 0 7 2 2 1 7 6 6 5 1 4 7 2 10-3 7 4 11 17 13-3 6-3 1-2 10-6-2-5 5-13 5-7-2-16-8-9-1-3-2-10 4-2-3-5 0-5 2-6 9-10 0-1 6-4 3-2 6-4 3 0 3-10 12-12 9-6 2-2-2-8-5 0-14-2-6 2-7 3-1 1-8-3-13-2-1 2-11-3-6 2-3-2-7 2-3-2-8 1-4 7-8-1-5 4-12-2-8-5-2-1-3-3-1-3-6 0-8-2-2-1-10-4-4-1-7-2-2 5-7 0-5 8-7-1-3 2-4-1-2 4-3 0-6 4-4-1-20-5-7 1-5-8-4-11-3-2-5-6-4 5-8 7-5 2-3-4-1-1-3-7-3-1-7-5-6-4 1-1 7-7-3 1-12 4-5-3-4-2-7 7-1 2-3 13-10 0-10-7-4 1-3-3 0 4-10 0-5 2-2-2-10 2-5-1-4-2 1 1-4 2-6 7-4-4-4 1-5 3-1 0-3-2-4 5-9 5-1 3-5-3-4 3-5-1-4 4-4 0-6 3-4 3 0 2-3 8 5 3-5 7-3 4-5 7-5 2-6 5-5-1-3 4-5 0-3 4-1 2 2 15-15 4-1 5 3 4-3 2-5 10 1 9-7 5 0 1-4 4-3 9-2 1 3 6 1 0-6 6-8 4 0-3-5-3-2-5-7 6-8-4-11 8-7 0-4-6-10 6-9 7-16 5-5-2-10-4-2 4-4-2-2 1-8 6-7-2-8 5 0 9 4 5-5z"},{"n":116,"nm":"Ríos entre el Tabasará y el San Pablo","rio":"Río Caté","prov":"Veraguas","km2":881,"p":[12263,13241,15342],"w":false,"a":false,"v":"Pacífico","lx":1911,"ly":2503,"bb":[1595,2262,2090,2650],"d":"M1814 2311l2 3-1 6 2 3-2 2 7 6 0 3 4 6 9 8 2 5 10 4 4 0-2 8 3 2-4 5 0 5-4 8 22 9 3-1 3 2 0 5 4 2 3-6 11 0 11 7 8 1-1 4 2 4 11 1 4 3 3-7 10-1 6 5 5 0 6-3 6 4 4 5 15 1 3 3 6-3 3-4 5 1 2-1 6 0 6-1 20 6 8-1 2-3 5 0 3 6 8 0 4 3 4 0 5-2 0 3 3 0 3 6 10 2 3-3-2 5 2 9-4 7 0 6 5 12-9 20 1 7-4-3-6 1-9 10-12 2-1-4 8-6 6-8-3-5-6 0-5-5-5 0-2 3 4 0 11 6 1 4-12 6-2 7-3 1 3 8-6 1-5 5-5-6 1-19-7-7-11 6 2 1 8-1 5 2-2 17 2 9 10 5 1 4-18 9-4-1-3-6-5-4-4 2-1-4-5 0 3 1 1 6 6 0 3 3-2 6 3 0 4 3 0 5 3 1 7-2 5-9 3-3 4 0 4 3 12-5 9 1 1 2 0 15-15 30 0 4 10 17-5 12 0 8-6 10-18 14-10-1-13-18-4-1-2 2-2 0-7-4-6-6-10 3-4-2-6-3-1-6-12-14-2-4-11-3-6-5-2 1-1 2 4 1 0 4-5 5 5 3 0 2-3 1-9-8-14-3-7 1-7-2-17-9-13-2-4 1-12-8-4-7-5-2-4 2 1 8-5 3-6-3-3-4-5 2 0-5-4-2-4 6-6-2-10 1-1-7 2-6 4-3-2-4-7-2 0-3-2-2-5 2-7-8-5 2-10-4 2 4-2 5-11-5-2 6-3-4-4 1 3-6-8-2-1 4-3 3-2-1 1-3-1 0-2 3-5 2-1-6-8 0-2 1-2-5-6 1-4-2-9-6 1-5 6-2 2-4 6 0 2-3 8-1 3-2 7 3 4-4 0-5-4-1-2-4 5-4 6-8 0-3-8 0-1-5-5-2 0-2-5 2-2-1-1 2-5-3 1 7-6-1-5-6-6 2-9-4-9 6 1 3 6 0-6 6 6 5 1 11-11-12-11-5-12-12-6 1-1-7 8 0 3-4 1-4-3-3 1-3-4-3-4 4-5 1 5-4 1-8-13-8-1-5 2-6 4 1 0-8 3-6-4-10 7 2 3-2 1-6-4-5 1-12 5-1 3 3 10-8 0-3-18-5 3-2-5-5-12 2-5 3-4-2-1 3-3-2-6 0 0-11 3 0 4 5 4 1-2-9 6-3 1-5 4-3-3-1 0-4-4 0-1-4-6 1 0-2-1-1-2 2-2-1-1 3-13-7 5-9-7-21 4-9 7-1 11 7 9-3-3-1-1-4-2 5-4 0-5-3-5-6 3-11 6-8 7 1 5 6 18 4 5 5 2 7 5 3 2 8 7 4 1 3-3 4 12 10 3-1 3 3 7 0 3 4 4-1 5 3 1-6 16-2 1-3 3 7 4 2 0 5-3 2 1 3 13 0 3 3 6-2 4 1 4-1 1 1 9 0 5 4 1 5 3 1 8 0 4-6-1-5 8-8 6 2 11-4 4-4-2-3 3-6z"},{"n":117,"nm":"Ríos entre el Chagres y Mandinga","rio":"Río Cuango","prov":"Colón, Comarca Guna Yala y Panamá","km2":1207,"p":[260813,368061,426870],"w":false,"a":false,"v":"Caribe","lx":4107,"ly":551,"bb":[3370,410,4505,823],"d":"M3881 414l-3 2-1 4 5 3-2 5 11 2 1 5-3 3 7-1 0 2-5 4-6 0-4 7-5 0 0 3-2 1 7 2 14-3-3 8 4 3 0 5 3 2 3 0 3-15 2-1 5 2 4-1 10 5 14-4 4 7 7 0 3-3 0-8 6-5 0-5 2-1 6 6 8 1 11-5 1 7 11 10 10-1 8 5 18 1 4 3 9 3 2-1 0-3 4 0 15 8 15-3 1-4 12 5 4-5 8-1 26 18 4-2 6 1 2-5 4 3 11-2 10 7 6 6 2-3 2-1 4 5 8 1 18 10 17-1 4-2 2 5 19 5 13-11 6-1 2-5 6-2 16 6-2 4-7 4 6 1 3-4 3 0 3-3-4-4 0-3 8-5 7-2 5 7 10 3 9-4 21 0 10-5 10 4 6 0 3-4 17-1 12-5 12 2 6-2 7 2 15-2 9 3 9-4 10 5 13-4 7 5 0 2-11 13-7 1-6-6-8 2-1 5 7 1 0 2-10 8-7-4-11 2 0-2-4 2 2 1-1 1-6 2-4-3-9 0-3-4 0 6-3-2-3 2-6 1-7 4-13 17 0 3-7 1 1 7-9 6-8-6 1-2-2-3-3-1-5-5-7 5-3 0-2-3 0-2 2-3-1-3-7-4-4 0-1-3-5 2-1 6-3 1-13 1-5-4-5 2-3-5-2 0-4 3 1 6-3 5 3 7-1 7-4 1-1 4-10 2 0 4-6 9 3 3 0 4-4 3-8 0-2 4-5 1-4-7-4-2-4 1-3-3-3 4 0 4-5 5-8-1-2 4-5 1-3 5 3 8-4 2-1 4-3 2-8-1-9 10-10 2-4 12-2 0 2 6-10 17 1-5-5-1-2-3 1-5 3-3 0-4-7 3-5-3-3-7-4 1-11-6 0-4-4-7-8-1-8 1-4 3-3 5 1 8-6 4-5-1-3 9-4 4-5 1-2 3-9-1-5-5 0-6-6 0-1-3-15 8-3 10-9-3-5 0-1 2-4 1-3-1-4 0-12 6 1 2-3 1-2 6-5 0-4-5 3-9 4-4 11-3 1-3 5-2 3-9 3-1 2-3 4 2 2-3-1-2 1-4-4-7 2-5-2-5-5-2 2-5 4-4 0-2-7-7-6-1-1-3 5-7 9-7 1-8-7-5-11-3-5 3-8-1-4 2-1 14-3 1-5-3-7 4-8-9-7 1-4-4-3 0-3 4-2-2-5 1-13 9-1 4-4 1-11-3 0-8-11-4-1-4-10 1-5 5-1 0-2 3-4 1-5-6 5-3 2-5 0-2-2 0-2-3 0 3-5-1-4 5-5-1-10 14-6-2-1-2-2 1-4 9 1 6-7 3-2 11-7 2-4 6-7-2-7 5-4 0-4 3-5 2-5 7-5 0-4 6 4 5-2 2-4 4-17 5-4 13-12 8-4 8-13 8 0 4-3 4-7 2-8 7-6 2-5 7-7 1-6-2-13 4-9-1-8 7-12-1-10 3-1 6-7 1-9 9-2 1-2-2-4 4-6 1-1 6-3-2-14 3-4 0-3-8-10-6-3 1-5-5-1-4-4 5-9 6-1 5-4 3-2 0-1-3-7 2-4 6 2 4-10 8 1 2-2 3-2-1 0-5-4-3-4 3-2 7-6 0 1 5-4 7 2 5-3 2-1 9-7 5-1 6 2 1-13 12-3-1-2 2-4-1-10 4 1-6-3-2-6 0-8 9-1-1-9-8-5-17-6 3-7-3-11 3-6-14-7-2-7 2-8-9-12-18-4-2 1-6 15-13 8-15-1-4 4-5 13-6 6 2 4-5 8-1 3-3-2 6 5-2-2 9 4 6-1 4-4 4 2 2 0 11 1 2-2 2 2 2-2 2 4 3-5 2-3 5 3 5 5 4 9 2 11-1 6 1 0 35 2-4 1-21 3 11 2-2-5-21 3-14-1-7 12-16-1-4 1-1 4 7-3 9 4-4 1-6-3-7-6 0-7-6 10 1-3-11 2-1 4-1 8 2 6 14 0 3-4-3-3 2-1 2 6 1-1 3 3 2 5 2 3-1 1-2-4-1-2-5 2-3 0-3 3 1 4-2-3-6-3-1 1-6-2-8-3-3 3-2 6 0-10-5 8-5 3 3 1 6 6 0 0-3-8-8-1-3-4 1 3-6 4 0 4-7 15-2-1 4 2 1 3 6-1 6 5 0 5 2 0 3-4-1 3 5 4-4 2 6 1 1 4-1-1-8-2-5-3-1 2-3-4 0-1-2 1-5 7-3-1 4 3 2 4 0 2 4 0 2-4 0-2 3 7 12-6 3 0 2 2 2 8 1 2-7-1-3 5 2-3-5-5 0-1-3 7-4 1-5 5-1 5 6 0 6-1 4-5 0-1 3 11-4 1 12 4 3-3 12 2 1 6-8 2 2-2 4 3 0 3-4-1-3-5-3-1-4-5-2 1-11-2-3 2-2-4-1 1-3 3 2 0-4-6-3-6-9 2-5 6-6 0-4 7 4 1-5 2 0 1-4 5-3-1-7 8 2-3-5 1-3 7 2 0-2-3-2 2-3 4 1 7-4 3 1 4-3 20 2 5-3 10-11 3-15 11 0-3-7 2-7 6 0 3-4 7-1 3-6 4-3 5 0 8-6 2-4 5 2-7-9 6-8-1-4 7-9 7-3 7-2-1-2-7-4-3-6 5-4 5 0 4-4 4 0 8-4-1-8 4-1-1-2-4 0-3-5 0 8-9 3-4 3-8-1-1-5-3-1 1-3 5 1 5-6 5-2 0-5 5-3-1-4 6 1 3-2 0-4 3 0-2-6 10 2 4-7 9-3-1-10 9-2 3-5 9 1 3 6 6 0 2-2-2-2 8-3 4 7 7 1 3 4 3-7 6-2 6-8 9 4 2-7 10-8 12 0 5-4 1 4zM3468 796l3 22 2 1-3-25-2 2zM3454 809l-2 1-7-3 0 6 9 1 0-5z"},{"n":118,"nm":"Río San Pablo","rio":"Río San Pablo","prov":"Comarca Ngäbe Buglé y Veraguas","km2":2473,"p":[80466,88121,94748],"w":true,"a":false,"v":"Pacífico","lx":1885,"ly":1798,"bb":[1641,1577,2116,2435],"d":"M1785 1577l13 2 11 8 3 4-1 4 2 2 0 4 4 5 2-2 6 0 8 2 9 0 4-1 5 1 5-3 9 0 6 3 4-3 0-5 4-2 2-5 3-2 0-6 13-5 12 11 15 0 16 15 10 4 10 13 3 12 12 15 7-2 6 1 4-4 9-2 6 0 6 2 6-1 11 11 3 6 4 0 1 4 5 2 0 4-4 6-7 5 0 2 19 15-11 3-2 4-1 7-5 4-2 6 3 3 1 8 7 4-1 7 2 5 6 2 0 4-6 2 0 6 4 1 1 4-2 8 7 6 3-3 5 0 1 4-6 8-1 4 6 35-6-1-1 2-5 1-2 4-4 1-3 7 3 7 6 5 0 9-7 8 0 3 5 5-4 3 0 5-3 2 6 7 3 10-7 13-1 8 10 0 3-12 3-2 3-4 5-2 9 10-3 7 5 2 0 4 3 1-1 4 5 13-1 3 4 13 0 6-10 2 0 3 1 3-2 2 1 12-7-3-10 14 6 12-8 2 0 4 1 1-1 3 9 7-1 3 5 6-3 3 0 8-7 4-9-4-15 2-5 3 0 8-8 5 0 3 5 3 6-2 6 3-2 1 0 9 2 4 7 6 0 4 4 3 1 3 6-1 4 7-4 4 0 5-6 1-7-2-10 5-7 6 5 8-2 6 4 5-9 9-6 3-1-1-3 5-3 1 4 5 3 0-3 5-4 0-3 3-3 0-4 5 2 10 3 3 4-2 1 2 6 4 0 4 9 7 10-3 7-6 0-10 5-2 3-5 9-3 0-6 14 7 4 7 6 1 0 10-5 18 6 4 0 8 6-2 3 5 3 1 4 13 4 2-3 7-3 4 4 2 4-3 8 8-7 6-10-2 2 3 0 11 4 0 2 10 4 4-3 2-1 3-6 0-3 5-3 0-3 5 1 5 0 8-4 2 0 10 7 4 1 9-8 9-4 8-4-3-4-8-9-8-7 0-4 2-5 7-13-2-2-2 2-6 10 0 7-5 6-8-2-7-7-7-9 1-5-3 1-7 3-2 7 0-2-13-2 4 2 7-8 0-3 4 1 8-3 0-7-7-11-23-9-5-5 3-8 11-5 1-4-10 1-8-2-3 0 11 4 11 8-1 2-4 8-5 8 1 4 9 0 5 11 17 4 2 17 4 6 2-2 8-24-2 0 4-5 0 4 4 0 10 6 5 15 6 5 8 0 2-3-1 3 4-5 3-6-4-6 0 6 6 6 0 9-3 4 4 3-3 14 0 0 7-4 1-2 4 0 17 3 6 11 8-3 4-10-2-3-6-3 0 0-3-5 2-4 0-4-3-8 0-3-6-5 0-2 3-8 1-20-6-6 1-6 0-2 1-5-1-3 4-6 3-3-3-15-1-4-5-6-4-6 3-5 0-6-5-10 1-3 7-4-3-11-1-2-4 1-4-8-1-11-7-11 0-3 6-4-2 0-5-3-2-3 1-21-8 3-14 4-5-3-2 2-8-4 0-10-4-2-5-9-8-4-6 0-3-7-6 2-2-2-3 1-6-2-4-7-5-8 0-4-3-8 3-3-1-6 4-6-3 7-8 0-3 8-6-1-7-3-3 4-18 7 1 7-3 2-6-2-4 4-7-1-8 3-4 7 2-4-7-8-8 0-5-4-2-2-5-1-8-7-3-1-4 2-2-5-13-6-1 4-9-4-1-4 2-8-1-9-6-9-1-3-4-11-3-4-7 2-9 12-3 7-4-7-15-10-2-4 4-12-1-3 5-5 3-4-2 1-5-9-9-1-9-5-4-5 1-2-2-8 1-3 3-8 3-2 3-3-2 3-6-1-4-13-4-2-2-7 0 1-6 6-3 1-7-5-6 4-2 4-12 20 0 1-3 2 0 9-7 4-1 3-8 5 1 5 0 3-3-1-3 10 0 8-5 4 0 2-3 8 1 5-4 3 0 5-7 5-2-1-7 4-6 8-3 4-6-4-4-6 3 0-6-7-6-13 0-5-3-4-11-5-1-1-8 0-3 7-2 3-7-5-4 3-5 0-8-8-11-4 0 2-3 0-7-2-2-1-8 4-3 2-11-1-3 1-9-4-1-2-5 4-10-8-11 3-9 3 0 4-4-1-11-3-3 0-10 4-8-3-7 0-5 4-3 0-5-3-6 0-20 6-6 0-6 4-5-1-4 2-6-3-4-1-6-8-12-1-5 7-1 4-4 0-9-1-7 2-3 0-4-3-6 2-4 0-2 8-6 4-13 3-1-2-20 3-5 9-6 9-1 15-7 3-9 2-2z"},{"n":119,"nm":"Río Mandinga","rio":"Río Mandinga","prov":"Comarca Guna Yala, Colón y Panamá","km2":345,"p":[86272,131643,153612],"w":false,"a":false,"v":"Caribe","lx":4270,"ly":671,"bb":[4171,526,4422,767],"d":"M4388 550l-2 7 7 6 1 2-6 9-1 8 2 4 4 2 2 8 5 7-2 4-3-1-3 6 15 12 6 1 5-4 0 4 4 4-3 2 0 3-5 1-4 7-6 1-2 2-4-3-5 2-4 0-10 8-6 1-2 7-19 6-1 11-7 6 7 7-2 4 4 7 0 9-4 1 0 3 3 8 5 4-1 5-3 3-1 8-18 5-4 4-3 0-2-2-7 1-5-2-3 2-4-10-3 2-8-1-6 5-15-1-5 4-4 0-3 5-12 2-3 4-6 0-1 3-4 3-9-6-15 7-3 0-1-4-3-2-11 0-3 4-7-4-5 1-7-10-1-6 5-8 4 1 3-2-1-7 7-3 8-11-1-5 3-6-2-4-5-1-2-4 0-3 5-3-1-5 2-7-3-4-1 2-11-2-2-6-5-3 10-17-2-6 2 0 4-12 10-2 9-10 8 1 3-2 1-4 4-2-3-7 2-5 6-2 2-4 8 1 5-5 0-4 3-4 3 3 4-1 4 2 4 7 5-1 2-4 8 0 4-3 0-4-3-3 6-9 0-4 10-2 1-4 4-1 1-7-3-7 3-5-1-6 4-3 2 0 3 5 5-2 5 4 13-1 3-1 1-6 5-2 1 3 4 0 7 4 1 3-2 3 0 2 4 3 8-5 5 5 3 1 2 3-1 2 7 6 4-1 2-4 4-1z"},{"n":120,"nm":"Río San Pedro","rio":"Río San Pedro","prov":"Veraguas y Herrera","km2":992,"p":[93434,100318,115550],"w":false,"a":false,"v":"Pacífico","lx":2206,"ly":2168,"bb":[2002,1918,2424,2394],"d":"M2345 2096l4 0 2 2-2 6 4 3 3-4 3 0 4 4 0 5-19 5 0 9 2 2 4 9 5 3-1 8-5 1-4 5 3 5 5 2-2 4 2 3 7 3 2 2 0 7 3 2-2 4 5 8 0 3 4 1 1 6 7 0 1 9 6 3 3-3 6 1 2 15-5 5 5 5 1 6 4 7 5 1 0 5-4 4 1 5 19 10 0 10-11 3-1 9-4-2-7 4-3-1-3 6-5 0-1-3-3 0-13 2-1 3-4 0-6-7-8-2 5-4-1-4-13-2 1-9-2-2 2-2 0-7-6-2-3 5-3-1 0 2-6-1-3 0-3 4-7-1-6 9-4 1-3 5-7 0-6 9-6-2-5 5-4 1-9 13-7-1-4 2-13-1-4 5 0 4-5 6 1 2-6 6-7-1-6 2-6 5-2 0 6-8-3-1 9-10 2-27 8-3 2-7-3 4-4-2 0 3-6 5-2 10-13-4-12 3-5-5-7-2-6 2 9 1 9 6 12-2 8 3 3 5-1 9-11 5-8 12 1 5-3 7 0 10-13 11-14-2-8-6-2-5-1-7 1-13 4-1 6 3 2 14 1-2 4 2 0-3 4-3-4-6 4 1 1-4-5-3-2-6-6-2-2-4-9-2 2-7 4-4-2-7-3 0-3 4-6-2-9 4 7 1 0 2-3 6 3 13-1 4 6 9 1 17 3 6 6 5 17 6 2 6-2 3-17 2-11-4 0-5-5 0-2 4-3-1-14 3-7-3 0-3 1-3 5-1 2-3 0-4-6 5-6 3-3-1-4 1-5-1-1-4-3 2-2-3-6-4 2-6 8-9-1-9-7-4 0-10 4-2 0-8-1-5 3-5 3 0 3-5 6 0 1-3 3-2-4-4-2-10-4 0 0-11-2-3 10 2 7-6-8-8-4 3-4-2 3-4 3-7-4-2-4-13-3-1-3-5-6 2 0-8-6-4 5-18 0-10-6-1-4-7-14-7 0 6-9 3-3 5-5 2 0 10-7 6-11 3-1-3-7-4 0-4-6-4-1-2-4 2-3-3-2-10 4-5 3 0 3-3 4 0 3-5-3 0-4-5 3-1 3-5 1 1 6-3 9-9-4-5 2-6-5-8 7-6 10-5 7 2 6-1 0-5 4-4-4-7-6 1-1-3-4-3 0-4-7-6-2-4 0-9 2-1-6-3-6 2-5-3 0-3 8-5 0-8 5-3 15-2 9 4 7-4 0-8 3-2-2-4-3-3 1-3-9-7 1-3-1-1 0-4 8-2-6-12 7-11 3-3 7 3-1-12 2-2-1-3 0-3 10-2 0-6-4-13 1-3-5-13 1-4-3-1 0-4-5-2 3-7 4 0 10 8-1 5 5 2-2 1 0 6 3 4 5-1 3 5 6-6 0-6 3-4 3-1 4 4-2 8 6 8 1 4-1 2 17 0 5-4 3 0 3 3 3-4 9-2 1-2 8 5 9-1 0 15 5 4 0 4 4 1 2 6 4 0 2 6 8 7 3 7 8 5 4-5 7 0 8 6 8 1 4 6-3 2-2 12 8 0 0 7 4 2 2 0 0 6 2 3-2 6 5 1 4 5 5 0 0 2 4-1 9 6 7 1 2 5 4 1 4 4 3-2 7 2 4-2 4 5 5-1 7 5 3-1 3 6 10-2 2 2-1 7z"},{"n":121,"nm":"Ríos entre el Mandinga y Armila","rio":"Río Cartí","prov":"Panamá, Darién, Comarca Emberá-Wounaan y Comarca Guna Yala","km2":2033,"p":[70753,104263,121403],"w":false,"a":false,"v":"Caribe","lx":4419,"ly":707,"bb":[4344,600,6274,1586],"d":"M5015 700l-3 3-5 0-12-5-2 5-8 7 0 4-5 1-2 3-10 2-4 6-9-1-5 5-6 2-9-2-5-4-7 0-4 2 1 5-2 0-5-2-12 0-9 2-13-9 0-5-4-1 1-3-4-1-9 1 0-3-2-1-8 1-2-3-6 0-5-5-3-14-11-2-15-12-4 1-6 6-3-4-7 0 0-9-2 1-1-1-12 4-5 5-9-3-7 3-9 0 0-2-9-5 0-4-6 1-1 5-4 2-4-6-3 0-2 4-7 3-3 0-5-6-3 0-9 8-17-1 3 5 0 16-1 1-13-1-8-2-9 0-2 2-3 0-1-2-8 1-4 4-2 0-3-3-11 0-1-3-19 2-7 6-2 9-4 6-4-1-8 3 2 4 0 11 2 3-11 3-1 1 1 4-11 5 0 4-3 2-2-1 2-7-1-5-4-1-3-3 4-4-4-3-5 4-12-7-6 2 0-4-7 4 0-4-4-6-4-2-12 6-4 0-1 2 2 3-4 5-5 3-5 9-5 4 12 5 4 7 11 1-4 5 3 2-2 5-2 1-9-5-7 4-5 0-3 3-4 0 0 5-4 1-6-7-7 2-13-1-1-3-12 2-3-7-14 2-4 2-2 4-7-1-6 2-1-2-3 0-8 2 0-7 8-5 3-3 0-3-4-5-7-4-2-10-7-3-7 1 1-9 3-3 1-5-5-4-3-8 0-3 4-1 0-9-4-7 2-4-7-7 7-6 2-11 18-6 2-7 6-1 10-8 4 0 5-2 4 3 2-2 6-1 4-7 5-1 3-6-4-3 0-4 5-5 6-3 13-2 11 9 11 1 9-3 5-3 2-10 5 0 4-5 3 3 11 2 12-5 6 4 5 1 12 8 8 2 5-1 6-4 7 11-8-5-4 1 5 4 8 14 8 1 8 4 11-5 8 2 7-1 4 6 5 1 6-1 4-3 4 3 4-1-1-6 7-7 1-6 4-1 8-2 6 11 5 2 5-9 9 3 2-2 5 2 12-5 1-8 5-6 11 3 1 4 6 1 12-2 5 3 8-3 4-4 13-2 10-6 3 9 4 3 4-3-1 5 11 8 11 1 2-4 3-2 10 10 13 6 10-2 4-5 6-1 1-4 4 5 16 1 9 6 1 6 4 3 2-4 8-3 1-2 8-2 3-2-1 4 3 0 3-4 24-21 12 4 6 0 3 5 5 3 1 3 5-2 7 1 4 6 6 3 6 0 5 5 7-1 7 3 9-3 8-1 6 5 7 3-4 3-2 5 1 7 5 4 10 1 5-5 17 7 3-2 5 1 10 7 1 7 11 10 3 0 2-3 3 1 4-2-2 5 2 2 5 0 5 4 5-3 14 4 3 8 8 2 4 3 15 3 2-2 8 0 10 3 16 12 9 3 5 7 10 3 3-2 11 4 0 7 12-5 7 5 15 1 3 5 4 3 5 2 3-2 5 4 3-2 3 7 10 5 2 0 0-3 3 1 0 4 3 1 0 4 4 0 1 3 12 3 12-1 6 1 9-3 3-3 5 3 0 4 8 0 10 5 1 3 3 1 3 4 11-2 9 1 2 2-1 5 9 3 5-2-7-2 0-5 5 1 1 3 4-1 5 5-3 3-3 0-2 5 1 4 5 5 1 0 2-4 3 4 9 0 1-1-2-2 1 0 4 1 1 3 15 4 7-2 2-2 12 3 10 1 6 5-3 3 2 4 2-3 3 0 0-5 8 8-1 8 7 9 3 2 0-4 2 0 7 5-1 5 3 2 1-3 6 2 5 9-1 7 2 5 18 6 2-1 3-6 2 0 2 2-2 3 5 10 3 1 0 6 11 1 3 3 6 2 9 8-1 8-5 0-3-4-2 1 0 3 2 5 5 3 2 4 11 8 11 16 4-1 5 4 3 7 4 1 7 5 0 3 6 4 10 5 3 7-4 1-3 4 2 2 1-4 5 1 2-5 2 0 1 5-1 2 1 4-2 1 9 4 3 6 7 4 4 1 4 5 6 2 0-2-4-3-5-12-5-2-3-6 4-16-7-9 1-6-3-7 2-1 7 4 4 6 6 3 1 8-3 2 1 2 7-2 8 16 3-1 2 8 13 8 0 6 3-2 21 12 2 5-5 16 5 2 5 11 5 2 4 0 2 3 14 10 7 3 2 4-4-2-4 1 6 4 0 2-6 0 3 4 3 1 4-7 6 1-1 3-4 0 1 6 9 4 1 5 6 3-1 1-4-1-2 4 1 4 8-4 3 3 8 4-2 2 2 8-3 1-5-3-6 1-1 2-2 11 4 4 1 6 9-1 26 30 1 3-4 0-1 5 7 8-2 5 2 3 3 0 1 5 4-1 9 8 5-1 2 2 2-1-3-4 7 0 1 2-3 7 3 8 8 6 6-1 10 4 8 13 4 2 1 4 10 5 0 11 5 4 3 1 3 9 8-1-1-7 1-1 4 1 8 10 7 1 0-3-7-4-9-14-7-4 4-8-2-5 8 1 2 5 13 13 5 9 0 5 11 2 11 13 19 12 5 8-5 4-3 6 3 11 4 4 6 1 4-2 5 3 5-5-1-8 1-2 12 4 5 8 1 6 5 2 1 8-4 4 0 4-2 5-4 1-2 5-3 1-3 3-1 7 8 15 11 5 17 13 17 7 7 7 45 16 11 7 5-1 9-4 8 3 9-1-1-5 2-1 1-6 5 0 7 3 4-6 9 2 8 5 8 8 9-6 2-3-2-5 3-1 1 14-5 12-4 3-10 2-5 3-5 11-2 17 3 18-2 10-8 5-11 3-26 24-7 10-3-7-6-3 0-4-10-1-7-7-13 3-5-4 0-8-6-5-4-1 0-10 5-8-2-5-5-4-6 2 0 5-8 6-9-2-16 16-8 0-3 3-3 1-3 0-7-10-6 0-8-4-5-3-1-16-12-12-1-4 5-9-1-3 1 0 2-5-2-12 7-8-4-3-3-10-10-4-2-3-6-4 0-2-10-5-8 0-3-1-3 1-5-1-2-3 1-3-6-7 0-8-11-10 2-4 0-12-5-7-5-2-3 0-4 2-5 0-9-16-5-1-11-8-3 0-4 5-7 1-3 0 0-3-4-1-3-9-2-1 1-6-8-1 1-18-4-3-3-7 4-4-4-5 0-4-8-7 0-4-9-1-4-6-5 0-6-7-5-1-3-5-1-7 2-3 1-10-6-2-1-4-4-1-4-5-4 0-10-8-8 2-5-4-9 0-9-8-9-2-5-4 0-3-10-9-1-2-7 2-6 0-2 3-4-1-1-3-9-8-2-5-5-1-1-7-5-5 1-8-6-2-2-3 1-2-6-6 11-6-4-5 0-3-4 0-8-6-4 0-5-4-8-2-3-3 0-4-3 1-2-6-11-12-5 2-6-1-2-6 6-5 1-5-13-8-5 1 0-7-8-2-1 2-6-1 0-11-5-4-4 0-1-3-8 0-3 2-7-4 2-5-2-3-2 0-1-3-7 1-1-4-5 0-1-2-1 1-3-5 1-5-7-3-2-8-12-7-9-1-11-11-4 0-11-6-15 4-7 0-7-8-5-1-1-5-7 0-2-3-4 0-4-6 1-6 4-4 5 0 1-4 6-1 0-3 4-3-4-6-12-2-3-3-7 0-2-2 0-4-3-2 2-7-3-5 2-2 6 0 0-2-6-7-5-1-6-4-1-3-6-2-1 3-8 1-12-7-2-5-5 1-8-7-9-1-8 1-6-7-15 2-2-4-13-3-5 3-2-2-8 0-2-2-11 2-13-7 0-2-7-2-4 4-12-2-4 2-5-5 1-12-10 0-2 11-7-2-9 5-11-9-3-1-4 2-2-8 4-4 0-9-7-9 0-11-7-3 2-6-3-5 1-7-6-3-9 1-9 11-23 0 1 4-1 4-2 2-3 0-12-9-3 4 0 5-10 1-2-3 1-2-4-4 1-3-10-12-3-2 0-4-6-5-4 7-8 0-4-1-6 5-1 5-12 7-1 3 3 10-6-2-2 2-9 0-3-2-16 0-5-6-4-11-6 0-1-22-15-9 0-9 5-2 3 1 2-3 0-11 4-3-1-8-8 2-4-3-1 2-4-4-1 1-5-5-8-4 6-5-3-7 1-6-7-2z"},{"n":122,"nm":"Ríos entre el San Pedro y el Tonosí","rio":"Río Quebro","prov":"Herrera, Los Santos y Veraguas","km2":2444,"p":[27851,27843,29718],"w":true,"a":true,"v":"Pacífico","lx":2371,"ly":2482,"bb":[2177,2267,2993,3099],"d":"M2340 2267l6 2 0 7-2 2 2 2-1 9 13 2 1 4-5 4 8 2 6 7 4 0 1-3 13-2 3 0 1 3 5 0 3-6 3 1 7-4 4 2 0 4 5 4 0 3 3 3-3 5-5 3-1 9 7 3 3 6-1 1 3 0 4 7 4 0 8 4 4-2 4 3-1 6-4 2 3 6-2 1-2 6 3 2 0 4-1 1 1 3 5 2 4-1 2 3 7-2 2 8 2 0-2 6 6 7 0 8 7 3 1 5 3 0 2 3 6 4 17 5 3 2 1 4 7 5 0 6 3 3-2 9 5 9-14 5-2 6-8 5 6 4 2 5-9 2-8 26-9 3-2 3 1 2-3 2 4 10 0 11 3-1 7 6 2-1 5 9 4 2 0 9-5 7 8 5 1 3-3 6 7 7-1 8 11 6-4 8-7 2-2 6 4 5 1 3-2 4 2 1 0 5 3 2 0 3 4 6-8 7 0 3-11 2-10 7 5 2 3 5 9-2 6 5 7-4 6 4 3-1 4 2 5-2 9 0 6 6 6 3 0 5 3 1-1 8 3 5 8 6 5-1 7 3-6 4-2 6-6 5 7 4-2 12 9 4 2 6 6 7 0 4-6 5-1 3-4 3 0 3-3 1-4 10 2 4 7 3 4 5 5 1 2 3-1 5 3 7 2 2 0 5 8 8-1 3-5 2-11 8-1 4 4 4 0 3 15 6 4 6 15 3 7 6 1 7 9 11 1 11-4 5 2 6 6-2 1-3 13-1 8-5 6 1 8-12 8-2-4-5-1-10 24 5 5-2 3 2 3-1 4-6 11-4 13-18 8-4 6 6 7 3 3 9 3 2 1 4 6 1 1-4 3-2 9 6 2-3 6-3 0 5 6-1 5 5 5 0 8 10 19 8 5-1 0 3 8 6 3 0 2 5 5 1 5 4 11 5 1 3 8 0 2 8 10 5 0 3 2 1 20 3 6-7 8 2 12-1 2 1 8 1 2 5 6 3 8-3 9 3 2 2 0 6-7 0-24 8-4 0-2 3-7 4-8 21 1 6-10 7-12 0-5 4-1 6 5 3-6 4-1 4 2 1-6 10-12 3-10-4-17-2-2-3-9 3-9-2-21 1-6-2-8 4-5 7-7 2-22-5-17 1-4-1-9 10-6 3-17-4-9 0-6 3-6-3-16 5-12-2-15 7-6-1-11 3-20 14-14-3-4 1-1 3-4-1-9 4-8-4-6-1-4 2-18-5-4 4-5-3-28-1-11 8-5 0-6 4-3-3-7-3-14-1-4-3-12 1 0 4-9 1-4-1-3-5-2-1-4 2-3 5-7 1-4-1-3 4-8 0-6-3-4 2-2-2-1-6 1-6 3-4-7-5-4-9-17-12-10-2 1-3-2-3 5-2-7-1-2 4-5 4-5-2-1-7-5-1 7-5 3-10 7 1 4-8-1-2-4 0 0-2 6-9-5 1-2-4 10-30 2-1 2 3 6-1 6-9 12-3 2-5-2-1-1 3-2 0-1-25-8-15 0-4-7-5-9-17-13-10-4-16 1-9 4-2 2-6 10-8 1-4-10-14-16-15-3-13-6-7-9-7-10-3-4-5-5-2 2-9 3-2 0-4 10-3 1-21 9-10 1-4-11-22-7-9-7-4-9-9 6-12-1-8-8-10-10-3-6-5-7-1-2-13-2-3-31-14-3-4-10-5-2-4-1-19 9 3 0-6 5-9 18-5 5 11 1-10 6 0 0 4 6 4 10 2-12-5-1-4 3-3-9-2-13 0-8 2-6-2-6-11 0-4 5-6-7 6-4-2-2-13 3-6 14 1 6 3 4 0-7-7-9 0-4-4 8-12 2 0 5 8 4 0 6-4-10 0-5-9-7 2-4-2-9 0-11 3-3-1 0-3 6-7 4-1-1-1-11-8 6 9-6 5-9-3-8-11-8-3-1-2 4-14 0-7 4-11 14-15 6-3 15 1 22-2 11-8 11 5-8-7-3-13-1 14-7 1-1 3-4 2-25-1-6-3-3-15-1-21 5 3-3-7-3-21 6-1 16 7 7-4 2 5 4 3 8-5 4 3-3-5-10 4-1-5-2-2-8 3-13-8-8 1 0-3 14-7 7 1 6-6-1-2 5-6 0-4 4-5 13 1 4-2 7 1 9-13 4-1 5-5 6 2 6-9 7 0 3-5 4-1 6-9 7 1 3-4 3 0 6 1 0-2 3 1 3-5z"},{"n":124,"nm":"Río Tonosí","rio":"Río Tonosí","prov":"Los Santos y Herrera","km2":738,"p":[16331,17193,18715],"w":false,"a":false,"v":"Pacífico","lx":2702,"ly":2774,"bb":[2547,2623,3005,2973],"d":"M2873 2651l0 4-6 5 0 4-3 4 0 5 3 4-5 5 3 8-2 3-1-1-4 3-11 2-5 4-2-2-5 5-10 0-5 3 2 5 8 5 8 10-1 2 2 3-4 1-4 5 1 14-3 7 0 5 3 8-3 1-9 7 0 2 9 2 1 7 6 4 3 6 1 14 1 2-1 5 3 4-2 4 0 12 7 5 3 10 12 6 5 0 5 5 3 0 2 3 2 0 3-3 6 4 4-1 1 3 5 1 0 3 5-3 10 0 2-1 2 1 3-1 12 0 25 11 19 23 1 8-4-6-6 2-10-8-1 2 10 7 1 2 4-2 3 3 2 6 0 4 2 1-5 3-3-5-2 0 2 5 21 8 2 5-3 12 12 11 1 5-7 2-4-3 0-3-5-4-3 1-1-2-4 0-6 3-6-3-2-5-8-1-2-1-12 1-8-2-6 7-20-3-2-1 0-3-10-5-2-8-8 0-1-3-11-5-5-4-5-1-2-5-3 0-8-6 0-3-5 1-19-8-8-10-5 0-5-5-6 1 0-5-6 3-2 3-9-6-3 2-1 4-6-1-1-4-3-2-3-9-7-3-6-6-8 4-13 18-11 4-4 6-3 1-3-2-5 2-24-5 1 10 4 5-8 2-8 12-6-1-8 5-13 1-1 3-6 2-2-6 4-5-1-11-9-11-1-7-7-6-15-3-4-6-15-6 0-3-4-4 1-4 4-4 12-6 1-3-8-8 0-5-2-2-3-7 1-5-2-3-5-1-4-5-7-3-2-4 4-10 3-1 0-3 4-3 1-3 6-5 0-4-6-7-2-6-9-4 2-12-7-4 6-5 2-6 6-4-7-3-5 1-11-8 0-6 1-5-3-1 1-3-3-3-4-2-1-3-5-3 3-4-1-6 2-2 12-3 4-7 8-1 7 2 8-3 3-3 8-1 12-7 15-1 2-4 7-3 11 0 4 5 4 0 4 4 6 4 9 0 4-2 5 3 2-4 7 2 4-3 13-1 2-2 6-2 6 0 12 5 4-5 6-4 8 0 2 3 14-2 2-3 5-1 3-3 12 4 5-2 7 2 5-3-1-2 4-5 7-3-2-5 1-5 10-4 9 4-1 4 9 7 0 6 4 8 7-1 7 5 5-4 5-1z"},{"n":126,"nm":"Ríos entre el Tonosí y La Villa","rio":"Río Guararé","prov":"Los Santos","km2":2146,"p":[81776,82820,82536],"w":true,"a":false,"v":"Pacífico","lx":3083,"ly":2663,"bb":[2820,2251,3386,2916],"d":"M2978 2916l0-5-4-8-16-18-6-3-19-8-12 0-3 1-2-1-2 1-10 0-5 3 0-3-5-1-1-3-4 1-6-4-3 3-2 0-2-3-3 0-5-5-5 0-13-6-2-10-7-5 0-12 2-4-3-4 1-5-4-20-7-6-3-8-5 1-2-2 0-2 9-7 3-1-3-8 0-5 3-7-1-14 4-5 4-1-2-3 1-2-8-10-8-5-2-5 5-3 10 0 5-5 2 2 5-4 11-2 4-3 1 1 2-3-3-8 5-5-3-4 0-5 3-4 0-4 6-5 0-4 8 5 5-8 6 0 6-3 0-3 4-1 2-4-1-6-8-8 6-4-3-28 3-2-1-11 2-1-5-3 0-5-3-3-4-2-19-17 1-5 6-4 0-4-2-5-17-12-12-6 5-2 4-7-2-4 1-5-6-4-6-12-6-6 6-4 4 1 4-6 1-13 5-4 3-16 8-7-1-6 2-5 4-2 1-7 5-5 9 1 8-16 3-2 8 1-1-14-2-1-1-12 2-3-1-3 6-8 3 0 4 4 5-1 1-3 4-1 0-6 4-2 2-4 5 0 1-4 4 0 2-6 2 0 6 2 2-4-2-3 7-5 3-6 7 0 5-4 6-14 5-3 7-9 1-7 11-13 4 5 1 7 7 12 9 27 4 19-2 2-3-3 2 8 6 1 17 17 6 11 8 7 1 4 6 1 4 3 25 24 19 8 14 8 1 4 10 7 4 7 7 4 4 8 5 2-2 6 5 15 2 0 1-4 15 10 9 9 2 20-4 2-9-1-3 7 5 3-5 1 8 2 3-3 7 0-2-5 3-7 0-11 8 1 11 6 12 12 11 18 2 9 12 12-4 4 3 2 2-2 7 3 5 9 12 10 10 20 14 13-1 5-4 4 3 0 3-3 10 8 0-4-4-2 1-4-4 0 3-2 5 2 11 11-3 4 2 8 16 31 2 21 3 7 10 17 16 17 3 13 10 18-5 7-1 15 1 8 3 6-4 2-1 3 5 5-1 5-8 2-11 6-10 4-4 3-1 4-6 1-25-5-9 4-6 6 0 4-23 7-6 6-17-3-19 1-2 5-13 2-3 4 0 6-5-2-12 1 0 6-7 2-13-9-7 0 0-5-2-8-7-4-9 3-4-2-1 2 3 3 0 6-9-2-6 7-16-7-13-1-15-11-5 0-5 2-4-2-7 0-7 3-11 9-9 3-2 0-1-3-1 4-17 3 0 1 30-3 21-8 12 1-9 5-33 7-20 10-32 23-8 12-5 4 3-22 7-4 5 0-4-4 0-9-3 11-11 5-2-3-2 1 1 7 5-3 0 12-5 11z"},{"n":128,"nm":"Río La Villa","rio":"Río La Villa","prov":"Los Santos y Herrera","km2":1297,"p":[105435,109409,113160],"w":true,"a":true,"v":"Pacífico","lx":2704,"ly":2514,"bb":[2477,2207,3005,2697],"d":"M2863 2425l-4 6 1 3-3 11-5 4-1 13-4 6-4-1-6 5 6 5 6 12 6 4-1 5 2 4-4 7-5 2 12 6 17 12 2 5 0 4-6 4-1 5 19 17 4 2 3 3 0 5 5 3-2 1 1 11-3 2 3 28-6 4 8 8 1 6-2 4-4 1 0 3-6 3-6 0-5 8-8-5-5 1-5 4-7-5-7 1-4-8 0-6-9-7 1-4-9-4-10 4-1 5 2 5-7 3-4 5 1 2-5 3-7-2-5 2-12-4-3 3-5 1-2 3-14 2-2-3-8 0-6 4-4 5-12-5-6 0-6 2-2 2-13 1-4 3-7-2-2 4-5-3-4 2-9 0-6-4-4-4-2 1-4-5-5-2-2 2-6-1-7 3-1 3-4 1-12 1-2 2-6 1-4 4-8 1-3 3-8 3-7-2-8 1-4 7-12 3-2 2 1 6-3 4-9 0-5 2-4-2-3 1-6-4-7 4-6-5-9 2-3-5-5-2 10-7 11-2 0-3 8-7-4-6 0-3-3-2 0-5-2-1 2-4-1-3-4-5 2-6 7-2 4-8-11-6 1-8-7-7 3-6-1-3-8-5 5-7 0-9-4-2-5-9-2 1-7-6-3 1 0-11-4-10 3-2-1-2 2-3 9-3 8-26 9-2-2-5-6-4 8-5 2-6 14-5-5-9 2-9-3-3 0-6-6-5 2-3 7 3 4-3 5 2 4-7 4 0 3 7 7 1 5-4 8-1 2 2 0 4 5-1 3 3 4 0 1 3 7-1 5-16 5-4 8-11 5-3 0-3 3-1 0-12-4 1-1-3 7-16 9 2 3 0 1-2 15 1 6-6 5 1 1-5 5-5 20-3 1-8 3-4 0-3 7-1 5-3 0-5-2-2 4-4-2-3 1-5 10-7 4 1 5-5 9 7 7 2 2-3 3 1 0 7 7 2 1 3-3 3 1 2 3 2 5-2 2-10-2-4 9-4 2-6 2 0 4-6 2-6 8 0 5-4 2-5 6-1 4-5 0-8 2-3 3-1 4 5 4-3 8 2 3-3 3 1 5-3 7 1 5-2 8 1 9-2 6-3 1-10 6-3 4 1 8-2 2-14 6-7 1-10 4 0 5-5-2-3 2-1 2 2 6-1 2 2 2-3 5 0 4-3 5-2 15 8 7 0 13 8 4 1 14-9 6 1 6 6 20 29-11 13-1 7-7 9-5 3-6 14-5 4-7 0-3 6-7 5 2 3-2 4-6-2-2 0-2 6-4 0-1 4-5 0-2 4-4 2 0 6-4 1-1 3-5 1-4-4-3 0-6 8 1 3-2 3 1 12 2 1 1 14-8-1-3 2-8 16-9-1-6 7 0 5-4 2-2 5 1 6-5 3z"},{"n":130,"nm":"Río Parita","rio":"Río Parita","prov":"Herrera","km2":603,"p":[67898,70224,73800],"w":true,"a":true,"v":"Pacífico","lx":2533,"ly":2349,"bb":[2411,2158,2920,2446],"d":"M2920 2207l-5 2-4 3-5 0-2 3-2-2-10 0 2 3-5 5-4 0-1 10-6 7-2 14-8 2-4-1-6 3 0 3-2 8-14 4-8-1-5 2-7-1-5 3-3-1-3 3-8-2-4 3-4-5-3 1-2 3 0 8-4 5-6 1-2 5-5 4-8 0-6 12-2 0-2 6-9 4 2 4-2 10-5 2-3-2-1-2 3-3-1-3-7-2 0-7-3-1-2 3-7-2-9-7-5 5-4-1-10 7-1 5 2 3-4 4 2 2 0 5-5 3-7 1 0 3-3 4-1 8-20 3-5 5-1 5-5-1-6 6-15-1-1 2-3 0-9-2-7 16 1 3 4-1 0 12-3 1 0 3-5 3-8 11-5 4 0 4-5 7 0 5-4 1-3 0-1-3-4 0-3-3-5 1 0-4-2-2-8 1-5 4-7-1-3-7-4 0-4 7-5-2-4 3-7-3-3 3-1-4-3-2-13-5-2 1-8-5-2-3-3 0-1-5-7-3-1-11-3 0-2-4 2-6-2 0-1-7-2-1-2 2-4 0-2-3-4 1-5-2-1-3 1-1 0-4-3-2 2-6 2-1-3-6 4-2 1-6-4-3-4 2-8-4-4 0-4-7-3 0 1-1-3-6-7-3 1-9 5-3 3-5-3-3 0-3-5-4 1-12 11-4 0-10-2-1 6-3 1-4 10-2 0-4 2 0 4 1 6-1 6 3 7-3 1 4 5 3 2 0 0-3 2 0 3 3 7 0 2-2-2-12-6-2 0-2 8-3 3-3 4 4 4 0 3 5 4 0 1 4 9 4 6 0 2-9 2-1 5 6 9 2 1 5 10 2 4 3 3-1 10 7 7-1 1-4 7 0 5 4 5 0 4-3 10 4 6-13-3-3 6-3 0-5-3-2 2-6 4-1 3 4 3-5 4 0 3 6 3 0 2-3 9 0 2-2 4 1 3 4 3 0 3-5-4-11 5-11 7-9 20 2 0-20 4-3 8 1 6-15 8 1 3 3 3 0 6 5 7 0 4-4 4 0 1 9 4 5 7 1 0 4 4 0 3 3 7 0 0-2 11-1 1-2 1 1 5 0 2-2 5-2 12-15 7 0 1-2 4-3 2-10 9 6 4 0 4-3 3 1 4-3 13 0 12-10 7 17 17 19 10-1 15 9 5 5z"},{"n":132,"nm":"Río Santa María","rio":"Río Santa María","prov":"Veraguas, Herrera, Coclé y Comarca Ngäbe Buglé","km2":3364,"p":[220267,251830,286837],"w":true,"a":true,"v":"Pacífico","lx":2288,"ly":1788,"bb":[2030,1527,2866,2277],"d":"M2238 1528l6 2-1 4 1 10 9 2 0 6 8 1 4 3 3 6 0 7 3 2 0 4 5 3 1 10 4 1 4-2 9-1 5-5 3-5 5-2 3 1 7 12 6 3 2-5 7 1 1-4 9-2 1-4 6-2 3-3 3 2 10-1 3-4 1-5 3 3 8 0 2 2 3-4 8-3 4 0 4 3 8 1 3 4 0 7 3 3-2 14 2 3 0 7 3 3 2 4-1 3 4 1 9 10 5 2 3 12 2 2 1 4 9 4 4 0 8 10 3 0 3 3 1 7 11 9-1 5-5 5-5 7 9 7 0 3-4 5-1 8 5 1 3 9 11 7 6 8 5 2 6 12 7 6 3 0 2 4 7-5 2-3 10 2 5-4 6 3-1 4 5 9-2 3 6 2 0 4 3 2 0 12 6 0 2 2 2 13 1 1 8-5 2 2-1 4 4 5 0 8 3 4 4 2 6 0 4 5-1 3 11 13 11 6-3 8 4 8 0 6 6 1 3 4 6-4 13 1 6 3 0 4 3 4 9 2 0 2 6-2 5 2 5-3 3 1 3 10 6 13 6 1 2 3 7 0 3 6 17 3 8 9 8 0 4 3 0 5 3 4 7 3 10 10 1 15-3 4 5 4 5 0 2 6 16 9 3-1 6 1 3-1 3 5 27 8 6 0-2 5-8-1-8 8-4-1 5 2 6-5 4 0-2 15 2 20 1 19 8 29-5 10-14-1 2 3 9 2 13 13 4 2 5 23-12 10-13 0-4 3-3-1-4 3-4 0-9-6-2 10-4 3-1 2-7 0-12 15-5 2-2 2-5 0-1-1-1 2-11 1 0 2-7 0-3-3-4 0 0-4-7-1-4-5-1-9-4 0-4 4-7 0-6-5-3 0-3-3-8-1-6 15-8-1-4 3 0 20-20-2-7 9-5 11 4 11-3 5-3 0-3-4-4-1-2 2-9 0-2 3-3 0-3-6-4 0-3 5-3-4-4 1-2 6 3 2 0 5-6 3 3 3-6 13-10-4-4 3-5 0-5-4-7 0-1 4-7 1-10-7-3 1-4-3-10-2-1-5-9-2-5-6-2 1-2 9-6 0-9-4-1-4-4 0-3-5-4 0-4-4-3 3-8 3 0 2 6 2 2 12-2 2-7 0-3-3-2 0 0 3-2 0-5-3-1-4-9 3-4-3-6 1-4-1-2 0 0 4-10 2-1 4-7 4-9-7-2 1-5-4-1-5 4-4 0-5-5-1-4-7-1-6-5-5 5-5-2-15-6-1-3 3-6-3-1-9-7 0-1-6-4-1 0-3-5-8 2-4-3-2 0-7-2-2-7-3-2-3 2-4-5-2-3-5 4-5 5-1 1-8-5-3-4-9-2-2-1-7 1-2 19-5 0-5-4-4-3 0-2 4-5-3 2-6-2-2-4 0 1-7-2-2-10 2-3-6-3 1-7-5-5 1-4-5-4 2-7-2-3 2-4-4-4-1-2-5-7-1-9-6-4 1 0-2-5 0-4-5-5-1 2-6-2-3 0-6-2 0-4-2 0-7-8 0 2-12 3-2-4-6-8-1-8-6-7 0-4 5-8-5-3-7-8-7-2-6-4 0-2-6-4-1 0-4-5-4 0-15-9 1-8-5-1 2-9 2-3 4-3-3-3 0-5 4-17 0 1-2-1-4-6-8 2-8-4-4-3 1-3 4 0 6-6 6-3-5-5 1-3-4 0-6 2-1-5-2 1-5-10-8-5 0-8-10-5 2-3 4-3 2-3 12-10 0 1-8 7-13-3-10-6-7 3-2 0-5 4-3-5-5 0-3 7-8 0-9-6-5-3-7 3-7 4-1 2-4 5-1 1-2 6 1-6-35 1-4 6-9-1-3-5 0-3 3-7-6 2-8-1-4-4-1 0-6 6-2 0-4-6-2-2-5 1-7-7-4-1-8-3-4 2-5 5-4 1-7 2-4 11-4-19-14 0-2 7-5 4-9 8-1 4 2 8-2 4 3 10 1 7-3 2-8 6-3 9-2 4 4-1-3 3-5-1-22 3-7 2-9-4-5-2 1-6-7 3-4-2-10 2-7 6 0 5 4 5 0 6-6 1-8 10 1 3-5 7-3 12-10 14 2 11-9 4 1 0-2 7-1 3-2 7 0 11-10 4 3 13-6 7 0z"},{"n":134,"nm":"Río Grande","rio":"Río Grande","prov":"Coclé y Veraguas","km2":2385,"p":[196930,234658,255398],"w":true,"a":false,"v":"Pacífico","lx":2790,"ly":1699,"bb":[2438,1444,3229,2015],"d":"M2949 1447l12 0 7 6 13 0 3 4 5 16-5 8 3 3 0 6 3 2 4 11-1 2 0 4-10 6-1 10 10 0 6 4 8-1 6-6 1-3 7 0 2 3 0 15 7 3 0 4 12 8 8-1 7 7 4-4 5-1 8-15 1-8 9-4 4-12 3 2 15 0 1 2 2-2 5 0 6-4 4 1 8-2 5 2 5-4 7-1 1-1 8 0 6-3 14 0 1-2 5 2 6-5 6 0 16-11 7 1 1 4 7 3 1 4 2 2-1 7-2 3-2 8-9 6-7-1-2 1 1 8-9 9-3 9-11 11-1 5-8 1-11 8-5 8-8 4-10-1-3 3-7 1-14 18-4 0-2 6-4 3-1 6-8 7-2 4 1 8-6 4-1 9 3 5 0 3-4 5 1 3-23 10 0 16-3 15 1 5-3 6 0 4-6 6 1 2-2 5-11 3-5 10-6-1-6 9-1 5 3 10-7 14-1 4 5 9-5 12-2 11-5 13-4 5-16 3-6 3 0 5 5 11-5 14-25 15-8 1 3-2-4-4 0-5 7-3 4-4-5 4-6 1-6-5-2-10 7-11-2-5-1 6-8 10 3 25-12 4-8 5-4 8-11 6-11 19-10 9-2 11-6 4-4-3 1 6-14 9-8-15-6-3-8 1-4 11 2 5 4 0 3-4 0-8 1-2 7 2 4 7 0 5-7 11-3 10 5 16-4 6-6 0-27-8-3-5-3 1-6-1-3 1-16-9-2-6-5 0-5-4 3-4-1-15-10-10-7-3-3-4 0-5-4-3-8 0-8-9-17-3-3-6-7 0-2-3-6-1-6-13-3-10-3-1-5 3-5-2-6 2 0-2-9-2-3-4 0-4-6-3-13-1-6 4-3-4-6-1 0-6-4-8 3-8-11-6-11-13 1-3-4-5-6 0-4-2-3-4 0-8-4-5 1-4-2-2-8 5-1-1-2-13-2-2-6 0 0-12-3-2 0-4-6-2 2-3-5-9 1-4-6-3-5 4-10-2-2 3-7 5-2-4-3 0-7-6-6-12-5-2-6-8-11-7-3-9-5-1 1-8 4-5 0-3-4-4-5-2 5-8 5-5 1-5-11-9-1-7-3-3-3 0-8-10-4 0-9-4-1-4-2-2-2-10 13-4 7-10 3 0 10-6 0-4 7-4 0-4 7 1 5 4 7 0 10 6 7-2 6-9 1-10 5-3 6-12 7-2 3-4 9-2-1-1 4-9-7-11-2-6 5-11 22 5 10 0 1-1-1-6 5-8 1-8 3-2 22-5 7 8 7 2 4-2 1-6 6-4 11 0 3 0 9 9 12 0 7-3 4-6 9-3 1-6 5 0 9-12 6 1 7-2 6 9 8 2 3-2-1-7 2-3 0-8 4-2 0-6 2-2 6-4 18 1 0-5 3-3 5 3-1 2 7-2 2 5 8 7 6-1 0 9 11 9 4-1 3-6 5 0 0-8 13-1 9-8 5 0 5-5 4 0 6 7 9 1 7 5 9-9 10-1 1-3 4-1 23 0 3 6 5 1 5-3 4-8 4 0 1 3z"},{"n":136,"nm":"Río Antón","rio":"Río Antón","prov":"Panamá Oeste y Coclé","km2":305,"p":[59918,68575,72557],"w":true,"a":false,"v":"Pacífico","lx":3073,"ly":1798,"bb":[2955,1507,3270,1901],"d":"M3233 1508l1 2 4 2 1 6-4 2 1 6 4 0 3 3 6 0 6-9 9-5 0 12 3 8-3 3 5 2 1 3-5 6-2 20-5-4-6 0-12 3-6 4-8-4-10 14-1 6-8 8-6 16-7 3-3 4-4 0-2 5-7 5-1 4-12 6-1 10 1 3-2 6-5 5 0 12-2 5-6 6 0 3-3 4-8 4-5 11-9 7 1 13-4 8 1 5-4 8 1 2-4 12-1 8 1 4 4 1 2 5-1 4 4 3 3 13-8 9 1 7-4 4 1 9 1 2-3 3 0 15-2 2-5-1-6 8 7 8 2 18-13 2-10-1-34 9-10-3 0-2 3 1 0-3 11 4 9-5 0-2-27-5-1 3-10 1-15 6-18 4-10 1 1-3 8 1 4-3 19-4 2-4-7 2-20 2-15 5-13 9-10-1-1-1 8-1 26-16 4-13-5-11 0-5 6-3 16-3 4-5 12-36-5-9 8-18-3-10 1-5 6-9 6 1 5-10 11-3 2-5-1-2 6-6 0-4 3-6-1-5 3-15 0-16 23-10-1-3 4-5 0-3-3-5 1-9 6-4-1-8 5-8 5-3 1-6 4-3 3-6 3 0 14-18 7-1 3-3 10 1 8-4 5-8 11-8 8-1 1-5 11-11 3-9 9-9-1-8 2-1 7 1 3-1 7-5 3-13 5 1z"},{"n":138,"nm":"Ríos entre el Antón y el Caimito","rio":"Río Chame","prov":"Coclé y Panamá Oeste","km2":1432,"p":[211968,285937,336529],"w":true,"a":false,"v":"Pacífico","lx":3394,"ly":1567,"bb":[3087,1253,3710,1892],"d":"M3635 1327l0 6-4 6 1 5-3 3-2 9 9 12 1 6 2-3 2 1-2 6-3 1 3 5 5 0 0 8-3 4 6 5-1 3 9 3-7 4 3 4 4-2 5 3-4 6-6 3 6 5 0 1-4 0-2 5-7 0-1 7-2 4 4 3 6 1-4 3-9 15-4 0-13 8-16 2 3-13-3-6-5-3-4 0-8 8-3 0 1-12-1-4-4-2-18-3 0-1 3-3-2-8-2 0 3 6-4 3-8-10-1 4 7 8-2 3 10 1-2 3-2 8 3-2 1-4 7-4 5 2 3 3-1 5-2 2-4 0 1 2 5 1 0 3 11 1 7-6 5 1 1 3-5 6-3 1-2 5-1 8 3 2 0 2-4 7-9-4-7 1-5 6-4-1 1 7-7 4-5-6-15-9 6-7-1-7-2 2 0 6-6-3 1 7-4 0-3-3-4 3 6 0-2 6 4 4 2-6 11 7 6 5 4 13 6 4-1-4-4-2 2-4 9 2 18 14 6 0 20 10 6 1 6-5 8-1 15 3-5 5-7 1 0 3 4 0 15-8 2-3-2-4 1-2 18-9 0-5 2-2 17-9 7-6 5-3-1-3 2 0 2 2-1 5-10 11-41 38-6 8-30 20-18 8-22 7-15 3-8 0-9 5 9-3 0 2-8 3-19 3-7 3-2 4-6 2-5 5 3 12-6 4-8 1-14 6-6 4-2-1 0 3-4 3-3 6-11 4-20 13-8 13-1 14-3 0-10 11-7 2-8 9-15 6-7 5-6 1-28 23-16 7-3 5-16 5-12 6-18 13-17 8-18 13-12 5-26 18-54 30-45 19-19 4-5-3 1-1 7 2 8-2 14-4-5 1-2-18-7-8 6-8 5 1 2-2 0-15 3-3-1-2-1-9 4-4-1-7 8-9-3-13-4-3 1-4-2-5-4-1-1-4 1-8 4-12-1-2 4-8-1-5 4-8-1-13 9-7 5-11 8-4 3-4 0-3 6-6 2-5 0-12 5-5 2-6-1-3 1-10 12-6 1-4 7-5 2-5 4 0 3-4 7-3 6-16 8-8 1-6 10-14 8 4 6-4 12-3 6 0 5 4 2-20 5-6-1-3-5-2 3-3-3-8 0-12 10-4 0-2 3-3 3-1 2 3 4 0 4-6 3-1 2-6 6-2 12-9 10-12 0-3 4-3 2-6 4-3 1-6 10 0 6-9 5-2 5 0 2 3 10-4 3 2 9 1 16 8 7 2 13-5 5-5 6 2 2-10 3-1 3-6-17-13-4-11 3-6 15-16 9 3 6-4 8-13 8-6-6-15 5-3 0-5 5 0 2-2 6 0 2-9-2-4 3-2 6-1 3-3 4 2 10-2 1-4-5-10 4-4 0-7 9 0 0-5 3-5-1-2 6-3 2-9 16-2 6 3 2 5 8 2 4-7 3 2 5-2 3-6 5 1 6-8 8 4 4-5 8-2 0 9 3 2 4 5 0 8 8 5 0 5 3 2-2 7-1 2-4-1-5 5 3 3-3 5 7 3-1 5 5 5-6 13 1 4 5 4 5-2 5-11 6-4z"},{"n":140,"nm":"Río Caimito","rio":"Río Caimito","prov":"Panamá Oeste","km2":509,"p":[386651,585672,724778],"w":true,"a":true,"v":"Pacífico","lx":3649,"ly":1207,"bb":[3387,1098,3787,1397],"d":"M3729 1098l10 2 15-1 3 3 0 6-9 9 2 3-2 3 0 4-1 12-3 2 2 4-2 3 9 8 4 1 0 8 6 6 5 3 6-2 2 2 7 0 4 10-2 3-6-1-5 4-16-2-2-2-5 1-1-4-3-4-6-2-2-4-8-1-1-2-1 6 1 2-5 2 4 8-8 6 0 4 3 3 8 3 0 4 6 10-4 9-4 2 1 1-9 5 8 10 4 0 3 14-5 4-5 0 4-6-2-5-3-2-6 1-8 5-8-6-5 0-5 11 1 3 8 7-7-3-10-2-11 6-2 6-9 2-2 4-8 6 0 5 3 3-2 8-4-4-3 3 4 9-5 1-5-2 2 4-1 3-14 11-5 10-4 3-6-3-1-5 6-13-5-5 1-5-7-3 3-5-3-3 5-5 4 1 1-2 2-7-3-2 0-5-8-5 0-8-4-5-3-2 0-9-8 2-4 5-8-4-6 8-5-1-3 6-5 2-3-2-4 7-8-2-2-5-6-3-16 2-2 9-6 3 1 2-3 5 0 5-9 0 0 7-4 4 5 10-1 4-10 2-4-2-3 3-6 1-3 2 2 4-2 9-6 0-2 2-5 0 0 5-5 3 6 15-8 6-8 13-6 4-9-3-15 16-2-11-4-7-5-1-6-6-1-7-2-2 0-7-5-8-2-17 10-8-1-3 8-11-4-3 2-22-3-1-2 1-3-2 3-5 2 0 0-5 0-1-9-1-3-5 2-17-4-5 5-11-4-12 1-11 2-3-8-6-1-5 5 1 1 2 7 0 1 5 7 4 10 9 3-7 3-2 3 2 4-3 5-11 7 2 1 4 3 0 2-4 13-7 4 1 4-3 7 2 8-7 0-5 2-4 4 2 4-2 2 2 5-6 7-3 7 1 2-3 4 4 8 3 3-8 4 2 2 3 9 1 3 4 3-1 6-7 3 2 11-6 3 2 5-3 3 1 3-4 8 1 1-4 3-1 4-4 0-8 9 4 8-3 6 0 4 2 5-2 0-7-4-3 0-8 10-6 7-1 10 2 3-1 1-2 7 0 6-2 6-10 10 2 1-6 4 2 7-3 5 2-1 4 6 1 5 3 3-4 5-2 2-6z"},{"n":142,"nm":"Ríos entre el Caimito y el Juan Díaz","rio":"Río Matasnillo","prov":"Panamá","km2":324,"p":[1013714,1278730,1403442],"w":true,"a":false,"v":"Pacífico","lx":3876,"ly":1089,"bb":[3721,986,3982,1264],"d":"M3791 989l6 2 6 10-2 5 4 3 0 4-3 3 0 2 4 1 4-4 2 1 3-5 6 3 5-5 2 3 4 0 2 7-1 2 2 3 16 1 9-6 3 0 5-5 2 9 8 1 3 3 1 4 3-1 4 5 4 1 1-3 8-3 6 3 2 4-5 4 1 5 13-2 1-4 7-5 0-3 12-1 0-5 5 0 3 7-4 0-2 2-2 6 5 1 3 3-2 6 1 3 5-2 7 4 2 8 8-2 4 1 2 7-4 2 12 14-2 8-33 5-31 36 1 4-5 3-5 3-2-7-6 0-3 2-10 16 1 5 4 2 0 4-6-2-11 5-2 2-3-2-2 1 3 4 6 1 2 10 13 17 11 0-1 3-2 1 3 4 2-2 3 2-1 3-4-1-7-7 0 4-7-5 0-3-15-19-20-14 0-7 4-3 0-4-1-3-1 2-4 1 1-4-7-4-3-5 0-7-4-4-1-7-18-21-2-17-2 3 1 10-6-6-9-3 0-5-5-11 1-4-3 0-4-4-4 2 1-4-1-4 2 0 0-3-1-3-3 1-3-2 3-13-1-3-7-3-1-5 4-22-3-3-3 1-1-1 0-5 4-4 4-2 3 2 1-3 5-5 2-1 0 3zM3800 1091l4 4 0 2 10 9 3 11 5-6 12 15 3 10-1 1-2-2-1 3 12 21-1 15 10 5-6 8 7 6 3-1 2 4-4 23-9 7-7-1-4 2-2 4 3 5-14-6-5 1-8-2-5 1-2-1-17 10-17 0-3 1-1 6-8-6-1-6-3-4-4-1-7 5 0 5-4 5 2 14 4 4-10 2-2-2 5-3-3-14-4 0-8-10 9-5-1-1 4-2 1-5 3-2-1-5-2-1-3-6 0-4-8-3-3-3 0-4 8-6-4-8 5-2-1-2 1-6 1 2 8 1 2 4 6 2 3 4 1 4 5-1 2 2 16 2 5-4 6 1 2-3-4-10-7 0-2-2-6 2-5-3-6-6 0-8-4-1-9-8 2-3-2-4 3-2 1-12 0-4 2-3-2-3 9-9-1-7 3-3 2 0-2-4 4-6 0-4 9-5 2 4 8 6 9 0 9 2zM3826 1127l6 8-7-11 1 3z"},{"n":144,"nm":"Río Juan Díaz y entre Río Juan Díaz y Pacora","rio":"Río Juan Díaz","prov":"Panamá","km2":351,"p":[868401,1220974,1392606],"w":false,"a":false,"v":"Pacífico","lx":4014,"ly":1005,"bb":[3864,845,4136,1094],"d":"M3980 1094l2-8-12-14 4-2-2-7-4-1-8 2-2-8-7-4-5 2-1-2 2-7-3-3-5-1 2-6 2-2 4 0-3-7-5 0 0 5-12 1 0 3-7 5-1 4-13 2-1-5 5-4-2-4-6-3-10 6-7-6-3 1-1-4-3-3-8-1-2-10-4-8 6-7-1-4 15-5 2 6 4 2 1-5 5 0-5-8 0-4-1 1-6-4 0-5 5-2 5 2 3-3 2 1 2-5 4-1 6 1 3 4 3 0 7-4 0-9-11-9 3-3 0-6 2 0 2-2 4 2 5-6 3 0 3 1 2 6 8 0 2 2 7-13 5-2-2-4-2 1-5-4 7-1 7-12 5 0 3-6 11 12 10-1 4 2 4-1 9 7 7-3 0-6-3-6 0-3 8-6 1-5-2-5 4-5-2-2 3-7-4-6 0-5 3-6 2 0 3-8 8 2 8-3 8 9 1 5 4 1 4 5-4 7 0 4 3 4-2 3 0 7 6 11-4 9 0 12 2 17 2 2 0 7 3 3 3 8 2 2 6 1 4-2 8 0 2 9 3 4 5 0 12 11 9 4 6 10 2 9 4 4-1 28-2 2 1 9-6 13 4 8 0 6-2 5-53 0-29 3-6-1-6-6 0 7-3 2-28 4-5-1-3-2-9 5-7 1z"},{"n":146,"nm":"Río Pacora","rio":"Río Pacora","prov":"Panamá y Comarca Guna Yala","km2":368,"p":[253131,380965,441402],"w":true,"a":false,"v":"Pacífico","lx":4145,"ly":886,"bb":[4054,753,4304,1087],"d":"M4165 753l5 2-2 13 4 6-2 9-9 8 0 4 5 4 1 4 8 5 0 6 6 0 5 5 18-1 3 3 7 0 5-3 7-1-1 5 2 6 5 3 7 0 0 6 10 0 10 4 2 0 1-6 6-4 5 4 3-1 9 7 5 0 0 11 4 0 4 8 6 3 0 5-7-3-9 1-8 6-13 4-1 6-4 4-3-2-8 7-4 1-3 3-3-2-6 2-9 9 2 7-5 1-6 5 0 6-4 3 0 4-3 1-1 10-5 2-2 3 4 25-5 7-7 2-3 8-4 2 0 5-4 3 4 8-6 10 2 3-1 4 4 0 0 3 5 1 4 7 4 4 8-3 1 4 6 7-2 41-30-4-6-5-7 2 1 2-41 0 2-11-4-8 6-13-1-9 2-2 1-28-4-4-2-9-6-10-9-4-12-11-5 0-3-4-2-9-8 0-4 2-6-1-2-2-3-8-3-3 0-7-2-2-2-17 0-12 4-9-6-11 0-7 2-3-3-4 0-4 4-7-4-5-4-1-1-5 5-6 23-8 3-8-4-8 7-6 3-7 4-1 6-8 14-1 11 4 11-6-1-11 3-3 0-5 9-7 3-15 3 0 2-4 6 1 3-2z"},{"n":148,"nm":"Río Bayano","rio":"Río Bayano","prov":"Panamá y Darién","km2":5200,"p":[220469,312809,354146],"w":true,"a":false,"v":"Pacífico","lx":5058,"ly":1040,"bb":[4161,668,5503,1331],"d":"M5499 982l2 17-3 4 1 3-4 3-1 15-7 6 1 5-13 11 2 6-1 5-8 0 2 9-6 4-5-1-1 2-4 1-7 6 0 7-5 3-2 6-4 2-1 6 3 2 0 9 5-1 2 2 0 6 8 5-2 5 2 2 12 2 3 2-3 3 0 3 6 0 2-2 13 12-1 4-3 0-4 9-4 0-3-1-5 3-1-2-5 3-2 6-4-4-7 2-5-3-6 0-4 2-4-5 0-4-4-2-4 0-8 5-6-2-5-5-6 11-8-3-4 5-3 3 4 2 1 9-6 6 0 8-2 3 2 9 5 4 3-1-3 9 3 4 2 12-1 5-2 0-1 3-4 1-3-2-1 1-12 0-5 2-2-3-2 1-5-6-3 2-12-2-3-6-2-1 2-5-4-4 0-2-5-4-11 3-2 3 1 3-4 1-4-1 1-4-2-1-10 0-2 7-9 5-4 8-3 0-2 4-3-1-4 5-5 0-6 7-11-9-2 1-4 7 1 2-8 8-2 9-2 3-3 0 1 5-6 10-1 9-4 5 3 4 0 2-5 6-6 2-7 0-1-3-8-3-2-2-1-9-5-1-6-5 2-3-2-2 1-6 3-2 5-6 1 1 1-3 4-2 0-3-7 2-1-5-7-1-1-4-3-1-5 1 0 4-9 1-1 3-3 0-4-3-10-1-8-7-8-3-7 9-1 8-7 1-5 5-11 0-2 1-5-1-4 2-10-1-5 6 0 3-4 6 5 6 0 6-7 11-13 1-7 5-3 0-5-5-5 0-2 7-4-2-5 4-3 0-4-3-3 1-10-11-6-1 1-12-1-1-3 3-5-1-3 2-6-3-5-5 2-4-4-4 0-7-3-3 1-4-4-9-4-2-6-16-5-4-9 0-4-3-5 0-10-8 1-7-4-1-3-7-8-2-5-6-3-1-4-4-1-4-5-3-1-2-6-1-1 3-4-1 0-5 4-3 4 1 2-2-1-8-4-4-8 4-5-3-5 6-6 0-9-3-5-8-13 0-4 2-8-4-5 0-3 2-11 0-5 3-25-14-14 4-3 4 1 6-1 2-15-4-6 2-7-1 0-9-3-3-1-3-4-1-7-24-6-3-1-10-8 2-4-4-7 3-8-16-9 1-6-8-4 0 0-10-3-10-3 2-6-1-4 5-4-1-11 5-6-2-7 1-1-5-6 0-2-2-6 0-4-2-7-1-3-6-5 0-1-3-10-5 0-7-2 3-8 0-3-4-6 3-18-7-9 1-3-2-9 2-3-3-7 0 1 7-2 1-6-1-1 4-15 5-7-1-9 8-9-3-5 1-6 3-1 5-3-1-6 4-8-1-4 11-5 2-10-3-9 5-8 0-13 6-1 3-2 2 4 4-1 2-8-2-6-6 12-8 0-9 12-12 1-9-1-19 2-5-1-11-13-24-11-2-11 10-4-3-1-6 5-5 26 0 9-1 2-3-2-1-9 3-11-2-17 1-6 4-2 6 2 7 8 5 13-9 4 1 9 10 5 9-2 6-2 27-3 11-7 1 3 1 0 4-8 12-9 8-8 1-23-8-18-3-13-9-3-6 1-9 10-5-9 1-2 3-3 13 1 7-2 2-14 1-14-2-9-3-1 0 0 3-8 0-23-4 2-41-6-7-1-4-8 3-4-4-4-7-5-1 0-3-4 0 1-4-2-3 6-10-4-8 4-3 0-5 4-2 3-8 7-2 5-7-4-25 2-3 5-2 1-10 3-1 0-4 4-3 0-6 6-5 5-1-2-7 9-9 6-2 3 2 3-3 4-1 8-7 3 2 4-4 1-6 13-4 8-6 9-1 7 3 0-5-6-3-4-8-4 0 0-11-5 0-9-7-3 1-5-4-6 4-1 6-2 0-10-4-10 0 0-6-7 0-5-3-2-6 1-5-7 1-5 3-7 0-3-3-18 1-5-5-6 0 0-6-8-5-1-4-5-4 0-4 9-8 2-9-4-6 2-13-4-2 5-6 2 6 6 9 5-1 6 4 4-4 11 0 3 2 1 4 3 0 15-7 9 6 4-3 1-3 6 0 3-4 12-2 3-5 4 0 5-4 15 1 6-5 8 1 3-2 4 10 3-2 5 2 7-1 2 2 3 0 2-3 10-2 1-2 16-2 8 4 1 9 7 4 4 5 0 3-3 3-8 5 0 7 8-2 3 0 1 2 6-2 7 1 2-4 4-2 14-2 3 7 12-2 1 3 13 1 7-2 6 7 3 0 1-6 4 0 3-3 5 0 7-4 9 5 2-1 2-5-3-2 4-5-11-1-4-7-12-5 5-4 5-9 5-3 4-5-2-3 1-2 4 0 12-6 4 2 4 6 0 4 7-4 0 4 6-2 12 7 5-4 4 3-4 4 3 3 4 1 1 5-2 7 2 1 3-2 0-4 11-5-1-4 1-1 11-3-2-3 0-11-2-4 8-3 4 1 4-6 2-9 7-6 19-2 1 3 11 0 3 3 2 0 4-4 8-1 1 2 3 0 2-2 9 0 8 2 13 1 1-1 0-16-3-5 17 1 9-8 3 0 5 6 3 0 7-3 2-4 3 0 4 6 4-2 1-5 6-1 0 4 9 5 0 2 9 0 6-3 10 3 5-5 12-4 1 1 2-1 0 9 7 0 3 4 6-6 4-1 15 12 11 2 3 14 5 5 6 0 2 3 8-1 2 1 0 3 7-1 6 1-1 3 4 1 0 5 13 9 9-2 12 0 5 2 2 0-1-5 4-2 7 0 5 4 9 2 6-2 5-5 9 1 4-6 10-2 2-3 5-1 0-4 8-7 2-5 12 5 5 0 4-3 6 2-1 6 3 6-6 6 8 4 5 5 1-1 4 4 1-2 4 3 8-2 1 8-4 3 0 11-2 3-3-1-5 2 0 9 15 9 1 22 6 0 4 11 5 6 16 0 3 2 9 0 2-2 6 2-3-10 1-3 12-7 1-5 6-5 4 1 8 0 4-7 6 5 0 4 3 2 10 12-1 3 4 4-1 2 2 3 10-1 0-5 3-4 12 9 3 0 2-2 1-4-1-4 23 0 9-11 12 0 3 2-1 7 3 5-2 6 7 3 0 11 7 9 0 9-4 4 2 8 4-2 3 1 11 9 9-5 7 2 2-11 10 0-1 12 5 5 4-2 12 2 4-4 7 2 0 2 13 7 11-2 2 2 8 0 2 2 5-3 13 3 2 4 15-2 6 7 8-1 9 1 8 7 5-1 2 5 12 7 8-1 1-3 6 2 1 3 6 4 5 1 6 7 0 2-6 0-2 2 3 5-2 7 3 2 0 4 2 2 7 0 3 3 12 2 4 6-4 3 0 3-6 1-1 4-7 1-3 5 0 4 4 6 4 0 2 3 7 0z"},{"n":150,"nm":"Ríos entre el Bayano y el Santa Bárbara","rio":"Río Chimán","prov":"Panamá y Darién","km2":1208,"p":[43320,58776,66015],"w":false,"a":false,"v":"Pacífico","lx":4838,"ly":1285,"bb":[4368,1053,5128,1825],"d":"M4978 1307l10 0 3-3 1 1-1 12 6 1 10 11 3-1 4 3 3 0 5-4 4 2 2-7 5 0 5 5 3 0 7-5 13-1 6-8 5 8-7 19 2 4-5 7 1 14-5 2 2 5-6 5-4 9-6 3-7 0-5-3-3 16 1 5-5 8 2 6-1 4-3-1-3 2-2 4 8 8-4 2 0 8 2 2 8 2 2 2-1 6 4 1 1 2-3 13 6 5 5-2 0 2 8 6 1 7 7 2-1 9 2 3-2 1 2 2-1 6 1 1 0 5-4 2-7 0-2 2-5 1 4 24 3 0 2 5 5 4 0 3-5 5 2 10-5 10 2 6 3 2-1 4 3 3 3 0 2 6-9 5 11 21 1 5 8 9 0 4 4 5 5 6 3-1 1 3 5 2 5 6 0 6 2 2-2 11 5 15-1 8 1 6 3 2-1 8 4 3 2 5 4 2 2 8 3 4-6 6 1 5 5 4 0 3 6 5 3 8-1 4-5 2 0 10-2 5 6 9 0 3-5 6-4-4-1-10-3-2-7 0-5-3-9-18-10 3-3-2 1-10-2-20 3-6-14-13 7-2 2-5-5-13-4-4-1-10-3 12-5 1-5 5 0 8 4 5-1 2-6-3-5-7-12-10-13-24 1-10 8 0 2-2 0-5-3-5 0-5-5-2 5-15 2-1 10 6 4-1-2-3-8-3-2-18-7 0-10-7 1-12-4-6-9-6-4 0-4-3 2-7-6-6-1-7-5-5-4-8 0-5 8 2 9-4 3 0 9 10 7 3 4 11 5 2-6-17 1-8-4-2 2-4-8-5 2-5-12 3-2-2 4-14 6-2-8-12 3-8 4-2-8-6-15-1 0-7 4-6-2-17-3 6 2 9-15-8 3-20-3 2-3 18 3 3 7 2 5 9-2 5-3 2-38-19 0-2 6-7 2-7-3-14-3-5-1-6-2 6 4 6 2 10 0 7-3 4-12-11-11-4 0-3 7-8-6-9-2 1 0 1 5 3 1 6-8 4-4 6-4 0 2 8-5-1-2-4-2 1-2 8-6 0-4-4-2-13-10-2 2-10-4-8 5-8 1-7 10-7 2-6 0-12 6-17-2-9-5 0-3-3 7 13-6-2 3 8-4 11 0 14-7 4-6-7-9-1-8 3-12 16 2 8-2 1-18-17 17-9 2-4-2-4-3 6-7 1-1-4 3-3-3-10-4-1-3-5-2 0-2 4-7 1-5-2-8 0-4-6-16-2-10-3-5-4-7 0 0-7-3-1-2-4-9 0-5-29 3-4-2-4 4-8-8 5-6-4-16-7 0-8 6-7-6 1-7-7-6 0-1-3 3-5-1-3-2 6-1 0-3-2-2-19-9-10-7-2 3 8 6 2 4 5 1 19 2 9-24 1-14 22-5 2-4 0-20-18-4-5-1-9-11-18 0-8-5-5-1-21-9-13-10-6-5 1-3-3-2-11-6-7-14-5-3 0 0 4-2 0-6-12-3 0-5 4-11-3-2-4-5 2-3-5-4 0-2-4-11 0-7-3-13-10-14-3-8-6-5-3-10 0-13-18-12-5-1 1 2 4 9 5 0 3-4 1-9-2-24-11-13-3-6 0-3 4-1-5 1-2-4-4 5-7 5-1 6-3 8 0 9-5 11 3 4-2 4-11 8 1 6-4 3 1 1-5 6-3 5-1 9 3 9-8 7 1 15-5 1-4 6 1 2-1-1-7 7 0 3 3 9-2 3 2 9-1 18 7 6-3 3 4 8 0 2-3 0 7 10 5 1 3 5 0 3 6 7 1 4 2 6 0 2 2 6 0 1 5 7-1 6 2 11-5 4 1 4-5 6 1 3-2 3 10 0 10 4 0 6 8 9-1 8 16 7-3 4 4 8-2 1 10 6 3 7 24 4 1 1 3 3 3 0 9 7 1 6-2 15 4 1-2-1-6 3-4 14-4 25 14 5-3 11 0 3-2 5 0 8 4 4-2 13 0 5 8 9 3 6 0 5-6 5 3 8-4 4 4 1 8-2 2-4-1-4 3 0 5 4 1 1-3 6 1 1 2 5 3 1 4 4 4 3 1 5 6 8 2 3 7 4 1-1 7 10 8 5 0 4 3 9 0 5 4 6 16 4 2 4 9-1 4 3 3 0 7 4 4-2 4 9 7z"},{"n":152,"nm":"Río Santa Bárbara y entre Santa Bárbara y Chucunaque","rio":"Río Sabanas","prov":"Panamá y Darién","km2":2497,"p":[48241,62261,69261],"w":false,"a":false,"v":"Pacífico","lx":5238,"ly":1472,"bb":[5018,1219,5850,2116],"d":"M5363 1249l0 3-3 3 1 4-7 3-1 3 2 2-5 4-3 0-1 6 7 3-3 6 1 3-1 4 6 1 1 4 5 2 4 6 6 3 4 6 7-1 2 4 7 1 2 2-1 3 6 4 0 3 3 3 3 1 4-4 4 6-1 3 3 7 5 0 0 11 7 0 5 9 0-5 3-2 8 0 5-5 6 2 2 4 3-1 0 3 12 2 4 6 0 6 3 3 1 4 7 3 1 7-1 1 4 8 0 5-3 1 0 3 6 4-1 4 3 3 0 7 8-1 3 7-2 2 1 1 0 5-2 4 11 4-3 7 1 3 6-1 2 2 10 1 5 6 3 0 1-4 6 2 0 10-5 2-1-2-4-1-6 7 0 18-2 2-5-3-3 4 1 6-2 4-7-3-6 1-3-4-5 0-2 2-8-2-1 8 3 3 2 6 0 3-3 2 2 6 4-1 2-2 9 0 4 4 0 5 4 2 2 3-1 4 2 1 3-2 6 1 2 5 4 0 0-4 8 0-1 6 2 6-5 5-3 6-5 3 6 7-6 15 1 4-2 3-7 2-7 9 5 10-4 10 3 7 5 5 5 0-3 3-3 0-7 5 3 7 0 8-2 2 1 6 5 1 7 7 9-3 6 5 1 0 2-10 8 3 3-1 16 12 4 0 5 4 4 5 0 7 3 2 8-1 7 3 2-1 4 11 6 3 6-3 14 5 4-1 1-2 8 2 0 4 4 1 1 5 7 3-1 7 4 0 4 3-1 15 2 4 0 5 4 2 4 26 4 1 4 6 13 0 11 7 2 11 4 9 0 9 3 4 0 6 3 2 10 0 5-2 1-2 6 0 7-7 4 0 2 3 4 1 10-1 2 1 2 9 2 2 13-2 4 7 6-3 3 2-1 3 2 1 0 5-1 2 3-1 2 6 4 2 2 4 3-1 2 1-1 5 5 5-2 12 3 1 2-2 4 2-1 3 6 11-4 5 8 9-1 7 6 3 3 4 1 6 0 7 1 2-5 5 0 8-16 4-4 4 3 8-3 3 0 4 5 5 3 21 7 5 0 5 9 5 4 5-4 4 2 7-2 5-2 1-1 9-5 11 4 14-9 3-10 10-2 0-1-2 7-10-1-9-4 0-14 6-4-1-1-2 0-6 9-15-1-6-3-2-13-2-5-3-7-9-14-26-5 0-3 3-2 18-2 1-3-1-2-5 2-14 4-12-12-21-8-6-10-2-8-13-14-15-38-12-13-7-23-8-28-3-35-8-9-6-6-8-9-16 0-15-5-14-19-30-3-11-1-17-12-21-10-29 1-14 1-1 6 7 11 0 5 6 0 2-7 0-2 1-1 3 3 4 4 2 9-1-5-13-7-6 3-6 4-1 11 5 13 1 6 12 8 3-5-4 4-3-6-2 4-2 0-3-6 1 1-2 4-1-7-1 7-4-7 1 2-4-3-1-2 2-1 4-5 1-4-6 0-4-5 1-3-3-3-5 0-7 11 3 3-3-10-8-3 2-3 3-1 10 3 7 9 6 1 2-16-4-8 8-4-1-1-3 6-11-4 0-2 6-6-3-4 1-11-22 3 0 7 9 4 1 10-12 0-3-5 4-4 7-5 1-6-9-8-2-1-2 1-2 11-7 1-4-5-10 2 10-1 3-11 4-7-3-11-12-4-13 2-8 11-11 6 5 10 0 0-2 4-4-1-2-4 2 1-11 5-9-5-10-1-6-1 6 4 10-4 7-5 2-2-2 2-4-17-9-15-15-3 4-3-29-6-3-6-8-2-8-7-8-7-19 6-5-2-6 5-8-3 3-9-4-2-7-1 4 2 4 9 4-3 3 2 7-5 1-2 2 6 13-1 7 8 13 3 11 7 9 2 6-4 3-7-8-3 0-1 5 14 19 0 6 3 8-6 8 2 4 2 0 5-7 1 0 2 3 4-5 2 1 0 7 7-5 6 2 3 4-2 5-8 7-4 7-3 11 8 24 14 16 5 27-2 12-2 1-4-2-13-16-6-5-1-6-3-2-10-21-11-9-13-4-4-8-5 15-9 7-3-1-10 11 1-10-3-2 0 7-4 5 1 4-4 5 6 6 2 9-2 8 0 11-13 9-13-2-3 2-2 9-8-5-1 1 5 6-5 6-9 1-8 3-5 0-4 5-2-13-4-1-3 2-3-1-1-13-7-5 3-5 14-13 1-2-3-3 0-8 10 5 14 2 0 7 2-2 1-6 6-2 0-4 4 7 3-1 2 7 2-6 5-1 1-2-4-2 0-2 4 1-1-7-4-3 5-6-3-1 1-4-4-2-3-5 1-5-9-1-2-4 8-17 11-8-4-11-4-3 1-10-5-12-3 4-1 0 1-7 6-8-7 3 1-4-3-1-2-5-3 1-2-4-4 7 0-9-4-3-2 14-2 1-3-3-2 1 2 4-3 4 4 2-1 6 7 3 4 4 11 4 4 6-2 15-11 18-4-1 0-1 2 0 1-2-8-4 2-3-3-1-4 3 6-10-4 2-5 7-2-1 4-7-6-3 7-2-1-2-6-1-2 3-2 0-1-5-4-3-2 11-1-6-4 1-6-4-1 1 2 3-4 1-8-9 7 10 13 5 2 13-4 4-14 9-7-2-9-6 13 12-2 3-6-1 4 4-3 4 1 9-4 1 2 8-4 2-8-3-5 0-3-2-5-7 1-13-5 0-6-9 1-7-2-7-5-6-5-12-12-6-3-6-2 3-5-4 7 11 12 4 10 19 1 5-7 12-21-10 2 4-1 2-6 7-3 1-6-6-2-14 4-7-4 3-3 6 3 12-3 11 5-7 4 4 4 1 6-7 5-2 8 2 2 11-11 1-7 6 0 5-9 4-3 9-9 11-6 2-7-11 1-8-3-23 3-9-3-8-1-25-1-1-4 0-1-3-4-22 0-2 5-3-2-5 2-1 3 3 4-6 1-3-5 0-1-9 4-6-6 3-6 8-7 1-1 7-2 3-3-4 1-23-4 0-1-3-5 16-10-6-2 1 6 7-3 15 3 4 11 10 0 5 15 30 3 34-3 19 1 8 3 8 9-2 13 9 4 8 1 11 0 2-5 1-6 7-2 8-6 4 0 5 2 6-4 8 2 5-1 19-12-7-5-9-6 0-8 2-2 3-2-1 5-6 0-3-6-9 2-5 0-10 5-2 1-4-3-8-6-5 0-3-5-4-1-5 6-6-3-4-2-8-4-2-2-5-4-3 1-8-3-2-1-6 1-8-5-15 2-11-2-2 0-6-5-6-5-2-1-3-3 1-5-6-4-5 0-4-8-9-1-5-11-21 9-5-2-6-3 0-3-3 1-4-3-2-2-6 5-10-2-10 5-5 0-3-5-4-2-5-3 0-4-24 5-1 2-2 7 0 4-2 0-5-1-1 1-6-2-2 2-1-2-3 1-9-7-2-1-7-8-6 0-2-5 2-6-5 3-13-1-2-4-1 1-6-2-2-8-2-2-2 0-8 4-2-8-8 2-4 3-2 3 1 1-4-2-6 5-8-1-5 3-16 5 3 7 0 6-3 4-9 6-5-2-5 5-2-1-14 5-7-2-4 7-19-5-8 1-9-5-6 4-6 0-3 5-6 10 1 4-2 5 1 2-1 11 0 5-5 7-1 1-8 7-9 8 3 8 7 10 1 4 3 3 0 1-3 9-1 0-4 5-1 3 1 1 4 7 1 1 5 7-1 0 2-4 2-1 3-1-1-5 6-3 2-1 6 2 2-2 3 6 5 5 1 1 9 2 2 8 3 1 3 7 0 6-2 5-6 0-2-3-4 4-5 1-9 6-10-1-5 3 0 2-3 2-9 8-8-1-2 4-7 2-1 11 9 6-7 5 0 4-5 3 1 2-4 3 0 4-8 9-5 2-7 10 0 2 1-1 4 4 1 4-1-1-3 2-3 11-3 5 4 0 2 4 4-2 5 2 1 3 6 12 2 3-2 5 6 2-1 2 3 3 0z"},{"n":154,"nm":"Río Chucunaque","rio":"Río Chucunaque","prov":"Panamá y Darién","km2":5069,"p":[75238,105016,119432],"w":true,"a":false,"v":"Pacífico","lx":5805,"ly":1561,"bb":[5346,987,6377,2086],"d":"M5438 1359l-6 3 0 5-5-9-7 1 0-12-5 0-3-7 1-3-4-6-4 4-3-1-3-3 0-3-6-4 1-3-2-2-7-1-2-4-7 1-4-6-6-3-4-6-5-2-1-4-6-1 1-4-1-3 3-6-6-3-1-3 1-3 3 0 5-4-2-2 1-3 7-3-1-4 5-8 5 1 10-2 3 2 3-1 0-3 2 0 0-14-4-7 3-9-3 1-5-4-2-9 2-3 0-8 6-6-1-9-4-3 7-7 8 3 6-11 5 5 6 2 8-5 4 0 4 2 0 4 4 5 4-2 6 0 5 3 7-2 4 4 2-6 5-3 1 2 5-3 3 1 4 0 4-9 3 0 1-5-13-11-2 2-6 0 0-3 3-3-2-1-15-4 2-6-8-5 0-6-2-2-5 1-1-2 1-7-3-2 1-6 4-2 2-6 5-3-1-6 1-2 7-5 4-1 1-2 5 1 6-4-2-9 8 0 1-5-2-6 13-11-1-5 7-6 1-15 4-3-1-3 3-4-1-12 5 1 7 8 7 0 15-4 11 6 4 0 11 11 9 1 12 7 2 8 7 3-1 5 3 5 1-1 1 2 5 0 1 4 7-1 1 3 2 0 2 3-2 5 7 4 3-2 8 0 1 3 4 0 5 4 0 11 6 1 1-2 8 2 0 7 5-1 13 8-1 5-6 5 2 6 6 1 5-2 11 12 2 6 3-1 0 4 3 3 8 2 5 4 4 0 8 6 4 0 0 3 4 5-11 6 6 6-1 2 2 3 6 2-1 8 5 5 1 7 5 1 2 5 9 8 1 3 4 1 2-3 6 0 7-2 1 2 10 9 0 3 5 4 9 2 9 8 9 0 5 4 8-2 10 8 4 0 4 5 4 1 1 4 6 2-1 10-2 3 1 7 3 5 5 1 6 7 5 0 4 6 9 1 0 4 8 7 0 4 4 5-4 4 3 7 4 3-1 18 8 1-1 6 2 1 3 9 4 1 0 3 3 0 7-1 4-5 3 0 11 8 5 1 9 16 5 0 4-2 3 0 5 2 5 7 0 12-2 4 11 10 0 8 6 7-1 3 2 3 5 1 3-1 3 1 8 0 10 5 0 2 6 4 2 3 10 4 3 10 4 3-7 8 2 12-2 5-1 0 1 3-5 9 1 4 12 12 0 9 2 7 9 6 9 1 7 10 3 0 3-1 3-3 8 0 16-16 9 2 8-6 0-5 6-2 5 4 2 5-5 8 0 10 4 1 6 5 0 8 5 4 13-3 7 7 10 1 0 4 6 3 3 7-2 7 1 22-5 17 22 24 8 18-5 11-5 4-7 2 8 0 19-10 19 2 7 4 6 12 8 11 3 12 3 6 9 6 17 30 3 9 6 8 3 19 8 15-2 12-7 13-1 16 6 14 6 9 9 22 12 10 10 2 7 4 4 16 11 10 1 7 4 4 0 5-10-1-3 2-4-2-8 7-4-1-4 5 0 6-12 2-3 6-9 3-8-2-6 1-1 3-5 2-20-3-6 2-1 2-3 2-14 0-6 6 0 3-5 5-9-4-5 9-11 8-11-4-9 10-10-3-2 3-8-1-5 2-4 2-2 12-4 4-7 2-2 4-11 2-2 4-4 3-8-3-1 3-4-1-2 3-3 0-2-4-3 0-6 7-6-5-5-8-1-9 2-3-2-3-3-1-3-5-7-2 0-7-6 2-4-6-9-1-7 3-3 0-5 4-8 1-1-2-5 0-7-7 0-3-5 0-3 5-10 2-9 7-5-2-16 10-1 3-32 16-10 8-3-7-4-5-12-3-5-3-3 0-6 5-9-1-3 2-7-1-4 6-6-3-5 9 0 3 2 2-1 4-4 1-6-2-5 3-10 0-2 3 0 8-6 3 3-8 1-9 2-1 2-5-2-7 4-4-4-5-9-5 0-5-7-5-3-21-5-5 0-4 3-3-3-8 4-4 16-5 0-7 5-4-1-3 0-7-4-9-6-4 1-7-8-9 4-5-6-11 1-3-4-2-2 2-3-1 2-12-5-5 1-5-2-1-3 1-2-4-4-2-2-6-3 1 1-2 0-5-2-1 1-3-4-2-5 3-4-7-13 2-2-2-3-9-11 0-4-1-2-3-4 0-7 7-6 0-1 2-5 2-12-1-10-40-11-7-13 0-4-6-4-1-4-26-4-2 0-5-2-4 1-15-4-3-4 0 1-7-7-3-1-5-4-1 0-4-8-2-1 2-4 1-14-5-6 3-6-3-4-11-2 1-7-3-8 1-3-2 0-7-4-5-5-4-4 0-16-12-3 1-8-3-2 10-1 0-6-5-9 3-7-7-5-1-1-6 2-2 0-8-3-7 7-5 3 0 3-3-5 0-5-5-3-7 4-10-5-10 7-9 7-2 2-3-1-4 6-15-6-7 5-3 3-6 5-5-2-6 1-6-8 0 0 4-4 0-2-5-6-1-3 2-2-1 1-4-2-3-4-2 0-5-4-4-9 0-2 2-4 1-2-6 3-2 0-3-2-6-3-3 1-8 8 2 2-2 5 0 3 4 6-1 7 3 2-4-1-6 3-4 5 3 2-2 0-18 6-7 4 1 1 2 5-2 0-10-6-2-1 4-3 0-5-6-10-1-2-2-6 1-1-3 3-7-11-4 2-4 0-5-1-1 2-2-3-7-8 1 0-7-3-3 1-4-6-4 0-3 3-1 0-5-4-8 1-1-1-7-5-2-3-5-3-3 0-6-2-1-1-3-5-4-8 0 0-3-3 1-6-6-7 5-5-1z"},{"n":156,"nm":"Río Tuira","rio":"Río Tuira","prov":"Comarca Emberá y Darién","km2":3011,"p":[16113,21272,23308],"w":true,"a":false,"v":"Pacífico","lx":6129,"ly":2271,"bb":[5812,1954,6518,2748],"d":"M5868 2071l5-1 1-2-2-7 5-9 6 3 4-6 7 1 3-2 9 1 6-5 3 0 5 3 12 3 4 5 3 7 10-8 32-16 1-3 16-10 5 2 9-7 10-2 3-5 5 0 0 3 7 7 5 0 1 2 8-1 5-4 3 0 7-3 9 1 4 6 6-2 0 7 7 2 3 5 3 1 2 3-2 3 1 9 5 8 6 5 6-7 3 0 2 4 3 0 2-3 4 1 1-3 8 3 4-3 2-4 11-2 2-4 7-2 4-4 2-12 4-2 5-2 8 1 2-3 10 3 9-10 11 4 11-8 5-9 9 4 5-5 0-3 6-6 14 0 3-2 1-2 6-2 20 3 5-2 1-3 6-1 8 2 4-2 4 0 4-7 12-2 0-6 4-5 4 1 8-7 4 2 3-2 10 1 0-5 13 16 1 6 13 18-1 10-15 12-4 7 1 6 11 5 18 4 12 17 10 27 3 16-2 13 3 11-3 27 4 17 10 12 3 6 15 14 9 4 11 14 18 12 0 6-2 2-19-3-5 3-1 3 2 5 13 10 7 10 10 9 6 2-2 5-8 2-5 8-8 1-16-5-7 2-3 4-12 2-18-6-13-1-42 16-14-4-14 4-18 18-17 29-6 25 19 37 5 25 1 8-2 3-24 7-23 22-4 11-21 23-11-2-8 2-6 8-11 24-6 8-13 8-3 14-6 8-6 4-16 3-2 3 3 12-1 7-14 25-1 9-10 9-12 0-11 16-15 15-2 4-1 10-4 6-32 43-3 1-16-6-13-12-7-12-14-10-3-13-15-34-3-14-5-9-14-35-6-22-4-6-10-7-18 4-13-2-31-13-12 0-5-10 1-9 2-1-1-5-12-8-3 0-4-5 0-8 4-13 0-4 3-4 0-4 2 0 1-9 3-5-5-14 5-1 7-15 4-3-3-5 0-5 2-5 0-15 5-6 0-5 2 0 3-11 4-3-3-18 7-5 2-10 7-10-1-6 5-5 0-24-4-4-1-12-4-3-11 4-7-1-13 1-6-1-5-8-5-2-4 3-3 5-7-3 1-9-3-6 3-7-2-5 3-6-2-3 0-7-3-2 2-8-3-1 0-11-3-4-14 0-4-9 4-2 0-9-6 2-14-9 3-1 0-3 4-4-5-3-2-5 5-2 0-5 6-2 4-5 1 0 0-5 5-8 5-3 4-10 3-1 3-7 7-3 1-9 2-1 2-9-8-4-1-6 1-1 4 0 4-4 0-2 3-2-1-4 3-2 3-7z"},{"n":158,"nm":"Río Tucutí","rio":"Río Tucutí","prov":"Darién y Comarca Emberá","km2":1875,"p":[13333,16948,18981],"w":true,"a":true,"v":"Pacífico","lx":5758,"ly":2385,"bb":[5530,1945,5924,2812],"d":"M5579 2292l-6-2-2 2-4-1-2-1-1-5-3-1-3-8 3-2 2-8-2 0-4-10 1-4-2-2-5 0-2 6-8 5-3-10-3-2-4 1-1-9 4-6 6-2 2-8 4-2 11 2 5-3 4 4 0 2 3 1 5-9 5-4 0-4 2-3 8 3 0-4-6-3-4-7 7-7 0-8 4-3 0-7 4 0 0-3 4-3 2-4 1-16 2-6-3-16-7-8-2-8-4-4 0-4 4 0 13-9 7 5 3-5 4 0 3-13 2-1-1-7 8-10-1-7-3-3-3 1-3-2-2-8 1-4-2-2-5 1 2-4-3-4 0-4-3-2-5 1 0-5-7-4 0-2 3-1-1-6 1-1 10-2 5-4-10 0-1 3-7 2-5-1 2-2-1-9 2-3 2-8-2-3 4-3 0-4-6-3-2-5 5-2 11 2 22 24 7 4 16 5 20-1 7 3 5 6 1 12 14 10 6 18 2 21-1 7 12 5 7-5 4 1-2 5-9 7-1 7 4 4 9-5 8 3 0 6-5 4 10 3-1 3-5 5 1 3 5-1-1-3 8-5-1-4-6-3 4-6-3-4-17-5-3 1-3 5-2-2 1-6 11-7 0-4-5-3-9 3-5-2-9-45-5-6-9-7 1-9-4-7-19-9-17-3-11-4-15-13-10-11-7-6 0-3 10-3 15 0 10 8 34 7 30 12 5 5 8 15 22 18 5 13 4 25 3 5 7 1 8-7 5 0 3 2 6 13 5 4 21 8 0 5-10 11-2 5 4 6 9 4 4-1 7-6 5 0 1 4-8 10 2 7 6 0 9-12 7 3 4-2 1-5-4-12 2-4 6-1 2-2-2-9 10-1 6-5 2 1-3 7-3 2 1 4-3 2 0 2-4 4-4 0-1 1 1 6 8 4-2 9-2 1-1 9-7 3-3 7-3 1-4 10-5 3-5 8 0 5-1 0-4 5-6 2 0 5-5 2 2 5 5 3-4 4 0 3-3 1 14 9 6-2 0 9-4 2 4 9 14 0 3 4 0 11 3 1-2 8 3 2 0 7 2 3-3 6 2 5-3 7 3 6-1 9 7 3 3-5 4-3 5 2 5 8 6 1 13-1 7 1 11-4 4 3 1 12 4 4 0 24-5 5 1 6-7 10-2 10-7 5 3 18-4 3-3 11-2 0 0 5-5 6 0 15-2 5 0 5 3 5-4 3-7 15-5 1 5 14-3 5-1 9-2 0 0 4-3 4 0 4-4 13 0 8 4 5 3 0 12 8 1 5-2 1-1 9 5 10-14 3-7 6-8 16 1 8-2 15 6 17 0 6 0 5-5 9 0 6 5 9 1 8 6 19 9 11 3 15 7 12 5 7 15 11 2 6-2 9-9 8-12 18-5 5-21 6-6 4-9 16-5 0-15-9-25-3-14-11-4-19-5-2-1-5-6-8-5-4 1-3-3-3-7-2-1-8 3-3-3-18-10-1-9 7-16 3-19-2-5 3-13 0-2-5 1-4-3-4 1-3-3-4 1-4 4-6 0-3-4-3 3-5-8-2-4-16-4-4 0-6-5-4 2-4-2-3 5-6 1-6-3-14-6 4-3-5-5 2-7-1-2-4 2-7-3-12 2-2 1-12-3-8 5-10-9-7 0-8 4-6-1-4 3-8-5-8-1-10-6-8 13-11 1-9-1-6-6-4-2-6 1-5-5-5-1-14-9 0-11 7-3-10-5-6 0-3 4-4-1-9 2-3-7-5 0-16-4-3-3 0 0-6-4-3 2-8-5-14 1-9-7-5-5-8-3-15-3-2-2-4 4-8 5-3-1-8-3-2 2-5z"},{"n":160,"nm":"Ríos entre el Tucutí y el Sambú","rio":"Río Marea","prov":"Darién y Comarca Emberá","km2":904,"p":[9183,11480,13392],"w":true,"a":true,"v":"Pacífico","lx":5447,"ly":1978,"bb":[5238,1747,5630,2229],"d":"M5590 1963l2 5 6 3 0 4-4 3 2 3-2 8-2 3 1 9-2 2 5 1 7-2 1-3 10 0-5 4-10 2-1 1 1 6-3 1 0 2 7 4 0 5 5-1 3 2 0 4 3 4-2 4 5-1 2 2-1 4 2 8 3 2 3-1 3 3 1 7-8 10 1 7-2 1-3 13-4 0-3 5-7-5-13 9-4 0 5 14 8 10 0 4 3 3 0 11-2 4 0 14-3 6-4 3 0 3-4 0 0 7-4 3 0 8-7 7 4 7 6 3 0 4-8-3-2 3 0 4-5 4-5 9-2 0-5-7-5 3-11-2-4 2-3-4 0-5-4-2 0-2-7 1 0-11-3-1-2-3-10 5 0 5-1 1-3 0-5 5-5 2-4 0-1-3-4 0-5-3-2-12-10 1-2 1-3-2-6 2-2 3 2 4-3 6-9-5-6 1-5-2-13-8-1-13-3-3 2-7-1-7-7-7 2-4-3-2 1-6-8-7-2-6-4-2 0-10 3-6 3-1 14 9 15 2 1-4 3-2-9-20-11-9-5-10-2 1-6-5-2-5-5-4-4 2-5 5-12 5-2 4 0 3-4 2-5 0-4-2-8 1 1-4-5-4-14 0-5 1-4-4-5 2-14-6-7 1-2-3-7-1 7-10 1-4-3-5 5 0 2-3-1-21 2-20-3-9-14-1-2-5-7 1 0-5-4-2 2-3-4-3-2-7-4-3-9-3-1-4-5-4-1-7-12-7-4-20 4-2 5 5 6-2 2 2 4 1 4 5 3-1 16-14 3-6-1-6-4-5-9-7 0-4 3-2 6 2 7-2 8-13 8 3 12 24 9 2 7-2 4 4 4 0 6 8 1-2-5-9 10-6 5 0 5 2 1-1-3-8 1-3 2 0 5 5 9 5 0-8 8-6-8 3-4 6-8-10 13-16-4-11-5-2 1-2 7 0 3-3-8-13 3-5 6-1 2 2 5-4 5 14 3 2-4-15-7-6-1-6 5-4 5-14 11-16 1-8-4-13 6-16 10-2 13 13-1 11 4 14 8 15-1 3-6 3-2 12 3 10 6 4 10 0-4 7 2 1 4-6 0-4-13-2-4-6-1-8 3-1 5 2 1-4 4-1 2 5 3-2 7 1 14 14-12 10-3 7 0 5 3 0 6-5 6 8-1 4 2-1 1-3-5-9-4-2-4 3 0-2 7-9 13-3 15 12 5 10 13 10 12 24 6 8 0 24 15 29 18 15 15 1 0 3-3 10 0 15 4 7 6 4-5-5-2-11 2-15 6-9z"},{"n":162,"nm":"Río Sambú","rio":"Río Sambú","prov":"Darién y Comarca Emberá","km2":1498,"p":[14842,18461,21576],"w":true,"a":true,"v":"Pacífico","lx":5413,"ly":2348,"bb":[5102,2071,5650,2641],"d":"M5231 2276l-9 1-4 3-20-3-1-2-1-11-4-7-3 0-4-20-7-2-7-15-6 1-3-2-5 2-8-3-11 3-8-6 0-20-4 1-2-2 0-6-5-3-1-8-16-15 2-25 3-1 2-4 4-1-1-5 5-3 3-22 10-2-4 14 8 9 0 6-4 3-5 0-1 1 4 5 5 3 10-1 8 3 15-1 6-5 5 2 7-1 7 7 15 3 14-5 8-6 5 0 3-4 7 0 6-7 14-2 3 2 5 10 5-2 2-9 1 0 3 15 5 2 2-5-6-2-1-10-2-3-2 0-4 9-2 1-6-11-12 1-1-1 3-6 10-7 4-6 5-2 7-8 11-3 5-3 0-3-4-2-1-5 2-4 4 3 3 0 2 3 7-1 14 6 5-2 4 4 5-1 14 0 5 4-1 4 8-1 4 2 5 0 3-1 1-4 2-4 12-5 5-5 4-2 4 3 1 4 8 7 2-1 5 10 11 9 9 20-3 2-1 4-5 0-16-5-5-5-3-1-3 1-3 6 0 10 4 2 2 6 8 7-1 6 3 2-2 4 7 7 1 7-2 7 3 3 1 13 13 8 5 2 6-1 9 5 3-6-2-4 2-3 6-2 3 2 2-1 10-1 2 12 5 3 4 0 1 3 4 0 5-2 5-5 3 0 1-1 0-5 10-5 2 3 3 1 0 11 7-1 0 2 4 2 0 5 3 3-2 9-6 2-3 4 0 11 4-1 3 2 3 10 8-5 2-6 7 1-1 5 4 10 2 0-2 8-3 2 3 8 3 1 1 5 2 1 4 1 2-2 6 3-2 4 3 2 1 8-5 3-4 8 2 4 3 2 3 15 5 8 7 5-1 9 5 14-2 8 4 3 0 6 3 0 4 3 0 16 7 5-2 3 1 9-4 4 0 3 5 6 3 10 11-7 9 0 1 14 5 5-1 5 2 6 6 4 1 6-1 9-13 11 6 8 1 10 5 8-3 8 1 4-4 6 0 8 9 7-5 10 3 8-1 12-2 2 3 12-2 6 2 9-9 6-4 5-13 0-3 8-6-4-10 0-7-7-7-3-7 0-5 3-2-21-8-5 0-3-4-7-9 0-3-2-2-15-5-4-5 2-13-8-1-7-3-2 0-2-9-6 0-3-6-7-1-5-2-2-1-5-4-5-1-8-14-9-7-9-5-4-3-10-5-2-4 1 1 3-2 3-13 2-1 10-2 4-6 0-15 10 0 7 10 11 0 5-7 5-8 0-2 12 5 2 0 4-8 9-2-2-12 1-10-16-10-1-13-5-11-2-11-17 1-10-11-7-4-4-2 0-2-8-6-3-4-10-6-5-3-7-4-6 0-10-5-2-1-10-8-12 0-15-4-1-13-14 1-6-9-22 0-8-2-1-4 3-9 2-3-2-7-22 0-8-6-5-3-5-1-11 2-6-3-7 7-3 3-8 2-1 0-8-8-9z"},{"n":164,"nm":"Ríos entre el Sambú y el Juradó","rio":"Río Jaqué","prov":"Darién y Comarca Emberá","km2":1099,"p":[8666,10867,13150],"w":true,"a":true,"v":"Pacífico","lx":5561,"ly":2735,"bb":[5086,2094,5690,2962],"d":"M5130 2099l-10 2-3 22-5 3 1 5-4 1-2 4-3 1-2 25 16 15 1 8 5 3 0 6 2 2 4-1 0 20 2 3 4 0 2 3 11-3 8 3 5-2 3 2 6-1 7 15 7 2 4 20 3 0 4 7 1 11 1 2 20 3 4-3 9-1 8 9 0 8-2 1-3 8-7 3 3 7-2 9 4 13 6 5 0 8 7 22 3 2 9-2 4-3 2 1 0 8 9 22-1 6 13 14 4 1 0 15 8 12 1 10 5 2 0 10 4 6 3 7 6 5 4 10 6 3 2 8 2 0 4 4 11 7-1 10 11 17 11 2 13 5 10 1 10 16 12-1 2 2 8-9 0-4-5-2 2-12 8 0 7-5 0-5-10-11 0-7 15-10 6 0 2-4 1-10 13-2 2-3-1-3 4-1 5 2 3 10 5 4 7 9 14 9 1 8 4 5 1 5 2 2 1 5 6 7 0 3 9 6 0 2 3 2 1 7 13 8 5-2 5 4 2 15 3 2 9 0 4 7 0 3 8 5 2 21 5-3 7 0 7 3 7 7 10 0 6 4 3-8 13 0 4-5 9-6 0-4 7 1 5-2 5 5 4-4 3 14-1 6-5 6 2 3-2 4 5 4 0 6 4 4 4 16 8 2-3 5 4 3 0 3-4 6-1 4 3 4-1 3 3 4-1 4 3 5-8 10-1 3 2 16-2 7 4 5 0 4-3 6 1 8-4 5-1 5-8 2-5 4 2 23-3 13-2 2 0 9 4 6 3 14 6 6 0 3-8 13-4 3-18 1-3-2-1 3 4 6-1 3 4 10-10 0-7 5-8 2-6 4-5-1 0 4 8 8 0 6-3 3-9 3-8 10-3 0-11 6-3-9-4-2-8-7-7-4-5-16-4-1 2-13-2-3 3-12 3-4 0-5-4-4-1-4-5-2-7 1 1 6-8-3-2-10 5-12-1-3-5-2 4-8-3-6-5-2-9 4-3-1 0 5-8 8-5-6-3-9-8-10-6-5-2-5-3-1-6 1-6-4-5 1-4-8-15-12 0-8-5-3-3-6 1-3 3-3-2-7-7-6-27-15-8-2 2-7 12-6 3-3-14 5-6 5 0 4-7-3-4 2 0-5-3-5 2-9-5-1-1-3 4-5 7 3 3-20-6-8 8-6 1-5-4-5-8-4-8 1-4 5-5-6-4-1 3 16-1 7-5 7-1-8-7-10 0-6 6-6-1-7 9-2 3-3-4-15-6-5-1-5-7-2 0-3-9-7-10-12-12-5-1-4 3-9-6-8-5-3-5 2-1-5-10-6-10 8-1-7-4-2 4-7-4-10-9 0-9 3-5 5 0-8-4-9 1-3 9-13 10-7 6 0 7-7 1-4-5-4 1-9-9-7-2-7-5-3 0-10-3-1-6-7 0-5-9-15-8-8-17-26-5-5-3-7-7-6-2-11-5-8-1-17-2-3-5-3 0-8-5-4-3-9-4-1-4 5-24-17-4-7-9-4-8-30-5-4-1-13-6-7-3-9 2-32-3-1 0-4-7-9-1 3-2-1-2-11-3 1-1-5-7 0 0-5-3-2 1-12-5-9 4 1 2-1-1-9 4-17 4-2 10-10 7-10 7-1 4-5 3 5z"},{"n":166,"nm":"Río Juradó","rio":"Río Juradó","prov":"Darién","km2":361,"p":[3356,3837,4103],"w":false,"a":false,"v":"Pacífico","lx":5685,"ly":2964,"bb":[5586,2713,5792,3076],"d":"M5792 2789l-9 0-58 285-5 2-3-6-5-5-6 1-5-9 0-7-8-1-2-3-5 3 0-4-7 0-8-6 0-7-11-4-5-4 1-3-7 0-7-6-2-8-5-1 0-5-10 1-1-5-12-10-12-6-3-6-8-2 1-7-4-4 11-6 3 0 8-10 9-3 3-3 0-6-8-8 0-4 5 1 6-4 8-2 4-4 13-1-7-19 1-3 3 2 18-1 4-3 8-13 0-3-6-6-3-14-4-6 0-9 2-2 3-13-2-23 5-4 8-2 1-5 4-5-1-8 3-6 0-4-4-5 2-7-2-16 8-12 13-1 5-3 19 2 16-3 9-7 10 1 3 18-3 3 1 8 7 2 3 3-1 3 5 4 6 8 1 5 5 2 4 19z"}]};
+(function(){
+const NS="http://www.w3.org/2000/svg";
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString("es-PA");
+const mill=n=>n>=1e6?(n/1e6).toFixed(2).replace(/0$/,"")+" M":fmt(n/1000)+" mil";
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LIB="https://naturapanama.org/wp-content/uploads/";
+const F=D.feats;const byN={};F.forEach(f=>byN[f.n]=f);
+const st=f=>f.a?"a":f.w?"w":"o";
+const short=f=>f.rio.replace(/^Río /,"");
+
+// Fondos y socios por cuenca (listado de Natura, 17 mar 2026)
+const FONDOS={87:"Comité de Cuencas",89:"Comité de Cuencas",91:"Comité de Cuencas",95:"Conserva Aves (Fondo RFP)",102:"FIDECO · Fondo de Adaptación",106:"Comité de Cuencas",108:"Comité de Cuencas · FIDECO (PFC)",111:"Autoridad del Canal de Panamá (ACP)",114:"PNUMA",115:"FIDECO · FIDECO Chagres · Banistmo",118:"Comité de Cuencas",122:"Conserva Aves (Fondo RFP)",126:"GIZ · Comité de Cuencas",128:"FAO · Comité de Cuencas",130:"Conserva Aves (Fondo RFP)",132:"FIDECO · FAO · Tigo · Banistmo · Fondo de Adaptación · GIZ",134:"Comité de Cuencas",136:"Comité de Cuencas",140:"Comité de Cuencas · Conserva Aves (Fondo RFP)",142:"Comité de Cuencas",158:"AECID",160:"Conserva Aves (Fondo RFP)",162:"FIDECO Darién · AECID",164:"FIDECO Darién"};
+const GEF="Con el proyecto «Manejo sostenible de la tierra y restauración de paisajes productivos» (GEF, MiAMBIENTE, FAO y CATHALAC) acompañamos a productores en una agricultura y una ganadería climáticamente inteligentes.";
+const STORY={
+ 102:{t:"En las faldas del volcán Barú acompañamos 19 años a productores de café de Renacimiento y elaboramos el plan de conservación de la subcuenca del río Caisán, que protege las Lagunas de Volcán.",
+  l:[["Plan de conservación de la subcuenca del río Caisán",LIB+"2023/09/PLAN-DE-CONSERVACION-DE-LA-SUBCUENCA-DEL-RIO-CAISAN-comprimido.pdf","PDF"],["Proyecto: café y reforestación en el río Caisán","https://naturapanama.org/establecimiento-de-proyectos-de-reforestacion-riberena-y-agroforesteria-con-sistemas-de-cafe-y-de-conservacion-de-suelos-en-la-subcuenca-del-rio-caisan/","WEB"]]},
+ 115:{t:"Aquí nace el agua del Canal y de buena parte de Panamá y Colón. Con el canje de deuda del PN Chagres protegemos el bosque donde nacen sus ríos, y hoy lo restauramos con Banistmo y Coaliciones Verdes.",
+  l:[["Sistematización del fondo del PN Chagres",LIB+"2023/07/Sistematizacion-Fondo-Chagres.pdf","PDF"]]},
+ 132:{t:"Seis aliados y un plan de manejo integral para toda la cuenca, de la cordillera de Veraguas al golfo de Parita, con sistemas agroforestales y café en la parte alta.",
+  l:[["Plan de manejo integral del río Santa María",LIB+"2023/07/Plan_de_Manejo_Integrado_de_la_CRSM-2.pdf","PDF"],["Proyecto: sistemas agroforestales en la parte alta","https://naturapanama.org/implementacion-de-sistemas-agroforestales-y-de-conservacion-de-suelos-en-la-parte-alta-de-la-cuenca-hidrografica-del-rio-santa-maria-3/","WEB"]]},
+ 128:{t:"Con la FAO y el comité de cuenca acompañamos a productores en una agricultura y una ganadería climáticamente inteligentes, dentro del proyecto de manejo sostenible de la tierra (GEF).",l:[]}
+};
+[158,160,162,164].forEach(n=>{STORY[n]={t:"Con el fondo FIDECO Darién, nacido de un canje de deuda, la cooperación española (AECID) y Conserva Aves, acompañamos a comunidades emberá y campesinas que viven junto a los ríos del Darién.",l:[["Sistematización del fondo del PN Darién",LIB+"2023/07/Sistematizacion-Fondo-Darien.pdf","PDF"]]}});
+
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+function drawBase(svg,opts){
+  opts=opts||{};
+  const gc=el("g",{},svg);D.cr.forEach(d=>el("path",{d:d,class:"cr"},gc));
+  const ga=el("g",{},svg);const paths={};
+  F.forEach(f=>{let c="cu st-"+st(f);if(opts.hi)c="cu "+(opts.hi.includes(f.n)?"st-a":"st-f");
+    paths[f.n]=el("path",{d:f.d,class:c},ga)});
+  return {ga:ga,paths:paths};
+}
+
+// ---------- vista previa con rótulos ----------
+const mini=$("mini");const MV={x:-150,y:-750,w:D.W+300,h:D.H+1300};
+mini.setAttribute("viewBox",MV.x+" "+MV.y+" "+MV.w+" "+MV.h);drawBase(mini);
+// [cuenca, dx, dy, ancla, rótulo]
+const LEAD=[[102,-150,-1150,"start","Chiriquí Viejo"],[132,150,1050,"start","Santa María"],[115,-250,-1000,"middle","Chagres"],[162,-300,950,"middle","Darién"]];
+const gLead=el("g",{},mini);
+function placeLeads(){
+  gLead.innerHTML="";const w=mini.getBoundingClientRect().width||600;const k=MV.w/w;const fs=13*k;
+  LEAD.forEach((L,i)=>{const f=byN[L[0]];const x=f.lx,y=f.ly,tx=x+L[1],ty=y+L[2];
+    el("line",{x1:x,y1:y,x2:tx,y2:ty+(L[2]<0?fs*.4:-fs*1.1),class:"lead-l"},gLead);
+    el("circle",{cx:x,cy:y,r:4.5*k,class:"dot-a"},gLead);
+    const t=el("text",{x:tx,y:ty,class:"lead-t","text-anchor":L[3],"font-size":fs},gLead);t.textContent=w<560?String(i+1):L[4].toUpperCase();});
+  $("leadKey").hidden=w>=560;
+  const t1=el("text",{x:3700,y:-250,class:"sealbl","font-size":12*k},gLead);t1.textContent="MAR CARIBE";
+  const t2=el("text",{x:2500,y:3400,class:"sealbl","font-size":12*k},gLead);t2.textContent="OCÉANO PACÍFICO";
+}
+placeLeads();addEventListener("resize",placeLeads);
+
+// ---------- visor de ArcGIS Experience ----------
+(function(){
+  const MAP_URL="https://experience.arcgis.com/experience/b28da4fe10de4a69805e800045c953fc";
+  const openB=$("openMap"),mx=$("mapx"),frame=$("mapFrame");
+  openB.addEventListener("click",()=>{if(!frame.src)frame.src=MAP_URL;mx.hidden=false;document.body.style.overflow="hidden";$("closeMap").focus()});
+  $("closeMap").addEventListener("click",()=>{mx.hidden=true;document.body.style.overflow="";openB.focus()});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!mx.hidden)$("closeMap").click()});
+})();
+
+// ---------- ilustración: partes de la cuenca ----------
+(function(){
+  const P=[
+    {k:"intro",t:"¿Qué es una cuenca?",e:"De la cumbre al mar",d:"Es el territorio que recoge el agua de lluvia y la conduce hacia un río principal. Su borde es la divisoria de aguas y dentro de ella ocurre el ciclo del agua.",f:["52","cuencas hidrográficas tiene Panamá: 18 drenan al Caribe y 34 al Pacífico"],n:"Toca un número de la ilustración o usa los botones para recorrer sus partes."},
+    {k:"div",s:"Divisoria",t:"Divisoria de aguas",e:"El borde de la cuenca",x:302,y:206,d:"También llamada parteaguas, es la línea que une las cumbres. Define hacia qué río corre la lluvia que cae a cada lado de la montaña.",f:["2","vertientes en Panamá: la cordillera central reparte el agua entre el Caribe y el Pacífico"],n:"Apoyamos la gestión de las áreas protegidas de las cumbres donde nacen los ríos, como La Amistad, Chagres y Darién."},
+    {k:"esc",s:"Escurrimientos",t:"Escurrimientos",e:"El camino de la lluvia",x:610,y:244,d:"Es el recorrido del agua de lluvia por las laderas hasta las quebradas y los ríos. Cuando hay bosque, el suelo la absorbe y la libera poco a poco.",f:["Bosque","significa agua más limpia, menos crecidas y caudal en la época seca"],n:"Promovemos la conservación de suelos y el café bajo sombra para cuidar las laderas."},
+    {k:"alta",s:"Parte alta",t:"Parte alta",e:"Donde nace el agua",x:150,y:262,d:"Montañas, bosques y nacientes. El bosque funciona como una esponja que guarda la lluvia y alimenta los ríos durante todo el año.",f:["17/18","parques nacionales de Panamá han recibido aportes de Fundación Natura"],n:"Protegemos nacientes y restauramos bosques con especies nativas."},
+    {k:"media",s:"Parte media",t:"Parte media",e:"Donde se produce",x:300,y:420,d:"Fincas, cultivos y comunidades rurales. Las prácticas que se aplican en el suelo deciden la calidad del agua que llega río abajo.",f:["3,082","hectáreas con prácticas de restauración y manejo sostenible en Chiriquí Viejo, Santa María y La Villa"],n:"Acompañamos a productores en café bajo sombra, ganadería sostenible y acueductos rurales."},
+    {k:"baja",s:"Parte baja",t:"Parte baja",e:"Donde llega el agua",x:620,y:520,d:"Ciudades, humedales, manglares y la desembocadura en el mar. Aquí se refleja todo el cuidado que la cuenca recibió río arriba.",f:["5/6","sitios Ramsar del país con trabajo de Natura"],n:"Impulsamos la conservación de humedales y manglares, y fortalecemos los comités de cuenca."},
+    {k:"cic",s:"Ciclo del agua",t:"Ciclo del agua",e:"Todo está conectado",x:470,y:66,d:"El sol evapora el agua del mar y de los bosques, se forman las nubes y la lluvia regresa a la cuenca. Cuidar el bosque ayuda a mantener este ciclo.",f:["1","solo ciclo une la montaña, la ciudad y el mar"],n:"Desarrollamos proyectos de adaptación al cambio climático en cuencas como Chiriquí Viejo y Santa María."}
+  ];
+  const ZONES={alta:"M0 0H800V338H0Z",media:"M0 338H800V482H0Z",baja:"M0 482H800V640H0Z"},FULL="M0 0H800V640H0Z";
+  const veil=$("veil"),card=$("icard"),pills=$("pills"),hs=$("hotspots"),art=$("art");
+  const Ldiv=$("L-div"),Lesc=$("L-esc"),Lcic=$("L-cic"),Lzl=$("L-zl");let cur=0;
+  P.forEach((p,i)=>{if(!i)return;
+    const b=document.createElement("button");b.className="pill";b.setAttribute("aria-pressed","false");b.dataset.i=i;b.innerHTML="<b>"+i+"</b>"+p.s;b.onclick=()=>show(cur===i?0:i);pills.appendChild(b);
+    const g=el("g",{class:"hs",tabindex:"0",role:"button","aria-label":i+". "+p.t},hs);g.dataset.i=i;
+    g.innerHTML='<circle class="ring" cx="'+p.x+'" cy="'+p.y+'" r="22" fill="#1F5F63" stroke="#FFFFFF" stroke-width="3.5"/><text x="'+p.x+'" y="'+(p.y+7)+'" text-anchor="middle" font-family="Fredoka,Arial,sans-serif" font-weight="600" font-size="21" fill="#FFFFFF">'+i+'</text>';
+    g.addEventListener("click",()=>show(i));g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();show(i)}});
+  });
+  function show(i){cur=i;const p=P[i];
+    [...pills.children].forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.i===i)));
+    [...hs.children].forEach(g=>g.classList.toggle("on",+g.dataset.i===i));
+    const zone=ZONES[p.k];
+    if(!i){veil.setAttribute("d",FULL);veil.setAttribute("opacity","0")}
+    else if(zone){veil.setAttribute("d",FULL+zone);veil.setAttribute("opacity",".62")}
+    else{veil.setAttribute("d",FULL);veil.setAttribute("opacity",".5")}
+    Ldiv.style.opacity=(!i||p.k==="div"||zone)?1:.25;
+    Lesc.style.opacity=(!i||p.k==="esc")?1:(zone?.6:.2);
+    Lcic.style.opacity=p.k==="cic"?1:0;
+    Lzl.style.opacity=zone?1:0;[...Lzl.children].forEach(t=>t.style.display=t.dataset.z===p.k?"":"none");
+    fitStage();
+    const dots=P.map((_,j)=>'<i class="'+(j===i?"on":"")+'"></i>').join("");
+    card.innerHTML='<div class="ic1"><span class="kicker">'+(i?i+" · ":"")+p.e+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p></div><div class="ic2"><div class="fact"><b>'+p.f[0]+'</b><span>'+p.f[1]+'</span></div>'+
+      (i?'<p class="natline"><strong>Nuestro aporte</strong>'+p.n+'</p>':'<p class="sans" style="font-weight:500;color:var(--on-blue-2);font-size:15px">'+p.n+'</p>')+'</div>'+
+      '<div class="inav"><button id="iprev"'+(!i?" disabled":"")+'>‹ Anterior</button><span class="idots">'+dots+'</span><button class="next" id="inext">'+(i===P.length-1?"Volver al inicio":"Siguiente ›")+'</button></div>';
+    $("iprev").onclick=()=>{if(cur>0)show(cur-1)};$("inext").onclick=()=>show(cur<P.length-1?cur+1:0);
+  }
+  function fitStage(){const w=art.getBoundingClientRect().width||800;const p=P[cur];
+    if(w<560&&cur&&p.x!=null){const vw=480,vh=384,x=Math.min(Math.max(p.x-vw/2,0),800-vw),y=Math.min(Math.max(p.y-vh/2,0),640-vh);art.setAttribute("viewBox",x+" "+y+" "+vw+" "+vh)}
+    else art.setAttribute("viewBox","0 0 800 640")}
+  addEventListener("resize",fitStage);
+  show(0);
+})();
+
+// ---------- tour ----------
+const T=[
+ {n:[102],t:"Chiriquí Viejo",w:"Chiriquí · cuenca 102",hl:["19 años","acompañando a productores de café de Renacimiento"],txt:"En las faldas del volcán Barú elaboramos el plan de conservación de la subcuenca del río Caisán, que protege las Lagunas de Volcán, y promovimos un café que cuida el suelo y el agua, junto a FIDECO y el Fondo de Adaptación.",k:["1,339 km²","140,149 personas","Activa en 2026"],doc:["Plan de conservación de la subcuenca del río Caisán",LIB+"2023/09/PLAN-DE-CONSERVACION-DE-LA-SUBCUENCA-DEL-RIO-CAISAN-comprimido.pdf"]},
+ {n:[132],t:"Santa María",w:"Veraguas, Coclé y Herrera · cuenca 132",hl:["6 aliados","FIDECO, FAO, Tigo, Banistmo, Fondo de Adaptación y GIZ"],txt:"Una de las cuencas más grandes del país, de la cordillera de Veraguas al golfo de Parita. Con seis aliados construimos un plan de manejo para sus partes alta, media y baja, y acompañamos a productores en sistemas agroforestales.",k:["3,363 km²","220,267 personas","Activa en 2026"],doc:["Plan de manejo integral del río Santa María",LIB+"2023/07/Plan_de_Manejo_Integrado_de_la_CRSM-2.pdf"]},
+ {n:[115],t:"Chagres",w:"Panamá y Colón · cuenca 115",hl:["Canal","aquí nace el agua del Canal y de buena parte de Panamá y Colón"],txt:"Con el canje de deuda por naturaleza del Parque Nacional Chagres financiamos la protección del bosque donde nacen sus ríos. Hoy restauramos áreas degradadas junto a Banistmo y Coaliciones Verdes.",k:["703,582 personas","FIDECO Chagres","Activa en 2026"],doc:["Sistematización del fondo del PN Chagres",LIB+"2023/07/Sistematizacion-Fondo-Chagres.pdf"]},
+ {n:[158,160,162,164],t:"Ríos del Darién",w:"Darién y comarca Emberá · cuencas 158 a 164",hl:["4","cuencas activas en 2026: Tucutí, Marea, Sambú y Jaqué"],txt:"Con el fondo FIDECO Darién, nacido de un canje de deuda, la cooperación española (AECID) y Conserva Aves, acompañamos a comunidades emberá y campesinas que viven junto a estos ríos.",k:["5,376 km²","46,024 personas","Activas en 2026"],doc:["Sistematización del fondo del PN Darién",LIB+"2023/07/Sistematizacion-Fondo-Darien.pdf"]}];
+const tc=$("tourCar");
+T.forEach((s,i)=>{
+  const cs=s.n.map(n=>byN[n]);const bb=[Math.min(...cs.map(c=>c.bb[0])),Math.min(...cs.map(c=>c.bb[1])),Math.max(...cs.map(c=>c.bb[2])),Math.max(...cs.map(c=>c.bb[3]))];
+  const cx=(bb[0]+bb[2])/2,cy=(bb[1]+bb[3])/2;const w=Math.max((bb[2]-bb[0])*2.2,(bb[3]-bb[1])*2.2*2.1,1700);const h=w/2.1;
+  const a=document.createElement("article");a.className="stop";a.setAttribute("aria-label","Parada "+(i+1)+": "+s.t);
+  a.innerHTML='<div class="loc"><svg viewBox="'+(cx-w/2)+' '+(cy-h/2)+' '+w+' '+h+'" aria-hidden="true"></svg><span class="tag">'+(i+1)+' · <b>'+s.t+'</b></span></div>'+
+   '<div class="body"><span class="where">'+s.w+'</span><div class="hl"><b>'+s.hl[0]+'</b><span>'+s.hl[1]+'</span></div><p>'+s.txt+'</p>'+
+   '<div class="kpis">'+s.k.map(x=>'<span>'+x+'</span>').join('<span aria-hidden="true">/</span>')+'</div>'+
+   '<a class="lnk doclink" href="'+s.doc[1]+'" target="_blank" rel="noopener"><span class="ic">PDF</span><span>'+s.doc[0]+'</span></a></div>';
+  tc.appendChild(a);
+  const sv=a.querySelector("svg");el("rect",{x:-4000,y:-4000,width:D.W+8000,height:D.H+8000,class:"sea-r"},sv);
+  drawBase(sv,{hi:s.n});
+});
+function carousel(id,dotsId){const c=$(id),d=$(dotsId),n=c.children.length;
+  d.innerHTML=Array.from({length:n},(_,i)=>'<i class="'+(i?"":"on")+'"></i>').join("");
+  const upd=()=>{const w=c.children[0].getBoundingClientRect().width+16;const i=Math.round(c.scrollLeft/w);[...d.children].forEach((x,j)=>x.classList.toggle("on",j===Math.min(i,n-1)))};
+  c.addEventListener("scroll",()=>requestAnimationFrame(upd),{passive:true});}
+carousel("tourCar","tourDots");
+document.querySelectorAll(".arrow").forEach(b=>b.addEventListener("click",()=>{const c=$(b.dataset.car);const w=c.children[0].getBoundingClientRect().width+16;c.scrollBy({left:w*(+b.dataset.d),behavior:"smooth"})}));
+
+// ---------- líneas ----------
+const G={comite:'<svg viewBox="0 0 40 40"><circle cx="12" cy="14" r="4"/><circle cx="28" cy="14" r="4"/><circle cx="20" cy="10" r="4"/><path d="M5 30c1-6 13-6 14 0M21 30c1-6 13-6 14 0M12 26c1-5 15-5 16 0"/></svg>',
+agua:'<svg viewBox="0 0 40 40"><path d="M20 6c6 9 10 14 10 19a10 10 0 0 1-20 0c0-5 4-10 10-19z"/><path d="M15 26a5 5 0 0 0 5 5"/></svg>',
+cafe:'<svg viewBox="0 0 40 40"><ellipse cx="20" cy="20" rx="9" ry="13"/><path d="M20 7c-4 6 4 20 0 26"/></svg>',
+clima:'<svg viewBox="0 0 40 40"><path d="M10 26a7 7 0 1 1 3-13 8 8 0 0 1 15 3 5 5 0 0 1 0 10z"/><path d="M15 31l-2 4M22 31l-2 4M29 31l-2 4"/></svg>',
+arbol:'<svg viewBox="0 0 40 40"><path d="M20 34V20"/><path d="M20 6l9 12h-5l6 8H10l6-8h-5z"/></svg>'};
+const L=[["arbol","Restauramos bosques","Sembramos árboles nativos en nacientes y orillas, donde más protegen el agua.","Especies nativas"],
+["cafe","Acompañamos a productores","Café bajo sombra, ganadería sostenible y abonos orgánicos que cuidan el suelo.","1,567 productores"],
+["agua","Llevamos agua a las comunidades","Acueductos rurales mejor administrados y cosecha de agua de lluvia.","Manuales y guías"],
+["comite","Fortalecemos los comités de cuenca","Instituciones, municipios y vecinos deciden juntos sobre su río.","12 cuencas"],
+["clima","Nos adaptamos al clima","Proyectos del Fondo de Adaptación en Chiriquí Viejo y Santa María.","Acreditados desde 2014"]];
+$("lines").innerHTML=L.map(l=>'<article class="line">'+G[l[0]]+'<h3>'+l[1]+'</h3><p>'+l[2]+'</p><span class="k">'+l[3]+'</span></article>').join("");
+$("partners").innerHTML=["FIDECO","FIDECO Chagres","FIDECO Darién","Fondo de Adaptación","FAO","GIZ","AECID","PNUMA","Autoridad del Canal","Banistmo","Tigo","Conserva Aves","Comités de cuencas"].join(' <i>/</i> ');
+
+// ---------- aliados ----------
+(function(){
+  const cnt={};Object.keys(FONDOS).forEach(n=>FONDOS[n].split(" · ").forEach(x=>{const k=x.replace(" (PFC)","").replace("Autoridad del Canal de Panamá (ACP)","Autoridad del Canal").replace(" (Fondo RFP)","");(cnt[k]=cnt[k]||[]).push(+n)}));
+  const rows=Object.entries(cnt).sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0]));
+  const s=$("chartY"),rh=21,Lx=150,R=372,T0=4,max=12;const H=T0+rows.length*rh+22;
+  s.setAttribute("viewBox","0 0 400 "+H);let h="";
+  [0,3,6,9,12].forEach(t=>{const x=Lx+t/max*(R-Lx);h+='<line class="grid" x1="'+x+'" x2="'+x+'" y1="'+T0+'" y2="'+(H-20)+'"/><text class="ax" x="'+x+'" y="'+(H-6)+'" text-anchor="middle">'+t+'</text>'});
+  rows.forEach((r,i)=>{const y=T0+i*rh,w=r[1].length/max*(R-Lx);
+    h+='<g class="yb" tabindex="0" role="button" data-i="'+i+'" aria-label="'+esc(r[0])+': '+r[1].length+' cuencas"><rect x="0" y="'+y+'" width="400" height="'+rh+'" fill="transparent"/><text class="ax lab" x="'+(Lx-8)+'" y="'+(y+14.5)+'" text-anchor="end">'+esc(r[0])+'</text><rect class="bar" x="'+Lx+'" y="'+(y+4)+'" width="'+w.toFixed(1)+'" height="'+(rh-8)+'" fill="var(--m-w-d)"/><text class="ax" x="'+(Lx+w+5).toFixed(1)+'" y="'+(y+14.5)+'">'+r[1].length+'</text></g>'});
+  s.innerHTML=h;const ro=$("readout");
+  s.querySelectorAll(".yb").forEach(g=>{const f=()=>{s.querySelectorAll(".yb").forEach(x=>x.classList.toggle("on",x===g));const r=rows[+g.dataset.i];
+      ro.innerHTML='<b>'+esc(r[0])+'</b>: '+r[1].sort((a,b)=>a-b).map(n=>esc(short(byN[n]))).join(", ")};
+    g.addEventListener("click",f);g.addEventListener("mouseenter",f);g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}})});
+  const top=F.filter(f=>f.w).sort((a,b)=>b.km2-a.km2).slice(0,10),m=top[0].km2;
+  $("rank").innerHTML=top.map(f=>'<div class="rk'+(f.a?" a":"")+'"><span class="nm" title="'+esc(f.nm)+'">'+esc(short(f))+'</span><i style="width:'+(f.km2/m*100).toFixed(1)+'%"></i><span class="v">'+fmt(f.km2)+'</span></div>').join("");
+})();
+
+// ---------- El Niño 2026: caudal de septiembre ----------
+(function(){
+  const R=[["Changuinola",91,121.6],["Chiriquí Viejo",102,55.6],["Chico",106,36.0],["Chiriquí",108,32.9],["Tabasará",114,40.6],["San Pablo",118,22.0],["La Villa",128,38.0],["Santa María",132,21.1],["Grande",134,20.2],["Bayano",148,67.6]];
+  const s=$("chartN"),rh=24,Lx=104,Rx=360,T0=6,max=140,H=T0+R.length*rh+24;
+  s.setAttribute("viewBox","0 0 400 "+H);let h="";
+  [0,50,100].forEach(t=>{const x=Lx+t/max*(Rx-Lx);h+='<line class="grid" x1="'+x+'" x2="'+x+'" y1="'+T0+'" y2="'+(H-20)+'"/><text class="ax" x="'+x+'" y="'+(H-6)+'" text-anchor="middle">'+t+' %</text>'});
+  R.forEach((r,i)=>{const y=T0+i*rh,w=r[2]/max*(Rx-Lx),hi=r[2]>=100;
+    h+='<text class="ax lab" x="'+(Lx-8)+'" y="'+(y+16)+'" text-anchor="end">'+r[0]+'</text><rect x="'+Lx+'" y="'+(y+5)+'" width="'+w.toFixed(1)+'" height="'+(rh-10)+'" rx="2" fill="'+(hi?"var(--m-w-d)":"var(--orange)")+'"/><text class="ax" x="'+(Lx+w+5).toFixed(1)+'" y="'+(y+16)+'">'+Math.round(r[2])+' %</text>'});
+  const x100=Lx+100/max*(Rx-Lx);h+='<line x1="'+x100+'" x2="'+x100+'" y1="'+T0+'" y2="'+(H-20)+'" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 3"/>';
+  s.innerHTML=h;
+})();
+
+// ---------- hitos ----------
+const H=[["1991","El 28 de marzo nace Fundación Natura."],["1995","Asumimos como fiduciaria del Fideicomiso Ecológico de Panamá (FIDECO)."],["2003","Administramos los fondos de los canjes de deuda por naturaleza de los parques Chagres y Darién, donde nacen ríos que dan agua a medio país."],["2014","Acreditados como Entidad Nacional de Implementación del Fondo de Adaptación, entre las primeras 20 del mundo."],["2018","Obtenemos la certificación ISO 9001:2015."],["2021","Preparamos la propuesta técnica para declarar a Matusagaratí sitio Ramsar."],["2025","Matusagaratí, en Darién, se convierte en el Sitio Ramsar N.º 2,566, el sexto de Panamá."],["2026","Celebramos 35 años con proyectos activos en 13 cuencas del país."]];
+$("hitos").innerHTML=H.map(h=>'<div class="hito"><div class="y">'+h[0]+'</div><p>'+h[1]+'</p></div>').join("");
+
+// ---------- quiz ----------
+const Q=[
+ {q:"¿Cuántas cuencas hidrográficas tiene Panamá?",o:["18","34","52","123"],a:2,e:"Son 52: 18 drenan al Caribe y 34 al Pacífico."},
+ {q:"¿Qué cuenca da agua al Canal de Panamá?",o:["Santa María","Chagres","Chiriquí Viejo","Tuira"],a:1,e:"La del río Chagres (N.º 115), que también abastece a buena parte de Panamá y Colón."},
+ {q:"¿En cuántas cuencas ha trabajado Fundación Natura?",o:["6","13","30","52"],a:2,e:"En 30 de las 52, y en 13 hay proyectos activos en 2026."},
+ {q:"¿Qué hace un comité de cuenca?",o:["Cobra el agua","Reúne a instituciones y vecinos para decidir sobre el río","Construye represas","Vende madera"],a:1,e:"Es el espacio donde instituciones, municipios y comunidades planifican juntos el cuidado del agua."}];
+let qi=0,score=0;const qb=$("quizbox");
+function rq(){if(qi>=Q.length){qb.innerHTML='<div class="qtext">'+score+' de '+Q.length+'</div><p>'+(score===Q.length?"¡Eres guardián del agua! Comparte esta historia.":"Repasa la historia e inténtalo otra vez.")+'</p><button class="qbtn" id="qr">Repetir</button>';$("qr").onclick=()=>{qi=0;score=0;rq()};return}
+  const q=Q[qi];let done=false;
+  qb.innerHTML='<div class="qhead"><span class="kicker">Pregunta '+(qi+1)+' de '+Q.length+'</span><div class="qprog">'+Q.map((_,i)=>'<i class="'+(i<qi?"done":i===qi?"cur":"")+'"></i>').join("")+'</div></div><div class="qtext">'+q.q+'</div><div class="opts">'+q.o.map((o,i)=>'<button class="opt" data-i="'+i+'">'+o+'</button>').join("")+'</div><div id="qfb"></div>';
+  qb.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{if(done)return;done=true;const ok=+b.dataset.i===q.a;if(ok)score++;
+    qb.querySelectorAll(".opt").forEach(x=>{x.disabled=true;if(+x.dataset.i===q.a)x.classList.add("right")});if(!ok)b.classList.add("wrong");
+    $("qfb").innerHTML='<div class="fb"><b>'+(ok?"¡Correcto!":"No exactamente")+'</b>'+q.e+'</div><button class="qbtn" id="qn" style="margin-top:12px">'+(qi<Q.length-1?"Siguiente":"Ver resultado")+'</button>';
+    $("qn").onclick=()=>{qi++;rq()}}))}
+rq();
+
+// ---------- recursos ----------
+const LIBS=[["Lineamientos para comités de cuencas",LIB+"2023/07/Manual-Lineamientos-Comites-de-Cuencas_vf.pdf","PDF"],["Plan de manejo integral del río Santa María",LIB+"2023/07/Plan_de_Manejo_Integrado_de_la_CRSM-2.pdf","PDF"],["Plan de conservación de la subcuenca del río Caisán",LIB+"2023/09/PLAN-DE-CONSERVACION-DE-LA-SUBCUENCA-DEL-RIO-CAISAN-comprimido.pdf","PDF"],["Manual de acueductos rurales",LIB+"2023/07/Manual-Operativo-Admi-Acueductos-Rurales-lite.pdf","PDF"],["Guía de captación de agua de lluvia",LIB+"2024/01/GUIA-2022-CAPTACION-DE-AGUA-LLUVIA-comprimido.pdf","PDF"],["Lecciones de adaptación al cambio climático",LIB+"2024/01/EXPERIENCIAS-Y-LECCIONES-DE-ADAPTACION-AL-CAMBIO-CLIMATICOFINAL.pdf","PDF"],["Toda la librería","https://naturapanama.org/libreria/","WEB"]];
+$("lib").innerHTML=LIBS.map(d=>'<li><a href="'+d[1]+'" target="_blank" rel="noopener"><span>'+d[0]+'</span><small>'+d[2]+'</small></a></li>').join("");
+const GOV=[["Plan Nacional de Seguridad Hídrica 2015–2050","https://www.undp.org/es/panama/publicaciones/plan-nacional-de-seguridad-hidrica-2015-2050-agua-para-todos","PNUD"],["Portal de cuencas hidrográficas","https://cuencas.miambiente.gob.pa/","MIAMBIENTE"],["Manual de comités de cuencas","https://cuencas.miambiente.gob.pa/wp-content/uploads/2020/08/Manual-de-Procedimiento-Comite-de-cuencas.pdf","MIAMBIENTE"],["Autoridad del Canal de Panamá","https://pancanal.com/","ACP"]];
+$("gov").innerHTML=GOV.map(d=>'<li><a href="'+d[1]+'" target="_blank" rel="noopener"><span>'+d[0]+'</span><small>'+d[2]+'</small></a></li>').join("");
+
+// ---------- progreso y video ----------
+const pg=$("prog");
+function prog(){const h=document.documentElement.scrollHeight-innerHeight;pg.style.width=(h>0?Math.min(100,scrollY/h*100):0)+"%"}
+addEventListener("scroll",prog,{passive:true});prog();
+$("playBtn").addEventListener("click",()=>{const v=$("vid");v.classList.add("on");
+  v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/QtZBwuq9_MY?start=88&autoplay=1&rel=0" title="Rutas del agua, Voces de la Naturaleza" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'});
+})();
+</script>
+</body>
+</html>
